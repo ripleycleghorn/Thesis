@@ -1,7 +1,6 @@
 <template>
   <g 
     class="axis y-axis"
-    :transform="`translate(${xTranslate}, 0)`"
   >
   </g>
 </template>
@@ -13,11 +12,11 @@ export default {
   name: 'YAxis',
   props: {
     yScale: Function,
-    xTranslate: Number
+    // xTranslate: Number
   },
   updated() {
     select('.y-axis')
-      .call(axisLeft(this.yScale).ticks(10))
+      .call(axisLeft(this.yScale).ticks(15))
   }
 }
 </script>

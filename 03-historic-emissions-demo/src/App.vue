@@ -1,5 +1,6 @@
 <template>
-  <svg :height="height" :width="width">
+  <svg :height="svgHeight" :width="svgWidth" :transform="'translate(' + margin.left + ',' + margin.top + ')'">
+    <!-- I want a group here to encompass the path and axes and include the transform above but adding a group makes the axes disappear -->
     <path
     :d="emissionsLine"
     fill="none"
@@ -7,18 +8,16 @@
     />
     <XAxis 
       :xScale="xScale" 
-      :yTranslate="height - margin"
+      :height="height"
     />
     <YAxis 
       :yScale="yScale"
-      :xTranslate="margin"
     />
   </svg>
 </template>
 
 <script>
 import * as d3 from 'd3';
-// import LabeledPoint from './components/LabeledPoint.vue';
 import XAxis from './components/XAxis.vue';
 import YAxis from './components/YAxis.vue';
 
@@ -36,7 +35,6 @@ export default {
       });
   },
   components: {
-    // LabeledPoint,
     XAxis,
     YAxis
   },
@@ -44,13 +42,12 @@ export default {
       xScale() {
           return d3.scaleLinear()
             .domain(d3.extent(this.emissionsData, d => d.year))
-            .range([0, this.width - this.margin])
+            .range([0, this.width])
       },
       yScale() {
           return d3.scaleLinear()
-            // .domain([0,10000000000])
             .domain(d3.extent(this.emissionsData, d => d.emissions))
-            .range([this.height - this.margin, 0])
+            .range([this.height, 0])
       },
       emissionsLine() {
           const lineGenerator = d3.line()
@@ -59,19 +56,22 @@ export default {
           return lineGenerator(this.filteredData);
       },
       filteredData() {
-        return this.emissionsData.filter(d => d.Entity == this.selectedEntity)
+          return this.emissionsData.filter(d => d.Entity == this.selectedEntity)
+      },
+      width() {
+          return this.svgWidth - this.margin.left - this.margin.right;
+      },
+      height() {
+          return this.svgHeight - this.margin.top - this.margin.bottom;
       }
   },
   data() {
     return {
-      // points: [],
-      // xVar: "sepal_length",
-      // yVar: "petal_width",
-      margin: 100,
-      width: 500,
-      height: 300,
       emissionsData: [],
-      selectedEntity: 'United States'
+      selectedEntity: 'World',
+      svgHeight: window.innerHeight,
+      svgWidth: window.innerWidth,
+      margin: { top: 100, left: 100, bottom: 100, right: 100 },
     }
   },
 }
