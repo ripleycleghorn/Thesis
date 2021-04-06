@@ -25,7 +25,7 @@ import YAxis from './components/YAxis.vue';
 export default {
   name: 'App',
   created() {
-    d3.csv('https://raw.githubusercontent.com/ripleycleghorn/thesis/main/03-historic-emissions-demo/all_emissions.csv')
+    d3.csv('https://raw.githubusercontent.com/ripleycleghorn/thesis/main/project-code/all_emissions.csv')
       .then(data => {
         data.forEach(d => {
           d.emissions = +d.emissions;
