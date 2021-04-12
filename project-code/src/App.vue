@@ -43,14 +43,14 @@ export default {
       xScale() {
           return d3.scaleLinear()
             // .domain(d3.extent(this.emissionsData, d => d.year))
-            .domain([d3.min(this.emissionsData, d => d.year), d3.max(this.emissionsData, d => d.year) - 75])
+            .domain([d3.min(this.emissionsData, d => d.year), d3.max(this.emissionsData, d => d.year) - 213])
             .range([0, this.width])
       },
       yScale() {
           return d3.scaleLinear()
             // .domain([-5,50]) when I do it this way the y-axis disappears
             // .domain(d3.extent(this.emissionsData, d => d.emissions))
-            .domain([d3.min(this.emissionsData, d => d.emissions) + 5, d3.max(this.emissionsData, d => d.emissions) - 45])
+            .domain([d3.min(this.emissionsData, d => d.emissions) + 5, d3.max(this.emissionsData, d => d.emissions) - 87])
             .range([this.height, 0])
       },
       emissionsLine() {
@@ -61,7 +61,7 @@ export default {
           return lineGenerator(this.filteredData);
       },
       filteredData() {
-          return this.emissionsData.filter(d => d.Entity == this.selectedEntity)
+          return this.emissionsData.filter(d => d.Entity == this.selectedEntity).filter(d => d.year < 1887)
       },
       width() {
           return this.svgWidth - this.margin.left - this.margin.right;

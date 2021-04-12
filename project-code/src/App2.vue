@@ -69,7 +69,7 @@ export default {
   data() {
     return {
       emissionsData: [],
-      selectedEntity: '1.5 degrees',
+      selectedEntity: 'historic',
       svgHeight: window.innerHeight,
       svgWidth: window.innerWidth,
       margin: { top: 100, left: 100, bottom: 100, right: 100 },
@@ -79,5 +79,9 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
+.axis {
+  font-family: 'Lora', serif;
+}
 </style>

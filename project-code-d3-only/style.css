@@ -1,0 +1,48 @@
+body {
+    font-family: 'Lora', serif;
+}
+
+div {
+	border: 1px solid blue;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(5, 1fr) .2fr;
+}
+
+.nav {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.introduction {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 1;
+}
+
+.historic {
+    grid-column: 3 / span 2;
+    grid-row: 1 / span 1;
+}
+
+.future {
+    grid-column: 5 / span 2;
+    grid-row: 1 / span 1;
+}
+
+.beccs {
+    grid-column: 7 / span 2;
+    grid-row: 1 / span 1;
+}
+
+.text {
+    grid-column: 4 / span 2;
+    grid-row: 3 / span 1;
+}
+
+.arrow {
+    grid-column: 8;
+    grid-row: 6 / span 1;
+}
