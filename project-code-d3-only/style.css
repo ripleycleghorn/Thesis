@@ -1,49 +1,73 @@
 body {
     font-family: 'Lora', serif;
+    background-color: #F2F2F2;
+    color: #393939;
 }
 
 div {
-	border: 1px solid blue;
+	/* border: 1px solid blue; */
 }
 
 #container {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(5, 1fr) .2fr;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 100px repeat(9, 1fr);
+    width: 100vw;
+    height: 95vh;
+}
+
+.highlight {
+    color: #4A808C;
+    font-weight: 500;
 }
 
 .nav {
     text-align: center;
     padding-top: 20px;
-    font-weight: 500;
 }
 
 .introduction {
-    grid-column: 1 / span 2;
+    grid-column: 1 / span 3;
     grid-row: 1 / span 1;
 }
 
 .historic {
-    grid-column: 3 / span 2;
+    grid-column: 4 / span 3;
     grid-row: 1 / span 1;
 }
 
 .future {
-    grid-column: 5 / span 2;
+    grid-column: 7 / span 3;
     grid-row: 1 / span 1;
 }
 
 .beccs {
-    grid-column: 7 / span 2;
+    grid-column: 10 / span 3;
     grid-row: 1 / span 1;
 }
 
 .text {
-    grid-column: 4 / span 2;
-    grid-row: 3 / span 1;
+    grid-column: 5 / span 4;
+    grid-row: 5 / span 2;
+    border: 1px solid grey;
+    padding: 10px;
 }
 
-.arrow {
-    grid-column: 8;
-    grid-row: 6 / span 1;
+.graph-center {
+    grid-column: 2 / span 10;
+    grid-row: 2 / span 9;
+}
+
+.arrow-right {
+    grid-column: 12;
+    grid-row: 10;
+}
+
+.arrow-left {
+    grid-column: 1 / span 1;
+    grid-row: 10;
+}
+
+.cls-2 {
+    transition: 5s;
 }
