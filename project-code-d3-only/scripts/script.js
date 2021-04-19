@@ -14,7 +14,7 @@ let height = svgHeight - margin.top - margin.bottom
 let width = svgWidth - margin.left - margin.right
 
 // setup svg & add group
-let svg = d3.select('#vis')
+let svg = d3.select('.graph-center')
     .append('svg')
     .attr('height', svgHeight)
     .attr('width', svgWidth)
@@ -31,34 +31,39 @@ d3.csv("https://raw.githubusercontent.com/ripleycleghorn/thesis/main/project-cod
         d.emissions = +d.emissions;
         d.year = +d.Year;
       })
-      console.log(data);
+    //   console.log(data);
     // var emissionsData = data;
 
 
     // filter
-    data = data.filter(d => d.Entity === 'historic')
-    
+    var filteredData = data.filter(d => d.Entity === 'historic')
+    // filteredData = d3.group(data, d => d.Entity);
+
     // scales
     let xScale = d3.scaleLinear()
-        .domain(d3.extent(data, d => d.year))
+        .domain(d3.extent(filteredData, d => d.year))
         .range([0, width])
-    
     let yScale = d3.scaleLinear()
-        .domain(d3.extent(data, d => d.emissions))
+        .domain(d3.extent(filteredData, d => d.emissions))
         .range([height, 0])
-   
+    
     // define the line
-    var valueLine = d3.line()
-        .x(data, d => xScale(d.year))
-        .y(data, d => yScale(d.emissions))
-
+    function valueLine(data) {
+      const lineGenerator = d3.line()
+            .x(d => xScale(d.year))
+            .y(d => yScale(d.emissions))
+            // .curve(d3.curveMonotoneX)
+            // console.log(this.casesData)
+          return lineGenerator(data)
+    }
     // Add the valueline path.
-    svg.append("path")
-        .data(data)
-        // .attr("class", "line")
-        .attr("d", valueLine)
-        .attr("fill", "none")
-        .attr("stroke", "steelblue");
+    svg.selectAll('path')
+      .data(filteredData)
+      .join('path')
+      .attr("d", valueLine(filteredData))
+      .attr('fill', 'none')
+      .attr('stroke-width', 1)
+      .attr('stroke', 'steelblue')
     
     // axis
     let xAxis = d3.axisBottom(xScale)
