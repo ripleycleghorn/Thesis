@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100;400;500;700&family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100;200;300;400;500;600;700&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
 
 body {
     font-family: 'Source Sans Pro', sans-serif;
@@ -116,6 +116,8 @@ div {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 14px;
     width: 200px;
+    color: black;
+    font-style: italic;
 }
 
 /* charts */
@@ -146,7 +148,10 @@ div {
 }
 
 #geoengineering {
-    font-weight: 700;
-    color: #3C6E71;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: white;
+    background-color: #3C6E71;
+    /* white-space: nowrap; */
 }
 
