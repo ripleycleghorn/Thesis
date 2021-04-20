@@ -60,7 +60,13 @@ d3.csv("https://raw.githubusercontent.com/ripleycleghorn/thesis/main/project-cod
         .y(function(d) { return yScale(d.emissions); })
         .curve(d3.curveBasis);
 
-    // Loop through each symbol / key
+    // define the area
+    var area = d3.area()
+        .x(function(d) { return xScale(d.year); })
+        .y0(height)
+        .y1(function(d) { return yScale(d.emissions); });
+
+    // Loop through each entity / key
   
     dataNest.forEach(function(d,i) { 
         svg.append("path")
@@ -69,6 +75,11 @@ d3.csv("https://raw.githubusercontent.com/ripleycleghorn/thesis/main/project-cod
             .attr('fill', 'none')
             .attr('stroke-width', 1);
 
+        // add the area
+        svg.append("path")
+            .attr("class", "area")
+            .attr("d", area(d.value))
+            .attr("fill", "lightsteelblue")
     });
 
     // axis
