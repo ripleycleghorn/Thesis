@@ -60,6 +60,7 @@ div {
     border: 1px solid grey;
     padding: 10px;
     z-index: 1;
+    vertical-align: middle;
 }
 .text-1 {
     grid-column: 5 / span 4;
@@ -67,64 +68,54 @@ div {
     border: 1px solid grey;
     padding: 10px;
     z-index: 1;
+    vertical-align: middle;
 }
 
 .annotation {
-    grid-column: 6 / span 2;
-    grid-row: 5 / span 3;
     padding: 10px;
     z-index: 1;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 17px;
-    /* hyphens: manual; */
-    /* text-align: center; */
 }
 
-.annotation-5 {
+.general{
+    grid-column: 6 / span 2;
+    grid-row: 5 / span 3;
+}
+
+.page5 {
     grid-column: 6 / span 2;
     grid-row: 7 / span 3;
-    padding: 10px;
-    z-index: 1;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 17px;
-    /* text-align: center; */
 }
 
-.annotation-6 {
+.page6 {
     grid-column: 7 / span 2;
     grid-row: 4 / span 3;
-    padding: 10px;
-    z-index: 1;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 17px;
-    /* text-align: center; */
 }
 
-.annotation-7 {
+.page7 {
     grid-column: 9 / span 2;
     grid-row: 3 / span 3;
-    padding: 10px;
-    z-index: 1;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 17px;
-    /* text-align: center; */
 }
 
-.annotation-8 {
+.page8 {
     grid-column: 6 / span 3;
     grid-row: 5 / span 3;
-    padding: 10px;
-    z-index: 1;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 17px;
-    /* text-align: center; */
+}
+
+.box {
+    grid-column: 6 / span 2;
+    grid-row: 5 / span 2;
+    text-align: center;
+    /* vertical-align: middle; */
+    background-color: #3C6E71;
+    color: black;
 }
 
 .tooltip {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 14px;
     width: 200px;
-    /* color: #4A808C; */
 }
 
 /* charts */
