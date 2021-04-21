@@ -59,7 +59,6 @@ div {
     grid-row: 5 / span 3;
     border: 1px solid grey;
     padding: 10px;
-    z-index: 1;
     vertical-align: middle;
 }
 .text-1 {
@@ -67,13 +66,11 @@ div {
     grid-row: 5 / span 2;
     border: 1px solid grey;
     padding: 10px;
-    z-index: 1;
     vertical-align: middle;
 }
 
 .annotation {
     padding: 10px;
-    z-index: 1;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 17px;
 }
