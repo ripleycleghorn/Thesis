@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100;200;300;400;500;600;700&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #F2F2F2;
+    color: #393939;
+}
+
+div {
+	/* border: 1px solid blue; */
+}
+
+#container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 100px repeat(9, 1fr);
+    width: 99vw;
+    height: 95vh;
+}
+
+.highlight {
+    text-decoration: underline;
+}
+
+.nav {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 17px;
+    font-family: 'Antonio', sans-serif;
+    font-weight: 100;
+    color: #070C0D;
+}
+/* nav bar */
+
+.introduction {
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 1;
+}
+
+.historic {
+    grid-column: 4 / span 3;
+    grid-row: 1 / span 1;
+}
+
+.future {
+    grid-column: 7 / span 3;
+    grid-row: 1 / span 1;
+}
+
+.beccs {
+    grid-column: 10 / span 3;
+    grid-row: 1 / span 1;
+}
+
+/* text and annotations */
+
+.text {
+    grid-column: 5 / span 4;
+    grid-row: 5 / span 3;
+    border: 1px solid grey;
+    padding: 10px;
+    vertical-align: middle;
+}
+.text-1 {
+    grid-column: 5 / span 4;
+    grid-row: 5 / span 2;
+    border: 1px solid grey;
+    padding: 10px;
+    vertical-align: middle;
+}
+
+.annotation {
+    padding: 10px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 17px;
+}
+
+.general{
+    grid-column: 6 / span 2;
+    grid-row: 5 / span 3;
+}
+
+.page5 {
+    grid-column: 6 / span 2;
+    grid-row: 7 / span 3;
+}
+
+.page6 {
+    grid-column: 7 / span 2;
+    grid-row: 4 / span 3;
+}
+
+.page7 {
+    grid-column: 9 / span 2;
+    grid-row: 3 / span 3;
+}
+
+.page8 {
+    grid-column: 6 / span 3;
+    grid-row: 5 / span 3;
+}
+
+.box {
+    grid-column: 6 / span 2;
+    grid-row: 5 / span 2;
+    text-align: center;
+    /* vertical-align: middle; */
+    background-color: #3C6E71;
+    color: black;
+}
+
+.tooltip {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+    width: 200px;
+    color: black;
+    font-style: italic;
+}
+
+/* charts */
+
+.graph-center {
+    grid-column: 2 / span 10;
+    grid-row: 2 / span 9;
+    margin: 0 auto;
+}
+
+#y-axis, #x-axis {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #070C0D;
+    transition: transform 3s ease-in-out;
+}
+
+/* arrows */
+
+.arrow-right {
+    grid-column: 12;
+    grid-row: 10;
+}
+
+.arrow-left {
+    grid-column: 1 / span 1;
+    grid-row: 10;
+    text-align: right;
+}
+
+#geoengineering {
+    /* padding-left: 5px; */
+    /* padding-right: 5px; */
+    color: white;
+    background-color: #3C6E71;
+    /* white-space: nowrap; */
+}
+

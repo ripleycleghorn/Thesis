@@ -1,0 +1,31 @@
+
+@import 'main.css';
+
+.line0 {
+    stroke: #070C0D;
+}
+
+.line4 {
+    stroke: #0468BF;
+}
+
+.line3 {
+    stroke: #F2B705;
+}
+
+.line1 {
+    stroke: #049DBF;
+}
+
+.line2 {
+    stroke: #93A603;
+}
+
+.low {
+    color: #93A603;
+}
+
+.high {
+    color: #049DBF;
+}
+

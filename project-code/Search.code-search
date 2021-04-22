@@ -1,0 +1,43 @@
+# Query: <link rel="preconnect" href="https://fonts.gstatic.com">
+# ContextLines: 1
+
+12 results - 12 files
+
+index.html:
+   9          <link rel="stylesheet" href="style.css">
+  11          <script src="https://d3js.org/d3.v6.min.js"></script>
+
+page2.html:
+   9          <link rel="stylesheet" href="style.css">
+  11          <script src="https://d3js.org/d3.v6.min.js"></script>
+
+page3.html:
+   9          <link rel="stylesheet" href="style.css">
+  11      </head>
+
+page4.html:
+   9          <link rel="stylesheet" href="style.css">
+
+page5.html:
+   9          <link rel="stylesheet" href="style.css">
+
+page6.html:
+   9          <link rel="stylesheet" href="style.css">
+
+page7.html:
+   9          <link rel="stylesheet" href="style.css">
+
+page8.html:
+   9          <link rel="stylesheet" href="style.css">
+
+page9.html:
+   9          <link rel="stylesheet" href="style.css">
+
+page10.html:
+   9          <link rel="stylesheet" href="style.css">
+
+page11.html:
+   9          <link rel="stylesheet" href="style.css">
+
+page12.html:
+   9          <link rel="stylesheet" href="style.css">

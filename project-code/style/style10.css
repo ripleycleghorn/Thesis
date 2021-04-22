@@ -1,0 +1,18 @@
+
+@import 'main.css';
+
+.line0 {
+    stroke: #070C0D;
+}
+
+.line4 {
+    stroke: #0468BF;
+}
+
+.line1, .line2, .line3 {
+    stroke: #F2F2F2;
+}
+
+.baseline {
+    color: #0468BF;
+}
