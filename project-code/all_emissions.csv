@@ -1,0 +1,635 @@
+﻿Entity,Year,emissions
+historic,1750,0
+historic,1751,0
+historic,1752,0
+historic,1753,0
+historic,1754,0
+historic,1755,0
+historic,1756,0
+historic,1757,0
+historic,1758,0
+historic,1759,0
+historic,1760,0
+historic,1761,0
+historic,1762,0
+historic,1763,0
+historic,1764,0
+historic,1765,0
+historic,1766,0
+historic,1767,0
+historic,1768,0
+historic,1769,0
+historic,1770,0
+historic,1771,0
+historic,1772,0
+historic,1773,0
+historic,1774,0
+historic,1775,0
+historic,1776,0
+historic,1777,0
+historic,1778,0
+historic,1779,0
+historic,1780,0
+historic,1781,0
+historic,1782,0
+historic,1783,0
+historic,1784,0
+historic,1785,0
+historic,1786,0
+historic,1787,0
+historic,1788,0
+historic,1789,0
+historic,1790,0
+historic,1791,0
+historic,1792,0
+historic,1793,0
+historic,1794,0
+historic,1795,0
+historic,1796,0
+historic,1797,0
+historic,1798,0
+historic,1799,0
+historic,1800,0
+historic,1801,0
+historic,1802,0
+historic,1803,0
+historic,1804,0
+historic,1805,0
+historic,1806,0
+historic,1807,0
+historic,1808,0
+historic,1809,0
+historic,1810,0
+historic,1811,0
+historic,1812,0
+historic,1813,0
+historic,1814,0
+historic,1815,0
+historic,1816,0
+historic,1817,0
+historic,1818,0
+historic,1819,0
+historic,1820,0
+historic,1821,0
+historic,1822,0
+historic,1823,0
+historic,1824,0
+historic,1825,0
+historic,1826,0
+historic,1827,0
+historic,1828,0
+historic,1829,0
+historic,1830,0
+historic,1831,0
+historic,1832,0
+historic,1833,0
+historic,1834,0
+historic,1835,0
+historic,1836,0
+historic,1837,0
+historic,1838,0
+historic,1839,0
+historic,1840,0
+historic,1841,0
+historic,1842,0
+historic,1843,0
+historic,1844,0
+historic,1845,0
+historic,1846,0
+historic,1847,0
+historic,1848,0
+historic,1849,0
+historic,1850,0
+historic,1851,0
+historic,1852,0
+historic,1853,0
+historic,1854,0
+historic,1855,0
+historic,1856,0
+historic,1857,0
+historic,1858,0
+historic,1859,0
+historic,1860,0
+historic,1861,0
+historic,1862,0
+historic,1863,0
+historic,1864,0
+historic,1865,0
+historic,1866,0
+historic,1867,0
+historic,1868,0
+historic,1869,1
+historic,1870,1
+historic,1871,1
+historic,1872,1
+historic,1873,1
+historic,1874,1
+historic,1875,1
+historic,1876,1
+historic,1877,1
+historic,1878,1
+historic,1879,1
+historic,1880,1
+historic,1881,1
+historic,1882,1
+historic,1883,1
+historic,1884,1
+historic,1885,1
+historic,1886,1
+historic,1887,1
+historic,1888,1
+historic,1889,1
+historic,1890,1
+historic,1891,1
+historic,1892,1
+historic,1893,1
+historic,1894,1
+historic,1895,1
+historic,1896,2
+historic,1897,2
+historic,1898,2
+historic,1899,2
+historic,1900,2
+historic,1901,2
+historic,1902,2
+historic,1903,2
+historic,1904,2
+historic,1905,2
+historic,1906,3
+historic,1907,3
+historic,1908,3
+historic,1909,3
+historic,1910,3
+historic,1911,3
+historic,1912,3
+historic,1913,3
+historic,1914,3
+historic,1915,3
+historic,1916,3
+historic,1917,4
+historic,1918,3
+historic,1919,3
+historic,1920,4
+historic,1921,3
+historic,1922,3
+historic,1923,4
+historic,1924,4
+historic,1925,4
+historic,1926,4
+historic,1927,4
+historic,1928,4
+historic,1929,4
+historic,1930,4
+historic,1931,4
+historic,1932,3
+historic,1933,3
+historic,1934,4
+historic,1935,4
+historic,1936,4
+historic,1937,4
+historic,1938,4
+historic,1939,4
+historic,1940,5
+historic,1941,5
+historic,1942,5
+historic,1943,5
+historic,1944,5
+historic,1945,4
+historic,1946,5
+historic,1947,5
+historic,1948,5
+historic,1949,5
+historic,1950,6
+historic,1951,6
+historic,1952,6
+historic,1953,7
+historic,1954,7
+historic,1955,7
+historic,1956,8
+historic,1957,8
+historic,1958,8
+historic,1959,9
+historic,1960,9
+historic,1961,9
+historic,1962,10
+historic,1963,10
+historic,1964,11
+historic,1965,11
+historic,1966,12
+historic,1967,12
+historic,1968,13
+historic,1969,14
+historic,1970,15
+historic,1971,15
+historic,1972,16
+historic,1973,17
+historic,1974,17
+historic,1975,17
+historic,1976,18
+historic,1977,18
+historic,1978,19
+historic,1979,19
+historic,1980,19
+historic,1981,19
+historic,1982,19
+historic,1983,19
+historic,1984,19
+historic,1985,20
+historic,1986,20
+historic,1987,21
+historic,1988,22
+historic,1989,22
+historic,1990,23
+historic,1991,23
+historic,1992,22
+historic,1993,23
+historic,1994,23
+historic,1995,23
+historic,1996,24
+historic,1997,24
+historic,1998,24
+historic,1999,24
+historic,2000,25
+historic,2001,25
+historic,2002,26
+historic,2003,27
+historic,2004,28
+historic,2005,29
+historic,2006,30
+historic,2007,31
+historic,2008,32
+historic,2009,31
+historic,2010,33
+historic,2011,34
+historic,2012,35
+historic,2013,35
+historic,2014,35
+historic,2015,35
+historic,2016,35
+historic,2017,36
+historic,2018,36
+historic,2019,36
+2 degrees,2010,48
+2 degrees,2011,49
+2 degrees,2012,49
+2 degrees,2013,50
+2 degrees,2014,50
+2 degrees,2015,51
+2 degrees,2016,51
+2 degrees,2017,52
+2 degrees,2018,52
+2 degrees,2019,53
+2 degrees,2020,53
+2 degrees,2021,52
+2 degrees,2022,50
+2 degrees,2023,49
+2 degrees,2024,47
+2 degrees,2025,46
+2 degrees,2026,44
+2 degrees,2027,43
+2 degrees,2028,41
+2 degrees,2029,40
+2 degrees,2030,38
+2 degrees,2031,37
+2 degrees,2032,36
+2 degrees,2033,35
+2 degrees,2034,34
+2 degrees,2035,33
+2 degrees,2036,32
+2 degrees,2037,30
+2 degrees,2038,29
+2 degrees,2039,28
+2 degrees,2040,27
+2 degrees,2041,26
+2 degrees,2042,25
+2 degrees,2043,24
+2 degrees,2044,23
+2 degrees,2045,22
+2 degrees,2046,21
+2 degrees,2047,20
+2 degrees,2048,20
+2 degrees,2049,19
+2 degrees,2050,19
+2 degrees,2051,18
+2 degrees,2052,18
+2 degrees,2053,17
+2 degrees,2054,16
+2 degrees,2055,16
+2 degrees,2056,15
+2 degrees,2057,14
+2 degrees,2058,14
+2 degrees,2059,13
+2 degrees,2060,12
+2 degrees,2061,12
+2 degrees,2062,11
+2 degrees,2063,11
+2 degrees,2064,10
+2 degrees,2065,10
+2 degrees,2066,9
+2 degrees,2067,9
+2 degrees,2068,9
+2 degrees,2069,8
+2 degrees,2070,8
+2 degrees,2071,7
+2 degrees,2072,7
+2 degrees,2073,6
+2 degrees,2074,6
+2 degrees,2075,6
+2 degrees,2076,5
+2 degrees,2077,5
+2 degrees,2078,4
+2 degrees,2079,4
+2 degrees,2080,4
+2 degrees,2081,4
+2 degrees,2082,3
+2 degrees,2083,3
+2 degrees,2084,3
+2 degrees,2085,3
+2 degrees,2086,3
+2 degrees,2087,3
+2 degrees,2088,3
+2 degrees,2089,3
+2 degrees,2090,3
+2 degrees,2091,3
+2 degrees,2092,3
+2 degrees,2093,3
+2 degrees,2094,3
+2 degrees,2095,2
+2 degrees,2096,2
+2 degrees,2097,2
+2 degrees,2098,2
+2 degrees,2099,2
+2 degrees,2100,2
+1.5 degrees,2010,48
+1.5 degrees,2011,49
+1.5 degrees,2012,49
+1.5 degrees,2013,50
+1.5 degrees,2014,50
+1.5 degrees,2015,51
+1.5 degrees,2016,51
+1.5 degrees,2017,52
+1.5 degrees,2018,52
+1.5 degrees,2019,53
+1.5 degrees,2020,53
+1.5 degrees,2021,51
+1.5 degrees,2022,48
+1.5 degrees,2023,45
+1.5 degrees,2024,42
+1.5 degrees,2025,40
+1.5 degrees,2026,37
+1.5 degrees,2027,34
+1.5 degrees,2028,31
+1.5 degrees,2029,29
+1.5 degrees,2030,26
+1.5 degrees,2031,25
+1.5 degrees,2032,24
+1.5 degrees,2033,22
+1.5 degrees,2034,21
+1.5 degrees,2035,20
+1.5 degrees,2036,18
+1.5 degrees,2037,17
+1.5 degrees,2038,16
+1.5 degrees,2039,14
+1.5 degrees,2040,13
+1.5 degrees,2041,13
+1.5 degrees,2042,12
+1.5 degrees,2043,11
+1.5 degrees,2044,11
+1.5 degrees,2045,10
+1.5 degrees,2046,10
+1.5 degrees,2047,9
+1.5 degrees,2048,8
+1.5 degrees,2049,8
+1.5 degrees,2050,7
+1.5 degrees,2051,7
+1.5 degrees,2052,7
+1.5 degrees,2053,6
+1.5 degrees,2054,6
+1.5 degrees,2055,6
+1.5 degrees,2056,5
+1.5 degrees,2057,5
+1.5 degrees,2058,5
+1.5 degrees,2059,5
+1.5 degrees,2060,4
+1.5 degrees,2061,4
+1.5 degrees,2062,3
+1.5 degrees,2063,3
+1.5 degrees,2064,3
+1.5 degrees,2065,2
+1.5 degrees,2066,2
+1.5 degrees,2067,1
+1.5 degrees,2068,1
+1.5 degrees,2069,0
+1.5 degrees,2070,0
+1.5 degrees,2071,0
+1.5 degrees,2072,0
+1.5 degrees,2073,0
+1.5 degrees,2074,-1
+1.5 degrees,2075,-1
+1.5 degrees,2076,-1
+1.5 degrees,2077,-1
+1.5 degrees,2078,-1
+1.5 degrees,2079,-1
+1.5 degrees,2080,-2
+1.5 degrees,2081,-2
+1.5 degrees,2082,-2
+1.5 degrees,2083,-2
+1.5 degrees,2084,-2
+1.5 degrees,2085,-2
+1.5 degrees,2086,-2
+1.5 degrees,2087,-2
+1.5 degrees,2088,-2
+1.5 degrees,2089,-2
+1.5 degrees,2090,-2
+1.5 degrees,2091,-2
+1.5 degrees,2092,-3
+1.5 degrees,2093,-3
+1.5 degrees,2094,-3
+1.5 degrees,2095,-3
+1.5 degrees,2096,-4
+1.5 degrees,2097,-4
+1.5 degrees,2098,-4
+1.5 degrees,2099,-4
+1.5 degrees,2100,-5
+current policies low,2015,51
+current policies low,2016,51
+current policies low,2017,51
+current policies low,2018,52
+current policies low,2019,52
+current policies low,2020,50
+current policies low,2021,51
+current policies low,2022,51
+current policies low,2023,52
+current policies low,2024,52
+current policies low,2025,53
+current policies low,2026,53
+current policies low,2027,54
+current policies low,2028,54
+current policies low,2029,55
+current policies low,2030,55
+current policies low,2031,56
+current policies low,2032,56
+current policies low,2033,56
+current policies low,2034,57
+current policies low,2035,57
+current policies low,2036,57
+current policies low,2037,57
+current policies low,2038,58
+current policies low,2039,58
+current policies low,2040,58
+current policies low,2041,58
+current policies low,2042,58
+current policies low,2043,58
+current policies low,2044,59
+current policies low,2045,59
+current policies low,2046,59
+current policies low,2047,59
+current policies low,2048,59
+current policies low,2049,59
+current policies low,2050,59
+current policies low,2051,59
+current policies low,2052,59
+current policies low,2053,59
+current policies low,2054,59
+current policies low,2055,59
+current policies low,2056,59
+current policies low,2057,59
+current policies low,2058,58
+current policies low,2059,58
+current policies low,2060,58
+current policies low,2061,58
+current policies low,2062,57
+current policies low,2063,57
+current policies low,2064,57
+current policies low,2065,57
+current policies low,2066,57
+current policies low,2067,56
+current policies low,2068,56
+current policies low,2069,56
+current policies low,2070,56
+current policies low,2071,56
+current policies low,2072,56
+current policies low,2073,55
+current policies low,2074,55
+current policies low,2075,55
+current policies low,2076,55
+current policies low,2077,55
+current policies low,2078,54
+current policies low,2079,54
+current policies low,2080,54
+current policies low,2081,54
+current policies low,2082,53
+current policies low,2083,53
+current policies low,2084,53
+current policies low,2085,52
+current policies low,2086,52
+current policies low,2087,51
+current policies low,2088,51
+current policies low,2089,51
+current policies low,2090,50
+current policies low,2091,50
+current policies low,2092,50
+current policies low,2093,49
+current policies low,2094,49
+current policies low,2095,49
+current policies low,2096,49
+current policies low,2097,48
+current policies low,2098,48
+current policies low,2099,48
+current policies low,2100,48
+baseline low,2005,43
+baseline low,2006,43
+baseline low,2007,43
+baseline low,2008,44
+baseline low,2009,44
+baseline low,2010,44
+baseline low,2011,45
+baseline low,2012,46
+baseline low,2013,47
+baseline low,2014,48
+baseline low,2015,49
+baseline low,2016,50
+baseline low,2017,51
+baseline low,2018,51
+baseline low,2019,52
+baseline low,2020,53
+baseline low,2021,54
+baseline low,2022,55
+baseline low,2023,55
+baseline low,2024,56
+baseline low,2025,57
+baseline low,2026,57
+baseline low,2027,58
+baseline low,2028,58
+baseline low,2029,59
+baseline low,2030,60
+baseline low,2031,60
+baseline low,2032,61
+baseline low,2033,62
+baseline low,2034,62
+baseline low,2035,63
+baseline low,2036,63
+baseline low,2037,64
+baseline low,2038,65
+baseline low,2039,65
+baseline low,2040,66
+baseline low,2041,67
+baseline low,2042,67
+baseline low,2043,68
+baseline low,2044,69
+baseline low,2045,70
+baseline low,2046,71
+baseline low,2047,72
+baseline low,2048,72
+baseline low,2049,73
+baseline low,2050,74
+baseline low,2051,75
+baseline low,2052,75
+baseline low,2053,76
+baseline low,2054,77
+baseline low,2055,77
+baseline low,2056,78
+baseline low,2057,79
+baseline low,2058,79
+baseline low,2059,80
+baseline low,2060,81
+baseline low,2061,81
+baseline low,2062,82
+baseline low,2063,82
+baseline low,2064,83
+baseline low,2065,83
+baseline low,2066,83
+baseline low,2067,84
+baseline low,2068,84
+baseline low,2069,85
+baseline low,2070,85
+baseline low,2071,85
+baseline low,2072,86
+baseline low,2073,86
+baseline low,2074,86
+baseline low,2075,87
+baseline low,2076,87
+baseline low,2077,87
+baseline low,2078,87
+baseline low,2079,88
+baseline low,2080,88
+baseline low,2081,88
+baseline low,2082,88
+baseline low,2083,88
+baseline low,2084,88
+baseline low,2085,88
+baseline low,2086,88
+baseline low,2087,88
+baseline low,2088,88
+baseline low,2089,88
+baseline low,2090,88
+baseline low,2091,87
+baseline low,2092,87
+baseline low,2093,86
+baseline low,2094,86
+baseline low,2095,85
+baseline low,2096,85
+baseline low,2097,84
+baseline low,2098,84
+baseline low,2099,83
+baseline low,2100,83
