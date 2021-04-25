@@ -70,20 +70,25 @@ function buttonDecrease() {
 }
 
 function pageCheck(counter) {
+    console.log(counter)
     //intro pages
-    if(counter < 3 || (counter > 3 && counter < 6)) {
+    if(counter < 3) {
         d3.select('.text')
+            .style('opacity', '1')
             .html(text_data['text-' + counter])
     } else if(counter == 3) {
-        console.log(counter)
         //hide previous text
         d3.select('.text')
-            .attr('opacity', '0')
+            .style('opacity', '0')
         d3.select(".diagram")
             .node()
-            .append(diagram)
-            .attr(height, svgHeight)
-            .attr(width, svgWidth);        
+            .append(diagram);       
+    } else if(counter > 3 && counter < 6) {
+        d3.select('.diagram')
+            .attr('display', 'none')
+        d3.select('.text')
+            .style('opacity', '1')
+            .html(text_data['text-' + counter])
     }
     //historical emissions charts
     else if(counter < 10 && counter > 5) {
