@@ -125,6 +125,17 @@ div {
     margin: 0 auto;
 }
 
+.diagram {
+    grid-column: 2 / span 10;
+    grid-row: 2 / span 9;
+    margin: 0 auto;
+}
+
+svg {
+    height: 550px;
+    width: 880px;
+}
+
 #y-axis, #x-axis {
     font-family: 'Source Sans Pro', sans-serif;
     color: #070C0D;

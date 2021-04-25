@@ -24,9 +24,20 @@ let svg = d3.select('.graph-center')
 //global variables
 var parseDate = d3.timeParse("%Y");
 var response;
-var counter;
+var text_data;
+var diagram;
+var counter = document.getElementById("counter").value;
+//set initial text box
+if(counter == 0) {
+    d3.select('.text')
+        .html('Climate scientists agree: the earth is warming largely due to greenhouse gas emissions. Logically, the most important step is reducing emissions.  But one concern is dealing with historic emissions trapped in the atmosphere.')
+}
 
 //load data
+d3.json("https://raw.githubusercontent.com/ripleycleghorn/thesis/main/project-code/text.json").then(data => {
+    text_data = data;
+});
+
 d3.csv("https://raw.githubusercontent.com/ripleycleghorn/thesis/main/project-code/all_emissions.csv").then(data => {
     response = data;
     response.forEach(d => {
@@ -37,11 +48,13 @@ d3.csv("https://raw.githubusercontent.com/ripleycleghorn/thesis/main/project-cod
         d.year = parseDate(d.Year);
     })
 })
+d3.xml("https://raw.githubusercontent.com/ripleycleghorn/thesis/main/project-code/svg/diagram.svg").then(data => {
+    diagram = data.documentElement
+});
 
-// setTimeout(function () {
-//     console.log(response);
-// }, 200);
-
+setTimeout(function () {
+    console.log()
+}, 1000);
 
 //page counter
 function buttonIncrease() {
@@ -57,48 +70,61 @@ function buttonDecrease() {
 }
 
 function pageCheck(counter) {
-        if(counter > 2 && counter < 7) {
-            var historicArray = response.filter(d => d.Entity == 'historic')
-            if (counter == 3) {
-                var filteredArray = response.filter(d => d.numericYear < 1885)
-                var startDate = new Date(1860, 0, 1);
-            }
-            else if (counter == 4) {
-                var filteredArray = response.filter(d => d.numericYear < 1970)
-                var startDate = new Date(1860, 0, 1);
-            }
-            else if (counter == 5) {
-                var filteredArray = response.filter(d => d.numericYear > 1970)
-                var startDate = new Date(1971, 0, 1);
-            }
-            else if (counter == 6) {
-                var filteredArray = response.filter(d => d.numericYear < 2020)
-                var startDate = new Date(1860, 0, 1);
-            }
-            console.log(counter)
-            var emissions = d3.extent(historicArray, d => d.emissions)
-            var dates = d3.extent(historicArray, d => d.year)
-            var dataNest = Array.from(
-                d3.group(filteredArray, d => d.Entity), ([key, value]) => ({key, value})
-            );
-            drawGraph(startDate, dates[1], emissions[0], emissions[1], dataNest)
-        }
-        if(counter > 6 && counter < 10) {
-            var filteredArray = response.filter(d => d.numericYear > 2010)
-            var dataNest = Array.from(
-                d3.group(filteredArray, d => d.Entity), ([key, value]) => ({key, value})
-            );
-            var dates = d3.extent(filteredArray, d => d.year)
-            var emissions = d3.extent(filteredArray, d => d.emissions)
-            drawGraph(dates[0], dates[1], emissions[0], emissions[1] + 4, dataNest)
-        }
+    //intro pages
+    if(counter < 3 || (counter > 3 && counter < 6)) {
+        d3.select('.text')
+            .html(text_data['text-' + counter])
+    } else if(counter == 3) {
+        console.log(counter)
+        //hide previous text
+        d3.select('.text')
+            .attr('opacity', '0')
+        d3.select(".diagram")
+            .node()
+            .append(diagram)
+            .attr(height, svgHeight)
+            .attr(width, svgWidth);        
     }
+    //historical emissions charts
+    else if(counter < 10 && counter > 5) {
+        var historicArray = response.filter(d => d.Entity == 'historic')
+        var startDate = new Date(1860, 0, 1);
 
+        if (counter == 6) {
+            var filteredArray = response.filter(d => d.numericYear < 1885)
+        }
+        else if (counter == 7) {
+            var filteredArray = response.filter(d => d.numericYear < 1970)
+        }
+        else if (counter == 8) {
+            var filteredArray = response.filter(d => d.numericYear > 1970)
+            startDate = new Date(1970, 0, 1);
+        }
+        else if (counter == 9) {
+            var filteredArray = response.filter(d => d.numericYear < 2020)
+        }
+
+        var emissions = d3.extent(historicArray, d => d.emissions)
+        var dates = d3.extent(historicArray, d => d.year)
+        var dataNest = Array.from(
+            d3.group(filteredArray, d => d.Entity), ([key, value]) => ({key, value})
+        );
+        drawGraph(startDate, dates[1], emissions[0], emissions[1], dataNest)
+    //future emissions charts
+    } else if(counter == 10) {
+        var filteredArray = response.filter(d => d.numericYear > 2010)
+        var dataNest = Array.from(
+            d3.group(filteredArray, d => d.Entity), ([key, value]) => ({key, value})
+        );
+        var dates = d3.extent(filteredArray, d => d.year)
+        var emissions = d3.extent(filteredArray, d => d.emissions)
+        drawGraph(dates[0], dates[1], emissions[0], emissions[1] + 4, dataNest)
+    }
+}
 
 function drawGraph (xScalestart, xScaleend, yScalesart, yScaleend, graphData) {
-    var path_number = document.getElementById("counter").value;
-    console.log(path_number)
-    var previous_path = path_number - 1;
+    let path_number = document.getElementById("counter").value;
+    let previous_path = path_number - 1;
 
     //hide previous line
     d3.select('.chart' + previous_path)
@@ -159,3 +185,4 @@ function drawGraph (xScalestart, xScaleend, yScalesart, yScaleend, graphData) {
         .transition()
         .call(yAxis)
 }
+
