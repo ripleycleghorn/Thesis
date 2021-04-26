@@ -35,11 +35,11 @@ if(counter == 0) {
 }
 
 //load data
-d3.json("https://raw.githubusercontent.com/ripleycleghorn/thesis/main/project-code/data/text.json").then(data => {
+d3.json("https://gitcdn.link/repo/ripleycleghorn/thesis/main/project-code/data/text.json").then(data => {
     text_data = data;
 });
 
-d3.csv("https://raw.githubusercontent.com/ripleycleghorn/thesis/main/project-code/data/all_emissions.csv").then(data => {
+d3.csv("https://gitcdn.link/repo/ripleycleghorn/thesis/main/project-code/data/all_emissions.csv").then(data => {
     response = data;
     response.forEach(d => {
         //this converts emissions to numerical
@@ -49,10 +49,10 @@ d3.csv("https://raw.githubusercontent.com/ripleycleghorn/thesis/main/project-cod
         d.year = parseDate(d.Year);
     })
 })
-d3.xml("https://raw.githubusercontent.com/ripleycleghorn/thesis/main/project-code/svg/diagram.svg").then(data => {
+d3.xml("https://gitcdn.link/repo/ripleycleghorn/thesis/main/project-code/svg/diagram.svg").then(data => {
     diagram = data.documentElement
 });
-d3.xml("https://raw.githubusercontent.com/ripleycleghorn/thesis/main/project-code/svg/land-1.svg").then(data => {
+d3.xml("https://gitcdn.link/repo/ripleycleghorn/thesis/main/project-code/svg/land-1.svg").then(data => {
     land_visual = data.documentElement
 });
 
