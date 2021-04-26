@@ -130,15 +130,21 @@ div {
     margin: 0 auto;
 }
 
+.land-visual-1 {
+    grid-column: 2 / span 10;
+    grid-row: 2 / span 9;
+    margin: 0 auto;
+}
+
 svg {
     height: 550px;
     width: 880px;
 }
 
-#y-axis, #x-axis {
+#y-axis, #x-axis, .label {
     font-family: 'Source Sans Pro', sans-serif;
     color: #070C0D;
-    transition: transform 3s ease-in-out;
+    font-size: 14px;
 }
 
 /* arrows */
@@ -155,8 +161,8 @@ svg {
 }
 
 #geoengineering {
-    /* padding-left: 5px; */
-    /* padding-right: 5px; */
+    padding-left: 5px;
+    padding-right: 5px;
     color: white;
     background-color: #3C6E71;
     /* white-space: nowrap; */

@@ -3,7 +3,7 @@ let svgWidth = 850
 let svgHeight = svgWidth * 0.65
 
 let margin = {
-    left:30,
+    left:50,
     right:50,
     top:0,
     bottom:50
@@ -26,6 +26,7 @@ var parseDate = d3.timeParse("%Y");
 var response;
 var text_data;
 var diagram;
+var land_visual;
 var counter = document.getElementById("counter").value;
 //set initial text box
 if(counter == 0) {
@@ -51,6 +52,9 @@ d3.csv("https://raw.githubusercontent.com/ripleycleghorn/thesis/main/project-cod
 d3.xml("https://raw.githubusercontent.com/ripleycleghorn/thesis/main/project-code/svg/diagram.svg").then(data => {
     diagram = data.documentElement
 });
+d3.xml("https://raw.githubusercontent.com/ripleycleghorn/thesis/main/project-code/svg/land-1.svg").then(data => {
+    land_visual = data.documentElement
+});
 
 // setTimeout(function () {
 //     console.log()
@@ -72,18 +76,25 @@ function buttonDecrease() {
 function pageCheck(counter) {
     console.log(counter)
     //text pages
-    if((counter < 7 && counter != 3) || (counter > 15)) {
+    if((counter < 7 && counter != 3) || (counter > 16)) {
         d3.select('.text')
             .html(text_data['text-' + counter])
             .classed('hidden', false)
         if(counter > 3 && counter < 8) {
             d3.select('.diagram')
                 .attr('class', 'diagram hidden')
-        } else if (counter == 16) {
+        } else if (counter == 17) {
             d3.select('.annotation')
                 .attr('class', 'annotation hidden')
             d3.select('.graph-center')
                 .attr('class', 'graph-center hidden')
+        } else if(counter == 18) {
+            //land 1 diagram
+            d3.select('.text')
+                .attr('class', 'text hidden')
+            d3.select('.land-visual-1')
+                .node()
+                .append(land_visual);      
         }
     } else if(counter == 3) {
         //beccs diagram
@@ -93,27 +104,30 @@ function pageCheck(counter) {
             .node()
             .append(diagram);       
     }
-    //historical emissions charts
-    else if(counter < 12 && counter > 6) {
-        d3.select('.text')
-            .attr('class', 'text hidden')
+    //historical emissions charts, charts 7 through 12
+    else if(counter < 13 && counter > 6) {
         var historicArray = response.filter(d => d.Entity == 'historic')
         var startDate = new Date(1860, 0, 1);
-        if(counter > 6 && counter < 12) {
-            d3.select('.annotation')
+        
+        d3.select('.text')
+            .attr('class', 'text hidden')
+        d3.select('.annotation')
                 .html(text_data['annotation-' + counter])
-        }
+        
         if (counter == 7) {
-            var filteredArray = response.filter(d => d.numericYear < 1885)
+            var filteredArray = response.filter(d => d.numericYear < 1860)
         }
         else if (counter == 8) {
-            var filteredArray = response.filter(d => d.numericYear < 1970)
+            var filteredArray = response.filter(d => d.numericYear < 1885)
         }
         else if (counter == 9) {
+            var filteredArray = response.filter(d => d.numericYear < 1970)
+        }
+        else if (counter == 10) {
             var filteredArray = response.filter(d => d.numericYear > 1970)
             startDate = new Date(1970, 0, 1);
         }
-        else if (counter == 10 || counter == 11) {
+        else if (counter == 11 || counter == 12) {
             var filteredArray = response.filter(d => d.numericYear < 2020)
         }
 
@@ -123,8 +137,8 @@ function pageCheck(counter) {
             d3.group(filteredArray, d => d.Entity), ([key, value]) => ({key, value})
         );
         drawGraph(startDate, dates[1], emissions[0], emissions[1], dataNest)
-    //future emissions charts
-    } else if(counter > 10 && counter < 16) {
+    //future emissions charts, charts 13 through 16
+    } else if(counter > 12 && counter < 17) {
         d3.select('.annotation')
                 .html(text_data['annotation-' + counter])
         var filteredArray = response.filter(d => d.numericYear > 2010)
@@ -167,19 +181,19 @@ function drawGraph (xScalestart, xScaleend, yScalesart, yScaleend, graphData) {
             .attr('stroke-width', 1)
             .attr('stroke', function(d) {
                 if(i == 0) { return '#070C0D'}
-                if(counter == 12) {
-                    return (i == 4 ? '#0468BF' : '#F2F2F2')
-                }
-                else if(counter == 13) {
-                    if (i == 3) {return '#F2B705'}
+                if(counter == 13) {
                     return (i == 4 ? '#0468BF' : '#F2F2F2')
                 }
                 else if(counter == 14) {
+                    if (i == 3) {return '#F2B705'}
+                    return (i == 4 ? '#0468BF' : '#F2F2F2')
+                }
+                else if(counter == 15) {
                     if (i == 1) {return '#93A603'}
                     else if (i == 2) {return '#049DBF'}
                     return (i == 3 ? '#F2B705' : '#0468BF')
                 }
-                else if(counter == 15) {
+                else if(counter == 16) {
                     if (i == 0) {return '#cdcecf'}
                     else if (i == 1) {return '#93A603'}
                     else if (i == 2) {return '#049DBF'}
@@ -212,6 +226,16 @@ function drawGraph (xScalestart, xScaleend, yScalesart, yScaleend, graphData) {
     svg.append("g")
         .attr("id", "y-axis")
 
+    // text label for the y axis
+    svg.append("text")
+        .attr('class', 'label')
+        .attr("transform", "rotate(-90)")
+        .attr("y", 0 - margin.left)
+        .attr("x",0 - (height / 2))
+        .attr("dy", "1em")
+        .style("text-anchor", "middle")
+        .text("Gigatons"); 
+
     //append axis
     d3.select('#x-axis')
         .transition()
@@ -220,5 +244,6 @@ function drawGraph (xScalestart, xScaleend, yScalesart, yScaleend, graphData) {
     d3.select('#y-axis')
         .transition()
         .call(yAxis)
+
 }
 
