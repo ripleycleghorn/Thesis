@@ -34,11 +34,11 @@ if(counter == 0) {
 }
 
 //load data
-d3.json("https://raw.githubusercontent.com/ripleycleghorn/thesis/main/project-code/text.json").then(data => {
+d3.json("https://raw.githubusercontent.com/ripleycleghorn/thesis/main/project-code/data/text.json").then(data => {
     text_data = data;
 });
 
-d3.csv("https://raw.githubusercontent.com/ripleycleghorn/thesis/main/project-code/all_emissions.csv").then(data => {
+d3.csv("https://raw.githubusercontent.com/ripleycleghorn/thesis/main/project-code/data/all_emissions.csv").then(data => {
     response = data;
     response.forEach(d => {
         //this converts emissions to numerical
@@ -52,9 +52,9 @@ d3.xml("https://raw.githubusercontent.com/ripleycleghorn/thesis/main/project-cod
     diagram = data.documentElement
 });
 
-setTimeout(function () {
-    console.log()
-}, 1000);
+// setTimeout(function () {
+//     console.log()
+// }, 1000);
 
 //page counter
 function buttonIncrease() {
@@ -71,41 +71,49 @@ function buttonDecrease() {
 
 function pageCheck(counter) {
     console.log(counter)
-    //intro pages
-    if(counter < 3) {
+    //text pages
+    if((counter < 7 && counter != 3) || (counter > 15)) {
         d3.select('.text')
-            .style('opacity', '1')
             .html(text_data['text-' + counter])
+            .classed('hidden', false)
+        if(counter > 3 && counter < 8) {
+            d3.select('.diagram')
+                .attr('class', 'diagram hidden')
+        } else if (counter == 16) {
+            d3.select('.annotation')
+                .attr('class', 'annotation hidden')
+            d3.select('.graph-center')
+                .attr('class', 'graph-center hidden')
+        }
     } else if(counter == 3) {
-        //hide previous text
+        //beccs diagram
         d3.select('.text')
-            .style('opacity', '0')
-        d3.select(".diagram")
+            .attr('class', 'text hidden')
+        d3.select('.diagram')
             .node()
             .append(diagram);       
-    } else if(counter > 3 && counter < 6) {
-        d3.select('.diagram')
-            .attr('display', 'none')
-        d3.select('.text')
-            .style('opacity', '1')
-            .html(text_data['text-' + counter])
     }
     //historical emissions charts
-    else if(counter < 10 && counter > 5) {
+    else if(counter < 12 && counter > 6) {
+        d3.select('.text')
+            .attr('class', 'text hidden')
         var historicArray = response.filter(d => d.Entity == 'historic')
         var startDate = new Date(1860, 0, 1);
-
-        if (counter == 6) {
+        if(counter > 6 && counter < 12) {
+            d3.select('.annotation')
+                .html(text_data['annotation-' + counter])
+        }
+        if (counter == 7) {
             var filteredArray = response.filter(d => d.numericYear < 1885)
         }
-        else if (counter == 7) {
+        else if (counter == 8) {
             var filteredArray = response.filter(d => d.numericYear < 1970)
         }
-        else if (counter == 8) {
+        else if (counter == 9) {
             var filteredArray = response.filter(d => d.numericYear > 1970)
             startDate = new Date(1970, 0, 1);
         }
-        else if (counter == 9) {
+        else if (counter == 10 || counter == 11) {
             var filteredArray = response.filter(d => d.numericYear < 2020)
         }
 
@@ -116,7 +124,9 @@ function pageCheck(counter) {
         );
         drawGraph(startDate, dates[1], emissions[0], emissions[1], dataNest)
     //future emissions charts
-    } else if(counter == 10) {
+    } else if(counter > 10 && counter < 16) {
+        d3.select('.annotation')
+                .html(text_data['annotation-' + counter])
         var filteredArray = response.filter(d => d.numericYear > 2010)
         var dataNest = Array.from(
             d3.group(filteredArray, d => d.Entity), ([key, value]) => ({key, value})
@@ -128,11 +138,9 @@ function pageCheck(counter) {
 }
 
 function drawGraph (xScalestart, xScaleend, yScalesart, yScaleend, graphData) {
-    let path_number = document.getElementById("counter").value;
-    let previous_path = path_number - 1;
-
+    let previous_counter = counter - 1;
     //hide previous line
-    d3.select('.chart' + previous_path)
+    d3.select('.chart' + previous_counter)
         .attr('opacity', '0')
     // Set the ranges
     var xScale = d3.scaleTime()
@@ -152,18 +160,41 @@ function drawGraph (xScalestart, xScaleend, yScalesart, yScaleend, graphData) {
   
     graphData.forEach(function(d,i) { 
         svg.append("path")
-            .attr("class", "chart" + path_number + " path" + i)
+            .attr("class", "chart" + counter + " path" + i)
             .attr("d", valueLine(d.value))
             .attr('fill', 'none')
             // .attr('stroke', '#070C0D')
             .attr('stroke-width', 1)
             .attr('stroke', function(d) {
-                if (path_number == 7 && i == 1) {return '#93A603'}
-                else if (path_number == 7 && i == 2) {return '#049DBF'}
-                else if (path_number == 7 && i == 3) {return '#F2B705'}
-                else if (path_number == 7 && i == 4) {return '#0468BF'}
-                else {return '#070C0D'}
-            ;});
+                if(i == 0) { return '#070C0D'}
+                if(counter == 12) {
+                    return (i == 4 ? '#0468BF' : '#F2F2F2')
+                }
+                else if(counter == 13) {
+                    if (i == 3) {return '#F2B705'}
+                    return (i == 4 ? '#0468BF' : '#F2F2F2')
+                }
+                else if(counter == 14) {
+                    if (i == 1) {return '#93A603'}
+                    else if (i == 2) {return '#049DBF'}
+                    return (i == 3 ? '#F2B705' : '#0468BF')
+                }
+                else if(counter == 15) {
+                    if (i == 0) {return '#cdcecf'}
+                    else if (i == 1) {return '#93A603'}
+                    else if (i == 2) {return '#049DBF'}
+                    return (i == 3 ? '#fcf1cd' : '#e6f0f9')
+                }
+                else {return '#070C0D'};
+            })
+            // .attr('stroke-opacity', '0.2')
+            // .attr('stroke-opacity', function(d) {
+            //     if(counter == 15) {
+            //         return ((i == 4 || i ==0) ? '0.2' : '1')
+            //     } else { return '1.0'}
+            // })
+
+
     });
 
     // axis
