@@ -34,7 +34,7 @@ if(counter == 0) {
         .html('Climate scientists agree: the earth is warming largely due to greenhouse gas emissions. Logically, the most important step is reducing emissions.  But one concern is dealing with historic emissions trapped in the atmosphere.')
 }
 //load data
-d3.json("/data/text.json").then(data => {
+d3.json("https://gitcdn.link/repo/ripleycleghorn/thesis/main/project-code/data/text.json").then(data => {
     text_data = data;
 });
 
