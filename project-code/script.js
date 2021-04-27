@@ -51,7 +51,7 @@ d3.csv("https://gitcdn.link/repo/ripleycleghorn/thesis/main/project-code/data/al
 d3.xml("https://gitcdn.link/repo/ripleycleghorn/thesis/main/project-code/svg/diagram.svg").then(data => {
     diagram = data.documentElement
 });
-d3.xml("https://gitcdn.link/repo/ripleycleghorn/thesis/main/project-code/svg/land-1.svg").then(data => {
+d3.xml("https://gitcdn.link/repo/ripleycleghorn/thesis/main/project-code/svg/land-visual-1.svg").then(data => {
     land_visual = data.documentElement
 });
 
