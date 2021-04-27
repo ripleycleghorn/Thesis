@@ -114,6 +114,7 @@ function pageCheck(counter) {
             .attr('class', 'text hidden')
         d3.select('.annotation')
                 .html(text_data['annotation-' + counter])
+                .attr('id', 'annotation' + counter)
         
         if (counter == 7) {
             var filteredArray = response.filter(d => d.numericYear < 1860)
@@ -142,6 +143,7 @@ function pageCheck(counter) {
     } else if(counter > 12 && counter < 17) {
         d3.select('.annotation')
                 .html(text_data['annotation-' + counter])
+                .attr('id', 'annotation' + counter)
         var filteredArray = response.filter(d => d.numericYear > 2010)
         var dataNest = Array.from(
             d3.group(filteredArray, d => d.Entity), ([key, value]) => ({key, value})

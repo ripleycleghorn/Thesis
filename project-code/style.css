@@ -20,6 +20,7 @@ div {
 
 .highlight {
     text-decoration: underline;
+    text-decoration-thickness: 2px;
 }
 
 .baseline {
@@ -105,34 +106,34 @@ div {
     padding: 10px;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 17px;
-    grid-column: 6 / span 3;
+    grid-column: 6 / span 2;
     grid-row: 5 / span 4;
 }
 
-/* .general{
-    grid-column: 6 / span 2;
-    grid-row: 5 / span 3;
-}
-
-.page5 {
-    grid-column: 6 / span 2;
+#annotation8 {
+    grid-column: 4 / span 2;
     grid-row: 7 / span 3;
 }
 
-.page6 {
+#annotation9 {
     grid-column: 7 / span 2;
     grid-row: 4 / span 3;
 }
 
-.page7 {
+#annotation10 {
     grid-column: 9 / span 2;
     grid-row: 3 / span 3;
 }
 
-.page8 {
+#annotation11 {
+    grid-column: 6 / span 2;
+    grid-row: 4 / span 3;
+}
+
+#annotation16 {
     grid-column: 6 / span 3;
-    grid-row: 5 / span 3;
-} */
+    grid-row: 5 / span 4;
+}
 
 .tooltip {
     font-family: 'Source Sans Pro', sans-serif;
