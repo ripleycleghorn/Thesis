@@ -33,7 +33,6 @@ if(counter == 0) {
     d3.select('.text')
         .html('Climate scientists agree: the earth is warming largely due to greenhouse gas emissions. Logically, the most important step is reducing emissions.  But one concern is dealing with historic emissions trapped in the atmosphere.')
 }
-
 //load data
 d3.json("https://gitcdn.link/repo/ripleycleghorn/thesis/main/project-code/data/text.json").then(data => {
     text_data = data;
@@ -65,16 +64,18 @@ function buttonIncrease() {
     document.getElementById("counter").value++;
     counter = document.getElementById("counter").value
     pageCheck(counter)
+    highlight(counter)
 }
 
 function buttonDecrease() {
     document.getElementById("counter").value -= 1;
     counter = document.getElementById("counter").value
     pageCheck(counter)
+    highlight(counter)
 }
 
 function pageCheck(counter) {
-    console.log(counter)
+    // console.log(counter)
     //text pages
     if((counter < 7 && counter != 3) || (counter > 16)) {
         d3.select('.text')
@@ -247,3 +248,34 @@ function drawGraph (xScalestart, xScaleend, yScalesart, yScaleend, graphData) {
 
 }
 
+function highlight(counter) {
+    console.log(counter)
+    //this will not work if my headers become clickable and people switch sections!!!!
+    if(counter > 2 && counter < 6) {
+        if(d3.select('.beccs').classed('highlight') == false) {
+            d3.select('.beccs')
+                .attr('class', 'nav beccs highlight')
+        }
+        if(d3.select('.introduction').classed('highlight') == true) {
+            d3.select('.introduction').classed('highlight', false)
+        }
+    }
+    else if(counter > 5 && counter < 17) {
+        if(d3.select('.emissions').classed('highlight') == false) {
+            d3.select('.emissions')
+                .attr('class', 'nav emissions highlight')
+        }
+        if(d3.select('.beccs').classed('highlight') == true) {
+            d3.select('.beccs').classed('highlight', false)
+        }
+    } 
+    else if(counter > 16 && counter < 19) {
+        if(d3.select('.land').classed('highlight') == false) {
+            d3.select('.land')
+                .attr('class', 'nav land highlight')
+        }
+        if(d3.select('.emissions').classed('highlight') == true) {
+            d3.select('.emissions').classed('highlight', false)
+        }
+    }
+}
