@@ -1,6 +1,12 @@
 /*** HTML ELEMENTS ***/
 const prevButton = document.getElementById("arrow-left");
 const nextButton = document.getElementById("arrow-right");
+const introButton = document.getElementById("introduction");
+const beccsButton = document.getElementById("beccs");
+const emissionsButton = document.getElementById("emissions");
+const landButton = document.getElementById("land");
+const otherButton = document.getElementById("other");
+const conclusionButton = document.getElementById("conclusion");
 
 // const jumpPageButton = document.getElementById("jump-page-button");
 let counter = 0;
@@ -63,6 +69,7 @@ function handleData(data) {
 
   pageCheck(counter);
 
+  //decide which content to show
   function pageCheck(counter) {
     //get the data from the current page
     const pageData = data["page-" + counter]
@@ -194,6 +201,7 @@ function handleData(data) {
       .call(yAxis)
   }
 
+  //underline current section header
   function highlight() {
     const pageData = data["page-" + counter]
     if (pageData.pageHeader == "Intro") {
@@ -249,11 +257,6 @@ function handleData(data) {
     highlight();
   }
 
-  const introButton = document.getElementsByClassName("introduction");
-  const beccsButton = document.getElementsByClassName("beccs");
-  const emissionsButton = document.getElementsByClassName("emissions");
-  const landButton = document.getElementsByClassName("land");
-
   introButton.onclick = function() {
     counter = 0;
     pageCheck(counter)
@@ -268,6 +271,14 @@ function handleData(data) {
   }
   landButton.onclick = function() {
     counter = 17;
+    pageCheck(counter)
+  }
+  otherButton.onclick = function() {
+    counter = 0;
+    pageCheck(counter)
+  }
+  conclusionButton.onclick = function() {
+    counter = 0;
     pageCheck(counter)
   }
 }
