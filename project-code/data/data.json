@@ -11,7 +11,8 @@
     "annotation": "",
     "graphVisible": false,
     "diagramVisible": false,
-    "pageHeader": "Intro"
+    "pageHeader": "Intro",
+    "hover": true
   },
   "page-2": {
     "text": "This project looks at the nuances of one of these technologies, called Bioenergy with Carbon Capture and Storage, or BECCS. But before we get to the details, let’s take a look back at historic emissions. So how does BECCS work?",
