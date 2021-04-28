@@ -33,7 +33,7 @@ var diagram;
 var land_visual;
 
 /** LOAD DATA **/
-fetch("https://gitcdn.link/repo/ripleycleghorn/thesis/main/project-code/data/data.json")
+fetch("https://raw.githubusercontent.com/ripleycleghorn/thesis/main/project-code/data/data.json")
   .then(pageData => pageData.json())
   .then(json => {
     handleData(json)
