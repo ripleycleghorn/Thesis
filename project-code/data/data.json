@@ -1,0 +1,189 @@
+{
+  "page-0": {
+    "text": "Climate scientists agree: the earth is warming largely due to greenhouse gas emissions. Logically, the most important step is reducing emissions.  But one concern is dealing with historic emissions trapped in the atmosphere.",
+    "annotation": "",
+    "graphVisible": false,
+    "diagramVisible": false,
+    "pageHeader": "Intro"
+  },
+  "page-1": {
+    "text": "In a race against the clock, climate governance is embracing a variety of <span id='geoengineering' class='teal'>geoengineering</span> technologies to eliminate some of these emissions. However, given that these solutions aren’t being paired with meaningful fossil fuel reductions, they will be most likely be used to justify continuing business as usual practices.",
+    "annotation": "",
+    "graphVisible": false,
+    "diagramVisible": false,
+    "pageHeader": "Intro"
+  },
+  "page-2": {
+    "text": "This project looks at the nuances of one of these technologies, called Bioenergy with Carbon Capture and Storage, or BECCS. But before we get to the details, let’s take a look back at historic emissions. So how does BECCS work?",
+    "annotation": "",
+    "graphVisible": false,
+    "diagramVisible": false,
+    "pageHeader": "Intro"
+  },
+  "page-3": {
+    "text": "",
+    "annotation": "",
+    "graphVisible": false,
+    "diagramVisible": true,
+    "pageHeader": "Beccs"
+  },
+  "page-4": {
+    "text": "'The idea is that, as it grows, biomass will continuously capture CO2 from the atmosphere. When the biomass is burned for energy, the waste CO2 will also be captured and stored underground, instead of being released back into the atmosphere. The assumption is that this will result in negative emission'(FOEI).",
+    "annotation": "",
+    "graphVisible": false,
+    "diagramVisible": false,
+    "pageHeader": "Beccs"
+  },
+  "page-5": {
+    "text": "'There is only one existing BECCS project in the world: the capture of CO2 from corn fermentation at the Decatur ethanol refinery in the USA, owned by ADM.' The Department of Energy, who funded the project, claims that it provides a “carbon negative footprint. 'Since the refinery is powered by fossil fuels and corn is an energy-intensive crop, claiming the project a “success” is premature.' (Big Bad Fix).",
+    "annotation": "",
+    "graphVisible": false,
+    "diagramVisible": false,
+    "pageHeader": "Beccs"
+  },
+  "page-6": {
+    "text": "In order to understand the degree to which BECCS plays a role in future climate change, it’s helpful to first look at past emissions.",
+    "annotation": "",
+    "graphVisible": false,
+    "diagramVisible": false,
+    "pageHeader": "Beccs"
+  },
+  "page-7": {
+    "text": "",
+    "annotation": "This graph represents global historic emissions of greenhouse gases, measured in gigatons (one gigaton = one billion tons).",
+    "graphVisible": true,
+    "diagramVisible": false,
+    "historicOnly": true,
+    "filterAxisstart": 1860,
+    "filterAxisend": 2019,
+    "filterLinestart": 1860,
+    "filterLineend": 1862,
+    "pageHeader": "Emissions"
+  },
+  "page-8": {
+    "text": "",
+    "annotation": "Edison invents the central power station in 1882. At this time, global GHG emissions were nearing only 1 gigaton.",
+    "graphVisible": true,
+    "diagramVisible": false,
+    "historicOnly": true,
+    "filterAxisstart": 1860,
+    "filterAxisend": 2019,
+    "filterLinestart": 1860,
+    "filterLineend": 1885,
+    "pageHeader": "Emissions"
+  },
+  "page-9": {
+    "text": "",
+    "annotation": "But not all emissions have been evenly produced; by 1970, the U.S. and U.K. were responsible for <span class='teal'>75%</span> of emissions worldwide.",
+    "graphVisible": true,
+    "diagramVisible": false,
+    "historicOnly": true,
+    "filterAxisstart": 1860,
+    "filterAxisend": 2019,
+    "filterLinestart": 1860,
+    "filterLineend": 1970,
+    "pageHeader": "Emissions"
+  },
+  "page-10": {
+    "text": "",
+    "annotation": "Today global emissions have reached more than 35 gigatons per year, and are projected to continue.",
+    "graphVisible": true,
+    "diagramVisible": false,
+    "historicOnly": true,
+    "filterAxisstart": 1970,
+    "filterAxisend": 2019,
+    "filterLinestart": 1970,
+    "filterLineend": 2019,
+    "pageHeader": "Emissions"
+  },
+  "page-11": {
+    "text": "",
+    "annotation": "This accumulation of emissions corresponds to a rise in temperature of 1.16°C (2°F). If we compare this rise to body temperature, a 2°F increase <i>signals a problem.</i>",
+    "graphVisible": true,
+    "diagramVisible": false,
+    "historicOnly": true,
+    "filterAxisstart": 1860,
+    "filterAxisend": 2019,
+    "filterLinestart": 1860,
+    "filterLineend": 2019,
+    "pageHeader": "Emissions"
+  },
+  "page-12": {
+    "text": "",
+    "annotation": "Now let’s look forward to possible future scenarios.",
+    "graphVisible": true,
+    "diagramVisible": false,
+    "historicOnly": true,
+    "filterAxisstart": 1860,
+    "filterAxisend": 2019,
+    "filterLinestart": 1860,
+    "filterLineend": 2019,
+    "pageHeader": "Emissions"
+  },
+  "page-13": {
+    "text": "",
+    "annotation": "Absent any changes, temperatures are set to rise to at least 4° Celsius above pre-industrial levels. This is referred to as the <span class='baseline'>baseline</span> scenario.",
+    "graphVisible": true,
+    "diagramVisible": false,
+    "historicOnly": false,
+    "filterAxisstart": 2010,
+    "filterAxisend": 2100,
+    "filterLinestart": 2010,
+    "filterLineend": 2100,
+    "pageHeader": "Emissions"
+  },
+  "page-14": {
+    "text": "",
+    "annotation": "If all current climate mitigation <span class='policies'>policies</span> are enforced, the trajectory would look something like this: where temperatures might rise to between 2.7°C and 3.1°C.",
+    "graphVisible": true,
+    "diagramVisible": false,
+    "historicOnly": false,
+    "filterAxisstart": 2010,
+    "filterAxisend": 2100,
+    "filterLinestart": 2010,
+    "filterLineend": 2100,
+    "pageHeader": "Emissions"
+  },
+  "page-15": {
+    "text": "",
+    "annotation": "Finally, there are scenarios that lead us to stay below <span class='low'>1.5°C</span> and <span class='high'>2°C</span>, the threshold that climate scientists agree will help us to avoid unpredictable climate reactions.",
+    "graphVisible": true,
+    "diagramVisible": false,
+    "historicOnly": false,
+    "filterAxisstart": 2010,
+    "filterAxisend": 2100,
+    "filterLinestart": 2010,
+    "filterLineend": 2100,
+    "pageHeader": "Emissions"
+  },
+  "page-16": {
+    "text": "",
+    "annotation": "One reason to be concerned about BECCS in particular is because it is one of the major players in these pathways. In fact of the 116 scenarios that would most likely keep global temperatures below 1.5 degrees, <span class='teal'>BECCS is included in 80% of them.</span>",
+    "graphVisible": true,
+    "diagramVisible": false,
+    "historicOnly": false,
+    "filterAxisstart": 2010,
+    "filterAxisend": 2100,
+    "filterLinestart": 2010,
+    "filterLineend": 2100,
+    "pageHeader": "Emissions"
+  },
+  "page-17": {
+    "text": "So why should we be concerned about this? <br><br> One reason is the amount of resources BECCS would require. Let's look at how much land would be needed for the crop plantations and factories.",
+    "annotation": "",
+    "graphVisible": false,
+    "diagramVisible": false,
+    "landVisible": false,
+    "historicOnly": false,
+    "pageHeader": "Land"
+  },
+  "page-18": {
+    "text": "",
+    "annotation": "",
+    "graphVisible": false,
+    "diagramVisible": false,
+    "landVisible": true,
+    "historicOnly": false,
+    "pageHeader": "Land"
+  }
+}

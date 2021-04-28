@@ -1,52 +1,53 @@
+/*** HTML ELEMENTS ***/
+const prevButton = document.getElementById("arrow-left");
+const nextButton = document.getElementById("arrow-right");
+
+// const jumpPageButton = document.getElementById("jump-page-button");
+let counter = 0;
+
+/** SET UP SVG **/
 //global variables
 let svgWidth = 850
 let svgHeight = svgWidth * 0.65
 
 let margin = {
-    left:50,
-    right:50,
-    top:0,
-    bottom:50
+  left: 50,
+  right: 50,
+  top: 0,
+  bottom: 50
 }
 
-//inner width & height 
 let height = svgHeight - margin.top - margin.bottom
 let width = svgWidth - margin.left - margin.right
 
-// setup svg & add group
 let svg = d3.select('.graph-center')
-    .append('svg')
-    .attr('height', svgHeight)
-    .attr('width', svgWidth)
-    .append('g')
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+  .append('svg')
+  .attr('height', svgHeight)
+  .attr('width', svgWidth)
+  .append('g')
+  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-//global variables
 var parseDate = d3.timeParse("%Y");
 var response;
-var text_data;
 var diagram;
 var land_visual;
-var counter = document.getElementById("counter").value;
-//set initial text box
-if(counter == 0) {
-    d3.select('.text')
-        .html('Climate scientists agree: the earth is warming largely due to greenhouse gas emissions. Logically, the most important step is reducing emissions.  But one concern is dealing with historic emissions trapped in the atmosphere.')
-}
-//load data
-d3.json("https://gitcdn.link/repo/ripleycleghorn/thesis/main/project-code/data/text.json").then(data => {
-    text_data = data;
-});
+
+/** LOAD DATA **/
+fetch("https://gitcdn.link/repo/ripleycleghorn/thesis/main/project-code/data/data.json")
+  .then(pageData => pageData.json())
+  .then(json => {
+    handleData(json)
+  })
 
 d3.csv("https://gitcdn.link/repo/ripleycleghorn/thesis/main/project-code/data/all_emissions.csv").then(data => {
-    response = data;
-    response.forEach(d => {
-        //this converts emissions to numerical
-        d.emissions = +d.emissions;
-        //this renames my year variable to be lower case
-        d.numericYear = +d.Year;
-        d.year = parseDate(d.Year);
-    })
+  response = data;
+  response.forEach(d => {
+    //this converts emissions to numerical
+    d.emissions = +d.emissions;
+    //this renames my year variable to be lower case
+    d.numericYear = +d.Year;
+    d.year = parseDate(d.Year);
+  })
 })
 d3.xml("https://gitcdn.link/repo/ripleycleghorn/thesis/main/project-code/svg/diagram.svg").then(data => {
     diagram = data.documentElement
@@ -55,229 +56,207 @@ d3.xml("https://gitcdn.link/repo/ripleycleghorn/thesis/main/project-code/svg/lan
     land_visual = data.documentElement
 });
 
-// setTimeout(function () {
-//     console.log()
-// }, 1000);
 
-//page counter
-function buttonIncrease() {
-    document.getElementById("counter").value++;
-    counter = document.getElementById("counter").value
-    pageCheck(counter)
-    highlight(counter)
-}
+function handleData(data) {
+  //see how many pages we have
+  const numPages = Object.keys(data).length;
 
-function buttonDecrease() {
-    document.getElementById("counter").value -= 1;
-    counter = document.getElementById("counter").value
-    pageCheck(counter)
-    highlight(counter)
-}
+  pageCheck(counter);
 
-function pageCheck(counter) {
-    // console.log(counter)
-    //text pages
-    if((counter < 7 && counter != 3) || (counter > 16)) {
-        d3.select('.text')
-            .html(text_data['text-' + counter])
-            .classed('hidden', false)
-        if(counter > 3 && counter < 8) {
-            d3.select('.diagram')
-                .attr('class', 'diagram hidden')
-        } else if (counter == 17) {
-            d3.select('.annotation')
-                .attr('class', 'annotation hidden')
-            d3.select('.graph-center')
-                .attr('class', 'graph-center hidden')
-        } else if(counter == 18) {
-            //land 1 diagram
-            d3.select('.text')
-                .attr('class', 'text hidden')
-            d3.select('.land-visual-1')
-                .node()
-                .append(land_visual);      
-        }
-    } else if(counter == 3) {
-        //beccs diagram
-        d3.select('.text')
-            .attr('class', 'text hidden')
-        d3.select('.diagram')
-            .node()
-            .append(diagram);       
+  function pageCheck(counter) {
+    //get the data from the current page
+    const pageData = data["page-" + counter]
+    //text data
+    if (pageData.text) {
+      d3.select('.text')
+        .html(pageData.text)
+        .attr('id', 'text' + counter)
+        .attr('class', 'text active')
+
+    } else {
+      d3.select('.text')
+        .attr('class', 'text hidden')
     }
-    //historical emissions charts, charts 7 through 12
-    else if(counter < 13 && counter > 6) {
-        var historicArray = response.filter(d => d.Entity == 'historic')
-        var startDate = new Date(1860, 0, 1);
-        
-        d3.select('.text')
-            .attr('class', 'text hidden')
-        d3.select('.annotation')
-                .html(text_data['annotation-' + counter])
-                .attr('id', 'annotation' + counter)
-        
-        if (counter == 7) {
-            var filteredArray = response.filter(d => d.numericYear < 1860)
-        }
-        else if (counter == 8) {
-            var filteredArray = response.filter(d => d.numericYear < 1885)
-        }
-        else if (counter == 9) {
-            var filteredArray = response.filter(d => d.numericYear < 1970)
-        }
-        else if (counter == 10) {
-            var filteredArray = response.filter(d => d.numericYear > 1970)
-            startDate = new Date(1970, 0, 1);
-        }
-        else if (counter == 11 || counter == 12) {
-            var filteredArray = response.filter(d => d.numericYear < 2020)
-        }
-
-        var emissions = d3.extent(historicArray, d => d.emissions)
-        var dates = d3.extent(historicArray, d => d.year)
-        var dataNest = Array.from(
-            d3.group(filteredArray, d => d.Entity), ([key, value]) => ({key, value})
-        );
-        drawGraph(startDate, dates[1], emissions[0], emissions[1], dataNest)
-    //future emissions charts, charts 13 through 16
-    } else if(counter > 12 && counter < 17) {
-        d3.select('.annotation')
-                .html(text_data['annotation-' + counter])
-                .attr('id', 'annotation' + counter)
-        var filteredArray = response.filter(d => d.numericYear > 2010)
-        var dataNest = Array.from(
-            d3.group(filteredArray, d => d.Entity), ([key, value]) => ({key, value})
-        );
-        var dates = d3.extent(filteredArray, d => d.year)
-        var emissions = d3.extent(filteredArray, d => d.emissions)
-        drawGraph(dates[0], dates[1], emissions[0], emissions[1] + 4, dataNest)
+    //annotation data
+    if (pageData.annotation) {
+      d3.select('.annotation')
+        .html(pageData.annotation)
+        .attr('id', 'annotation' + counter)
+        .attr('class', 'annotation active')
+    } else {
+      d3.select('.annotation')
+        .attr('class', 'annotation hidden')
     }
-}
+    //diagram
+    if (pageData.diagramVisible) {
+      d3.select('.diagram')
+        .attr('class', 'diagram active')
+        .node()
+        .append(diagram); 
+    } else {
+      d3.select('.diagram')
+        .attr('class', 'diagram hidden')
+    }
+    //land visual
+    if (pageData.landVisible) {
+      d3.select('.land-visual')
+        .attr('class', 'land-visual active')
+        .node()
+        .append(land_visual); 
+    } else {
+      d3.select('.land-visual')
+        .attr('class', 'land-visual hidden')
+    }
+    //chart data
+    if (pageData.graphVisible) {
+      d3.select('.graph-center')
+        .attr('class', 'graph-center active')
+      //first, filter data by historic if necessary and set up variables for graph
+      var yScaledata = (pageData.historicOnly) ? (response.filter(d => d.Entity == 'historic')) : response;
+      var xScaledata = [new Date(pageData.filterAxisstart, 0, 1), new Date(pageData.filterAxisend, 0, 1)]
+      var lineData = response.filter(d => d.numericYear < parseInt(pageData.filterLineend) && d.numericYear > parseInt(pageData.filterLinestart));
+      var dataNest = Array.from(
+        d3.group(lineData, d => d.Entity), ([key, value]) => ({ key, value })
+      );
+      drawGraph(xScaledata, yScaledata, dataNest)
+    } else {
+      d3.select('.graph-center')
+        .attr('class', 'graph-center hidden')
+    }
+  }
 
-function drawGraph (xScalestart, xScaleend, yScalesart, yScaleend, graphData) {
+  function drawGraph(x, y, graphData) {
+    const pageData = data["page-" + counter]
     let previous_counter = counter - 1;
+    
+    svg.attr('class', 'graph-center page' + counter);
+
     //hide previous line
     d3.select('.chart' + previous_counter)
         .attr('opacity', '0')
+
     // Set the ranges
     var xScale = d3.scaleTime()
-        .domain([xScalestart, xScaleend])
-        .range([0, width]);
+      .domain(x)
+      .range([0, width]);
     var yScale = d3.scaleLinear()
-        .domain([yScalesart, yScaleend])
-        .range([height, 0]);
+      .domain(d3.extent(y, d => d.emissions))
+      .range([height, 0]);
 
-    // Define the line
-    var valueLine = d3.line()    
-        .x(function(d) { return xScale(d.year); })
-        .y(function(d) { return yScale(d.emissions); })
-        .curve(d3.curveBasis);
+    //define the line
+    var valueLine = d3.line()
+      .x(function (d) { return xScale(d.year); })
+      .y(function (d) { return yScale(d.emissions); })
+      .curve(d3.curveBasis);
 
-    // Loop through each symbol / key
-  
-    graphData.forEach(function(d,i) { 
-        svg.append("path")
-            .attr("class", "chart" + counter + " path" + i)
-            .attr("d", valueLine(d.value))
-            .attr('fill', 'none')
-            // .attr('stroke', '#070C0D')
-            .attr('stroke-width', 1)
-            .attr('stroke', function(d) {
-                if(i == 0) { return '#070C0D'}
-                if(counter == 13) {
-                    return (i == 4 ? '#0468BF' : '#F2F2F2')
-                }
-                else if(counter == 14) {
-                    if (i == 3) {return '#F2B705'}
-                    return (i == 4 ? '#0468BF' : '#F2F2F2')
-                }
-                else if(counter == 15) {
-                    if (i == 1) {return '#93A603'}
-                    else if (i == 2) {return '#049DBF'}
-                    return (i == 3 ? '#F2B705' : '#0468BF')
-                }
-                else if(counter == 16) {
-                    if (i == 0) {return '#cdcecf'}
-                    else if (i == 1) {return '#93A603'}
-                    else if (i == 2) {return '#049DBF'}
-                    return (i == 3 ? '#fcf1cd' : '#e6f0f9')
-                }
-                else {return '#070C0D'};
-            })
-            // .attr('stroke-opacity', '0.2')
-            // .attr('stroke-opacity', function(d) {
-            //     if(counter == 15) {
-            //         return ((i == 4 || i ==0) ? '0.2' : '1')
-            //     } else { return '1.0'}
-            // })
-
-
+    //loop through each entity
+    graphData.forEach(function (d, i) {
+      svg.append("path")
+        .attr("class", "chart" + counter + " path" + i)
+        .attr("d", valueLine(d.value))
+        .attr('fill', 'none')
+        .attr('stroke-width', 1)
+        .attr('stroke', '#070C0D')
     });
 
     // axis
     let xAxis = d3.axisBottom(xScale)
-        .ticks(10)
-    
+      .ticks(10)
+
     let yAxis = d3.axisLeft(yScale)
-        .tickFormat(d3.format("d"))
+      .tickFormat(d3.format("d"))
 
     //add svg group to append axis
     svg.append("g")
-        .attr("transform", `translate(0,${height})`)
-        .attr("id", "x-axis")
+      .attr("transform", `translate(0,${height})`)
+      .attr("id", "x-axis")
 
     svg.append("g")
-        .attr("id", "y-axis")
+      .attr("id", "y-axis")
 
     // text label for the y axis
     svg.append("text")
-        .attr('class', 'label')
-        .attr("transform", "rotate(-90)")
-        .attr("y", 0 - margin.left)
-        .attr("x",0 - (height / 2))
-        .attr("dy", "1em")
-        .style("text-anchor", "middle")
-        .text("Gigatons"); 
+      .attr('class', 'label')
+      .attr("transform", "rotate(-90)")
+      .attr("y", 0 - margin.left)
+      .attr("x", 0 - (height / 2))
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .text("Gigatons");
 
     //append axis
     d3.select('#x-axis')
-        .transition()
-        .call(xAxis)
+      .transition()
+      .call(xAxis)
 
     d3.select('#y-axis')
-        .transition()
-        .call(yAxis)
+      .transition()
+      .call(yAxis)
+  }
 
-}
-
-function highlight(counter) {
-    console.log(counter)
-    //this will not work if my headers become clickable and people switch sections!!!!
-    if(counter > 2 && counter < 6) {
-        if(d3.select('.beccs').classed('highlight') == false) {
-            d3.select('.beccs')
-                .attr('class', 'nav beccs highlight')
-        }
-        if(d3.select('.introduction').classed('highlight') == true) {
-            d3.select('.introduction').classed('highlight', false)
-        }
-    }
-    else if(counter > 5 && counter < 17) {
-        if(d3.select('.emissions').classed('highlight') == false) {
-            d3.select('.emissions')
-                .attr('class', 'nav emissions highlight')
-        }
-        if(d3.select('.beccs').classed('highlight') == true) {
-            d3.select('.beccs').classed('highlight', false)
-        }
+  function highlight() {
+    const pageData = data["page-" + counter]
+    if (pageData.pageHeader == "Intro") {
+      d3.select('.introduction')
+        .attr('class', 'nav introduction highlight')
+      //remove other headers
+      d3.select('.beccs', '.emissions', '.land').classed('highlight', false)
     } 
-    else if(counter > 16 && counter < 19) {
-        if(d3.select('.land').classed('highlight') == false) {
-            d3.select('.land')
-                .attr('class', 'nav land highlight')
-        }
-        if(d3.select('.emissions').classed('highlight') == true) {
-            d3.select('.emissions').classed('highlight', false)
-        }
+    else if (pageData.pageHeader == "Beccs") {
+      d3.select('.beccs')
+        .attr('class', 'nav beccs highlight')
+        d3.select('.introduction', '.emissions', '.land').classed('highlight', false)
     }
+    else if (pageData.pageHeader == "Emissions") {
+      d3.select('.emissions')
+        .attr('class', 'nav emissions highlight')
+        d3.select('.introduction', '.beccs', '.land').classed('highlight', false)
+    }
+    else if (pageData.pageHeader == "Land") {
+      console.log('land!')
+      d3.select('.land')
+        .attr('class', 'nav land highlight')
+        d3.select('.introduction', '.beccs', '.emissions').classed('highlight', false)
+    }
+  }
+
+  prevButton.onclick = function () {
+    if (counter <= 0) return;
+    counter -= 1;
+    console.log(counter)
+    //will be replaced with:
+    pageCheck(counter);
+    highlight();
+  }
+
+  nextButton.onclick = function () {
+    if (counter >= numPages - 1) return;
+    counter += 1;
+    console.log(counter)
+    //will be replaced with:
+    pageCheck(counter);
+    highlight();
+  }
+
+  const introButton = document.getElementsByClassName("introduction");
+  const beccsButton = document.getElementsByClassName("beccs");
+  const emissionsButton = document.getElementsByClassName("emissions");
+  const landButton = document.getElementsByClassName("land");
+
+  introButton.onclick = function() {
+    counter = 0;
+    pageCheck(counter)
+  }
+  beccsButton.onclick = function() {
+    counter = 3;
+    pageCheck(counter)
+  }
+  emissionsButton.onclick = function() {
+    counter = 7;
+    pageCheck(counter)
+  }
+  landButton.onclick = function() {
+    counter = 17;
+    pageCheck(counter)
+  }
 }

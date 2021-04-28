@@ -42,14 +42,17 @@ div {
 .teal {
     /* color: #3C6E71;
     font-weight: 600; */
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 2px;
+    padding-right: 2px;
     color: white;
     background-color: #3C6E71;
 }
 
 .hidden {
-    visibility: hidden;
+    opacity: 0;
+}
+.active {
+    opacity: 1;
 }
 
 .nav {
@@ -157,7 +160,7 @@ div {
     margin: 0 auto;
 }
 
-.land-visual-1 {
+.land-visual {
     grid-column: 2 / span 10;
     grid-row: 2 / span 9;
     margin: 0 auto;
@@ -168,6 +171,36 @@ svg {
     width: 880px;
 }
 
+/* chart path colors */
+.page13 > .path0, .page14 > .path0, .page15 > .path0, .page16 > .path0 {
+    stroke: #070C0D;
+}
+
+.page13 > .path1, .path2, .path3, .page14 > .path1, .path2 {
+    stroke: #F2F2F2;
+}
+
+.page13 > .path4, .page14 > .path4, .page15 > .path4, .page16 > .path4 {
+    stroke: #0468BF;
+}
+
+.page14 > .path3, .page15 > .path3, .page16 > .path3 {
+    stroke: #F2B705;
+}
+
+.page16 > .path3, .page16 > .path0, .page16 > .path4 {
+    stroke-opacity: .1;
+}
+
+.page15 > .path1, .page16 > .path1 {
+    stroke: #049DBF;
+}
+
+.page15 > .path2, .page16 > .path2 {
+    stroke: #93A603;
+}
+
+
 #y-axis, #x-axis, .label {
     font-family: 'Source Sans Pro', sans-serif;
     color: #070C0D;
@@ -176,12 +209,12 @@ svg {
 
 /* arrows */
 
-.arrow-right {
+#arrow-right {
     grid-column: 12;
     grid-row: 10;
 }
 
-.arrow-left {
+#arrow-left {
     grid-column: 1 / span 1;
     grid-row: 10;
     text-align: right;
