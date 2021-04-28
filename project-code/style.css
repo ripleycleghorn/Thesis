@@ -23,22 +23,6 @@ div {
     text-decoration-thickness: 2px;
 }
 
-.baseline {
-    color: #0468BF;
-}
-
-.policies {
-    color: #E89900;
-}
-
-.low {
-    color: #93A603;
-}
-
-.high {
-    color: #049DBF;
-}
-
 .teal {
     /* color: #3C6E71;
     font-weight: 600; */
@@ -50,6 +34,7 @@ div {
 
 .hidden {
     opacity: 0;
+    pointer-events: none;
 }
 .active {
     opacity: 1;
@@ -142,6 +127,7 @@ div {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 14px;
     width: 200px;
+    /* height: 100px; */
     color: black;
     font-style: italic;
 }
@@ -198,11 +184,11 @@ svg {
     stroke: #F2F2F2;
 }
 
-.page13 > .path4, .page14 > .path4, .page15 > .path4, .page16 > .path4 {
+.page13 > .path4, .page14 > .path4, .page15 > .path4, .page16 > .path4, .baseline {
     stroke: #0468BF;
 }
 
-.page14 > .path3, .page15 > .path3, .page16 > .path3 {
+.page14 > .path3, .page15 > .path3, .page16 > .path3, .policies {
     stroke: #F2B705;
 }
 
@@ -210,11 +196,11 @@ svg {
     stroke-opacity: .1;
 }
 
-.page15 > .path1, .page16 > .path1 {
+.page15 > .path1, .page16 > .path1, .high {
     stroke: #049DBF;
 }
 
-.page15 > .path2, .page16 > .path2 {
+.page15 > .path2, .page16 > .path2, .low {
     stroke: #93A603;
 }
 

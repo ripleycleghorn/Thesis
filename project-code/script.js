@@ -10,6 +10,7 @@ const conclusionButton = document.getElementById("conclusion");
 
 // const jumpPageButton = document.getElementById("jump-page-button");
 let counter = 0;
+let previousCounter = counter - 1;
 
 /** SET UP SVG **/
 //global variables
@@ -39,13 +40,13 @@ var diagram;
 var land_visual;
 
 /** LOAD DATA **/
-fetch("https://raw.githubusercontent.com/ripleycleghorn/thesis/main/project-code/data/data.json")
+fetch("./data/data.json")
   .then(pageData => pageData.json())
   .then(json => {
     handleData(json)
   })
 
-d3.csv("https://gitcdn.link/repo/ripleycleghorn/thesis/main/project-code/data/all_emissions.csv").then(data => {
+d3.csv("./data/all_emissions.csv").then(data => {
   response = data;
   response.forEach(d => {
     //this converts emissions to numerical
@@ -55,10 +56,10 @@ d3.csv("https://gitcdn.link/repo/ripleycleghorn/thesis/main/project-code/data/al
     d.year = parseDate(d.Year);
   })
 })
-d3.xml("https://gitcdn.link/repo/ripleycleghorn/thesis/main/project-code/svg/diagram.svg").then(data => {
+d3.xml("./svg/diagram.svg").then(data => {
     diagram = data.documentElement
 });
-d3.xml("https://gitcdn.link/repo/ripleycleghorn/thesis/main/project-code/svg/land-visual-1.svg").then(data => {
+d3.xml("./svg/land-visual-1.svg").then(data => {
     land_visual = data.documentElement
 });
 
@@ -70,7 +71,7 @@ function handleData(data) {
   pageCheck(counter);
 
   //decide which content to show
-  function pageCheck(counter) {
+  function pageCheck() {
     //get the data from the current page
     const pageData = data["page-" + counter]
     //text data
@@ -125,7 +126,7 @@ function handleData(data) {
       var dataNest = Array.from(
         d3.group(lineData, d => d.Entity), ([key, value]) => ({ key, value })
       );
-      drawGraph(xScaledata, yScaledata, dataNest)
+      drawGraph(xScaledata, yScaledata, dataNest, previousCounter)
     } else {
       d3.select('.graph-center')
         .attr('class', 'graph-center hidden')
@@ -139,9 +140,10 @@ function handleData(data) {
         // setup svg & add group
         let hover = d3.select('#geoengineering')
             .on("mouseover", function(event) {
+              console.log(event)
                 div.transition()
                   .duration(200)
-                  .style("opacity", .9);
+                  .style("opacity", 1);
                 div.html("Geoengineering: To make a large-scale effort to modify the earth or its environment, especially to counteract global warming")
                   .style("left", (900) + "px")
                   .style("top", (150) + "px")
@@ -157,14 +159,13 @@ function handleData(data) {
 
   function drawGraph(x, y, graphData) {
     const pageData = data["page-" + counter]
-    let previous_counter = counter - 1;
     
     svg.attr('class', 'graph-center page' + counter);
-
+    console.log('opacity', previousCounter)
     //hide previous line
-    d3.select('.chart' + previous_counter)
-        .attr('opacity', '0')
-
+    d3.select('.chart' + previousCounter)
+        .attr('class', 'hidden')
+    
     // Set the ranges
     var xScale = d3.scaleTime()
       .domain(x)
@@ -224,10 +225,6 @@ function handleData(data) {
       .call(yAxis)
   }
 
-  //show tooltip
-  function tooltip() {
-    
-  }
 
   //underline current section header
   function highlight() {
@@ -269,44 +266,48 @@ function handleData(data) {
 
   prevButton.onclick = function () {
     if (counter <= 0) return;
+    previousCounter = counter;
     counter -= 1;
-    console.log(counter)
+    console.log('current',counter)
+    console.log('previous',previousCounter)
     //will be replaced with:
-    pageCheck(counter);
+    pageCheck();
     highlight();
   }
 
   nextButton.onclick = function () {
     if (counter >= numPages - 1) return;
+    previousCounter = counter;
     counter += 1;
-    console.log(counter)
+    console.log('current',counter)
+    console.log('previous',previousCounter)
     //will be replaced with:
-    pageCheck(counter);
+    pageCheck();
     highlight();
   }
 
   introButton.onclick = function() {
     counter = 0;
-    pageCheck(counter)
+    pageCheck()
   }
   beccsButton.onclick = function() {
     counter = 3;
-    pageCheck(counter)
+    pageCheck()
   }
   emissionsButton.onclick = function() {
     counter = 7;
-    pageCheck(counter)
+    pageCheck()
   }
   landButton.onclick = function() {
     counter = 17;
-    pageCheck(counter)
+    pageCheck()
   }
   otherButton.onclick = function() {
     counter = 0;
-    pageCheck(counter)
+    pageCheck()
   }
   conclusionButton.onclick = function() {
     counter = 0;
-    pageCheck(counter)
+    pageCheck()
   }
 }
