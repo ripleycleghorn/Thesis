@@ -200,23 +200,34 @@ function handleData(data) {
       d3.select('.introduction')
         .attr('class', 'nav introduction highlight')
       //remove other headers
-      d3.select('.beccs', '.emissions', '.land').classed('highlight', false)
+      d3.select('.beccs').classed('highlight', false)
+      d3.select('.emissions').classed('highlight', false)
+      d3.select('.land').classed('highlight', false)
     } 
     else if (pageData.pageHeader == "Beccs") {
       d3.select('.beccs')
         .attr('class', 'nav beccs highlight')
-        d3.select('.introduction', '.emissions', '.land').classed('highlight', false)
+      //remove other headers
+      d3.select('.introduction').classed('highlight', false)
+      d3.select('.emissions').classed('highlight', false)
+      d3.select('.land').classed('highlight', false)
     }
     else if (pageData.pageHeader == "Emissions") {
       d3.select('.emissions')
         .attr('class', 'nav emissions highlight')
-        d3.select('.introduction', '.beccs', '.land').classed('highlight', false)
+      //remove other headers
+      d3.select('.introduction').classed('highlight', false)
+      d3.select('.beccs').classed('highlight', false)
+      d3.select('.land').classed('highlight', false)
     }
     else if (pageData.pageHeader == "Land") {
       console.log('land!')
       d3.select('.land')
         .attr('class', 'nav land highlight')
-        d3.select('.introduction', '.beccs', '.emissions').classed('highlight', false)
+      //remove other headers
+      d3.select('.introduction').classed('highlight', false)
+      d3.select('.beccs').classed('highlight', false)
+      d3.select('.emissions').classed('highlight', false)
     }
   }
 
