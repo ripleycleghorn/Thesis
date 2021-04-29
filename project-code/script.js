@@ -7,10 +7,10 @@ const emissionsButton = document.getElementById("emissions");
 const landButton = document.getElementById("land");
 const otherButton = document.getElementById("other");
 const conclusionButton = document.getElementById("conclusion");
+const diagramElement = document.getElementById("diagram");
+const landElement = document.getElementById('land-visual');
 
-// const jumpPageButton = document.getElementById("jump-page-button");
 let counter = 0;
-let previousCounter = counter - 1;
 
 /** SET UP SVG **/
 //global variables
@@ -56,9 +56,11 @@ d3.csv("./data/all_emissions.csv").then(data => {
     d.year = parseDate(d.Year);
   })
 })
+
 d3.xml("./svg/diagram.svg").then(data => {
     diagram = data.documentElement
 });
+
 d3.xml("./svg/land-visual-1.svg").then(data => {
     land_visual = data.documentElement
 });
@@ -68,7 +70,7 @@ function handleData(data) {
   //see how many pages we have
   const numPages = Object.keys(data).length;
 
-  pageCheck(counter);
+  pageCheck();
 
   //decide which content to show
   function pageCheck() {
@@ -102,6 +104,9 @@ function handleData(data) {
         .node()
         .append(diagram); 
     } else {
+      if (diagramElement.hasChildNodes()) {
+        diagramElement.removeChild(diagramElement.childNodes[0])
+      }
       d3.select('.diagram')
         .attr('class', 'diagram hidden')
     }
@@ -112,6 +117,10 @@ function handleData(data) {
         .node()
         .append(land_visual); 
     } else {
+      //remove this svg when on other pages so that when I return to that svg it doesn't get rendered incorrectly
+      if (landElement.hasChildNodes()) {
+        landElement.removeChild(landElement.childNodes[0])
+      }
       d3.select('.land-visual')
         .attr('class', 'land-visual hidden')
     }
@@ -126,25 +135,25 @@ function handleData(data) {
       var dataNest = Array.from(
         d3.group(lineData, d => d.Entity), ([key, value]) => ({ key, value })
       );
-      drawGraph(xScaledata, yScaledata, dataNest, previousCounter)
+      drawGraph(xScaledata, yScaledata, dataNest)
     } else {
       d3.select('.graph-center')
         .attr('class', 'graph-center hidden')
     }
     if (pageData.hover) {
-      var div = d3.select("#geoengineering")
+      var div = 
+      d3.select(".tooltip")
         .append("div")
-        .attr("class", "tooltip")
+        .attr("class", "hoverText")
         .style("opacity", 0);
 
         // setup svg & add group
-        let hover = d3.select('#geoengineering')
+        let hover = d3.select('.tooltip')
             .on("mouseover", function(event) {
-              console.log(event)
                 div.transition()
                   .duration(200)
                   .style("opacity", 1);
-                div.html("Geoengineering: To make a large-scale effort to modify the earth or its environment, especially to counteract global warming")
+                div.html(pageData.hoverText)
                   .style("left", (900) + "px")
                   .style("top", (150) + "px")
                   .style("position", "absolute");
@@ -158,13 +167,11 @@ function handleData(data) {
   }
 
   function drawGraph(x, y, graphData) {
-    const pageData = data["page-" + counter]
     
+    //give a page class to each graph
     svg.attr('class', 'graph-center page' + counter);
-    console.log('opacity', previousCounter)
-    //hide previous line
-    d3.select('.chart' + previousCounter)
-        .attr('class', 'hidden')
+    //remove previous chart before drawing new one
+    svg.selectAll('*').remove();
     
     // Set the ranges
     var xScale = d3.scaleTime()
@@ -254,7 +261,6 @@ function handleData(data) {
       d3.select('.land').classed('highlight', false)
     }
     else if (pageData.pageHeader == "Land") {
-      console.log('land!')
       d3.select('.land')
         .attr('class', 'nav land highlight')
       //remove other headers
@@ -266,10 +272,8 @@ function handleData(data) {
 
   prevButton.onclick = function () {
     if (counter <= 0) return;
-    previousCounter = counter;
     counter -= 1;
     console.log('current',counter)
-    console.log('previous',previousCounter)
     //will be replaced with:
     pageCheck();
     highlight();
@@ -277,10 +281,8 @@ function handleData(data) {
 
   nextButton.onclick = function () {
     if (counter >= numPages - 1) return;
-    previousCounter = counter;
     counter += 1;
     console.log('current',counter)
-    console.log('previous',previousCounter)
     //will be replaced with:
     pageCheck();
     highlight();
@@ -288,26 +290,32 @@ function handleData(data) {
 
   introButton.onclick = function() {
     counter = 0;
-    pageCheck()
+    pageCheck();
+    highlight();
   }
   beccsButton.onclick = function() {
     counter = 3;
-    pageCheck()
+    pageCheck();
+    highlight();
   }
   emissionsButton.onclick = function() {
     counter = 7;
-    pageCheck()
+    pageCheck();
+    highlight();
   }
   landButton.onclick = function() {
     counter = 17;
-    pageCheck()
+    pageCheck();
+    highlight();
   }
   otherButton.onclick = function() {
     counter = 0;
-    pageCheck()
+    pageCheck();
+    highlight();
   }
   conclusionButton.onclick = function() {
     counter = 0;
-    pageCheck()
+    pageCheck();
+    highlight();
   }
 }

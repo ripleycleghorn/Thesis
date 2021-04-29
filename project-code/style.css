@@ -24,12 +24,25 @@ div {
 }
 
 .teal {
-    /* color: #3C6E71;
-    font-weight: 600; */
+    /* padding-left: 2px;
+    padding-right: 2px; */
+    color: white;
+    background-color: #3C6E71;
+}
+
+.grey {
     padding-left: 2px;
     padding-right: 2px;
     color: white;
-    background-color: #3C6E71;
+    background-color: #989998;
+}
+
+.hoverText {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+    width: 200px;
+    color: black;
+    font-style: italic;
 }
 
 .hidden {
@@ -123,15 +136,6 @@ div {
     grid-row: 5 / span 4;
 }
 
-.tooltip {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 14px;
-    width: 200px;
-    /* height: 100px; */
-    color: black;
-    font-style: italic;
-}
-
 /* charts */
 
 .graph-center {
@@ -186,10 +190,12 @@ svg {
 
 .page13 > .path4, .page14 > .path4, .page15 > .path4, .page16 > .path4, .baseline {
     stroke: #0468BF;
+    color: #0468BF;
 }
 
 .page14 > .path3, .page15 > .path3, .page16 > .path3, .policies {
     stroke: #F2B705;
+    color: #F2B705;
 }
 
 .page16 > .path3, .page16 > .path0, .page16 > .path4 {
@@ -198,10 +204,12 @@ svg {
 
 .page15 > .path1, .page16 > .path1, .high {
     stroke: #049DBF;
+    color: #049DBF;
 }
 
 .page15 > .path2, .page16 > .path2, .low {
     stroke: #93A603;
+    color: #93A603;
 }
 
 
