@@ -95,6 +95,26 @@ div {
 
 /* text and annotations */
 
+.title {
+    font-size: 75px;
+    grid-column: 1 / span 12;
+    grid-row: 4 / span 4;
+    margin: 0 auto;
+    border-width: 0px;
+    font-family: 'Antonio', sans-serif;
+    background: #3C6E71;
+    background: -webkit-linear-gradient(to right, #3C6E71 0%, #B3BEBA 100%);
+    background: -moz-linear-gradient(to right, #3C6E71 0%, #B3BEBA 100%);
+    background: linear-gradient(to right, #3C6E71 0%, #B3BEBA 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    font-size: 50px;
+    color: #070C0D;
+}
+
 .text {
     grid-column: 5 / span 4;
     grid-row: 5 / span 3;

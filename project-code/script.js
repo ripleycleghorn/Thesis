@@ -77,6 +77,15 @@ function handleData(data) {
     //get the data from the current page
     const pageData = data["page-" + counter]
     //text data
+    if (pageData.title) {
+      d3.select('.title')
+        .html(pageData.title)
+        .attr('class', 'title active')
+
+    } else {
+      d3.select('.title')
+        .attr('class', 'title hidden')
+    }
     if (pageData.text) {
       d3.select('.text')
         .html(pageData.text)
