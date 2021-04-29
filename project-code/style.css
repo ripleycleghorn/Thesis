@@ -122,6 +122,12 @@ div {
     padding: 10px;
     vertical-align: middle;
 }
+.img {
+    width: 100%;
+    height: auto;
+    grid-column: 8 / span 3;
+    grid-row: 7 / span 2;
+}
 
 .annotation {
     padding: 10px;
@@ -200,34 +206,34 @@ svg {
 }
 
 /* chart path colors */
-.page13 > .path0, .page14 > .path0, .page15 > .path0, .page16 > .path0 {
+.page14 > .path0, .page15 > .path0, .page16 > .path0, .page17 > .path0 {
     stroke: #070C0D;
 }
 
-.page13 > .path1, .path2, .path3, .page14 > .path1, .path2 {
+.page14 > .path1, .path2, .path3, .page15 > .path1, .path2 {
     stroke: #F2F2F2;
 }
 
-.page13 > .path4, .page14 > .path4, .page15 > .path4, .page16 > .path4, .baseline {
+.page14 > .path4, .page15 > .path4, .page16 > .path4, .page17 > .path4, .baseline {
     stroke: #0468BF;
     color: #0468BF;
 }
 
-.page14 > .path3, .page15 > .path3, .page16 > .path3, .policies {
+.page15 > .path3, .page16 > .path3, .page17 > .path3, .policies {
     stroke: #F2B705;
     color: #F2B705;
 }
 
-.page16 > .path3, .page16 > .path0, .page16 > .path4 {
+.page17 > .path3, .page17 > .path0, .page17 > .path4 {
     stroke-opacity: .1;
 }
 
-.page15 > .path1, .page16 > .path1, .high {
+.page16 > .path1, .page17 > .path1, .high {
     stroke: #049DBF;
     color: #049DBF;
 }
 
-.page15 > .path2, .page16 > .path2, .low {
+.page16 > .path2, .page17 > .path2, .low {
     stroke: #93A603;
     color: #93A603;
 }

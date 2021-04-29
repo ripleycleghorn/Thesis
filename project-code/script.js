@@ -96,6 +96,19 @@ function handleData(data) {
       d3.select('.text')
         .attr('class', 'text hidden')
     }
+    //image data
+    if (pageData.image) {
+      d3.select('.image')
+        .attr('class', 'image active')
+        .append("image")
+        .attr("xlink:href", pageData.image)
+        .style("width", "50px")
+        .style("height", "auto")
+
+    } else {
+      d3.select('.image')
+        .attr('class', 'image hidden')
+    }
     //annotation data
     if (pageData.annotation) {
       d3.select('.annotation')
@@ -179,8 +192,8 @@ function handleData(data) {
     
     //give a page class to each graph
     svg.attr('class', 'graph-center page' + counter);
-    //remove previous chart before drawing new one
-    svg.selectAll('*').remove();
+    //remove previous paths before drawing new ones
+    svg.selectAll('path').remove();
     
     // Set the ranges
     var xScale = d3.scaleTime()
@@ -202,7 +215,7 @@ function handleData(data) {
         .attr("class", "chart" + counter + " path" + i)
         .attr("d", valueLine(d.value))
         .attr('fill', 'none')
-        .attr('stroke-width', 1)
+        .attr('stroke-width', 2)
         .attr('stroke', '#070C0D')
     });
 
@@ -303,17 +316,17 @@ function handleData(data) {
     highlight();
   }
   beccsButton.onclick = function() {
-    counter = 3;
+    counter = 4;
     pageCheck();
     highlight();
   }
   emissionsButton.onclick = function() {
-    counter = 7;
+    counter = 8;
     pageCheck();
     highlight();
   }
   landButton.onclick = function() {
-    counter = 17;
+    counter = 18;
     pageCheck();
     highlight();
   }
