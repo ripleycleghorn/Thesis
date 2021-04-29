@@ -103,9 +103,9 @@ div {
     border-width: 0px;
     font-family: 'Antonio', sans-serif;
     background: #3C6E71;
-    background: -webkit-linear-gradient(to right, #3C6E71 0%, #B3BEBA 100%);
-    background: -moz-linear-gradient(to right, #3C6E71 0%, #B3BEBA 100%);
-    background: linear-gradient(to right, #3C6E71 0%, #B3BEBA 100%);
+    background: -webkit-linear-gradient(to right, #3C6E71 0%, #B3BEBA 50%, #F2F2F2 100%);
+    background: -moz-linear-gradient(to right, #3C6E71 0%, #B3BEBA 50%, #F2F2F2 100%);
+    background: linear-gradient(to right, #3C6E71 0%, #B3BEBA 75%, #F2F2F2 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
