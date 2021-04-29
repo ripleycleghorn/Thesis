@@ -148,10 +148,10 @@ div {
     grid-column: 2 / span 10;
     grid-row: 2 / span 9;
     margin: 0 auto;
-    /* animation: fade-in 1s forwards ease-in; */
+    animation: fade-in 1s forwards ease-in;
 }
 
-/* #Layer_1 {
+#Layer_1 {
     animation-delay: 1s;
 }
 
@@ -166,7 +166,7 @@ div {
       opacity: 1;
     }
   
-  } */
+  }
 
 .land-visual {
     grid-column: 2 / span 10;
