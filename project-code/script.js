@@ -58,11 +58,19 @@ d3.csv("./data/all_emissions.csv").then(data => {
 })
 
 d3.xml("./svg/diagram.svg").then(data => {
-    diagram = data.documentElement
+    beccs = data.documentElement
+});
+
+d3.xml("./svg/carbon.svg").then(data => {
+    carbon = data.documentElement
 });
 
 d3.xml("./svg/land-visual-1.svg").then(data => {
-    land_visual = data.documentElement
+    land_visual_1 = data.documentElement
+});
+
+d3.xml("./svg/land-visual-2.svg").then(data => {
+  land_visual_2 = data.documentElement
 });
 
 
@@ -100,10 +108,6 @@ function handleData(data) {
     if (pageData.image) {
       d3.select('.image')
         .attr('class', 'image active')
-        .append("image")
-        .attr("xlink:href", pageData.image)
-        .style("width", "50px")
-        .style("height", "auto")
 
     } else {
       d3.select('.image')
@@ -121,10 +125,20 @@ function handleData(data) {
     }
     //diagram
     if (pageData.diagramVisible) {
-      d3.select('.diagram')
-        .attr('class', 'diagram active')
-        .node()
-        .append(diagram); 
+      if (diagramElement.hasChildNodes()) {
+        diagramElement.removeChild(diagramElement.childNodes[0])
+      }
+      if(pageData.diagramVisible == 1) {
+        d3.select('.diagram')
+          .attr('class', 'diagram active')
+          .node()
+          .append(beccs); 
+      } else if(pageData.diagramVisible == 2) {
+        d3.select('.diagram')
+          .attr('class', 'diagram active')
+          .node()
+          .append(carbon); 
+      }
     } else {
       if (diagramElement.hasChildNodes()) {
         diagramElement.removeChild(diagramElement.childNodes[0])
@@ -134,11 +148,27 @@ function handleData(data) {
     }
     //land visual
     if (pageData.landVisible) {
-      d3.select('.land-visual')
-        .attr('class', 'land-visual active')
-        .node()
-        .append(land_visual); 
-    } else {
+      if(pageData.landVisible == 1) {
+        //delete previous land visual
+        if (landElement.hasChildNodes()) {
+          landElement.removeChild(landElement.childNodes[0])
+        }
+        d3.select('.land-visual')
+          .attr('class', 'land-visual active')
+          .node()
+          .append(land_visual_1);
+      } else if(pageData.landVisible == 2) {
+        //delete previous land visual
+        if (landElement.hasChildNodes()) {
+          landElement.removeChild(landElement.childNodes[0])
+        }
+        d3.select('.land-visual')
+          .attr('class', 'land-visual active')
+          .node()
+          .append(land_visual_2);
+      }
+    } 
+    else {
       //remove this svg when on other pages so that when I return to that svg it doesn't get rendered incorrectly
       if (landElement.hasChildNodes()) {
         landElement.removeChild(landElement.childNodes[0])
@@ -176,7 +206,7 @@ function handleData(data) {
                   .duration(200)
                   .style("opacity", 1);
                 div.html(pageData.hoverText)
-                  .style("left", (900) + "px")
+                  .style("left", (400) + "px")
                   .style("top", (150) + "px")
                   .style("position", "absolute");
                 })
@@ -200,7 +230,7 @@ function handleData(data) {
       .domain(x)
       .range([0, width]);
     var yScale = d3.scaleLinear()
-      .domain(d3.extent(y, d => d.emissions))
+      .domain([d3.min(y, d => d.emissions), (d3.max(y, d => d.emissions) + 2)])
       .range([height, 0]);
 
     //define the line
@@ -217,11 +247,21 @@ function handleData(data) {
         .attr('fill', 'none')
         .attr('stroke-width', 2)
         .attr('stroke', '#070C0D')
+
+      svg.append("text")
+        // .attr('class', 'annotation')
+        .attr('x', width - margin.right + 5)
+        .attr('transform', `translate(0,100)`)
+        // .attr('y', d => yScale(d.emissions))
+        .attr("dy", "5em")
+        .attr("text-anchor", "start")
+        .style("fill", "#070C0D")
+        .text("Historic");
     });
 
     // axis
     let xAxis = d3.axisBottom(xScale)
-      .ticks(10)
+      // .ticks(10)
 
     let yAxis = d3.axisLeft(yScale)
       .tickFormat(d3.format("d"))
@@ -321,12 +361,12 @@ function handleData(data) {
     highlight();
   }
   emissionsButton.onclick = function() {
-    counter = 8;
+    counter = 9;
     pageCheck();
     highlight();
   }
   landButton.onclick = function() {
-    counter = 18;
+    counter = 19;
     pageCheck();
     highlight();
   }

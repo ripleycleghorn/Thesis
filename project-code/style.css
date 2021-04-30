@@ -100,7 +100,6 @@ div {
     grid-column: 1 / span 12;
     grid-row: 4 / span 4;
     margin: 0 auto;
-    border-width: 0px;
     font-family: 'Antonio', sans-serif;
     background: #3C6E71;
     background: -webkit-linear-gradient(to right, #3C6E71 0%, #B3BEBA 50%, #F2F2F2 100%);
@@ -112,21 +111,53 @@ div {
 
 .subtitle {
     font-size: 50px;
-    color: #070C0D;
 }
 
 .text {
-    grid-column: 5 / span 4;
-    grid-row: 5 / span 3;
-    border: 1px solid grey;
+    margin: 0 auto;
+    border: 1px solid #989998;
     padding: 10px;
-    vertical-align: middle;
+    font-style: italic;
+    grid-column: 6 / span 2;
+    grid-row: 4 / span 4;
+    background-color: white;
 }
-.img {
-    width: 100%;
-    height: auto;
-    grid-column: 8 / span 3;
-    grid-row: 7 / span 2;
+
+#text2 {
+    grid-column: 6 / span 2;
+    grid-row: 4 / span 5; 
+}
+
+#text3 {
+    grid-column: 6 / span 2;
+    grid-row: 4 / span 3; 
+}
+
+#text4 {
+    grid-column: 11 / span 2;
+    grid-row: 2 / span 5;
+}
+
+#text5, #text6 {
+    grid-column: 11 / span 2;
+    grid-row: 2 / span 3;
+}
+
+#text7 {
+    grid-column: 3 / span 2;
+    grid-row: 4 / span 5;
+    margin-left: 20px;
+    z-index: 100;
+}
+
+#text8 {
+    grid-column: 6 / span 2;
+    grid-row: 4 / span 2;
+}
+
+.image {
+    grid-column: 3 / span 8;
+    grid-row: 2 / span 5;
 }
 
 .annotation {
@@ -137,27 +168,27 @@ div {
     grid-row: 5 / span 4;
 }
 
-#annotation9 {
+#annotation10 {
     grid-column: 4 / span 2;
     grid-row: 7 / span 3;
 }
 
-#annotation10 {
+#annotation11 {
     grid-column: 7 / span 2;
     grid-row: 4 / span 3;
 }
 
-#annotation11 {
+#annotation12 {
     grid-column: 9 / span 2;
     grid-row: 3 / span 3;
 }
 
-#annotation12 {
+#annotation13 {
     grid-column: 6 / span 2;
     grid-row: 4 / span 3;
 }
 
-#annotation17 {
+#annotation18 {
     grid-column: 6 / span 3;
     grid-row: 5 / span 4;
 }
@@ -175,10 +206,19 @@ div {
     grid-row: 2 / span 9;
     margin: 0 auto;
     animation: fade-in 1s forwards ease-in;
+    animation-delay: 3s;
 }
 
 #Layer_1 {
     animation-delay: 1s;
+}
+
+#Layer_2 {
+    animation-delay: 3s;
+}
+
+#Layer_3 {
+    animation-delay: 5s;
 }
 
 
@@ -206,34 +246,34 @@ svg {
 }
 
 /* chart path colors */
-.page14 > .path0, .page15 > .path0, .page16 > .path0, .page17 > .path0 {
+.page15 > .path0, .page16 > .path0, .page17 > .path0, .page18 > .path0 {
     stroke: #070C0D;
 }
 
-.page14 > .path1, .path2, .path3, .page15 > .path1, .path2 {
+.page15 > .path1, .path2, .path3, .page16 > .path1, .path2 {
     stroke: #F2F2F2;
 }
 
-.page14 > .path4, .page15 > .path4, .page16 > .path4, .page17 > .path4, .baseline {
+.page15 > .path4, .page16 > .path4, .page17 > .path4, .page18 > .path4, .baseline {
     stroke: #0468BF;
     color: #0468BF;
 }
 
-.page15 > .path3, .page16 > .path3, .page17 > .path3, .policies {
+.page16 > .path3, .page17 > .path3, .page18 > .path3, .policies {
     stroke: #F2B705;
     color: #F2B705;
 }
 
-.page17 > .path3, .page17 > .path0, .page17 > .path4 {
+.page18 > .path3, .page18 > .path0, .page18 > .path4 {
     stroke-opacity: .1;
 }
 
-.page16 > .path1, .page17 > .path1, .high {
+.page17 > .path1, .page18 > .path1, .high {
     stroke: #049DBF;
     color: #049DBF;
 }
 
-.page16 > .path2, .page17 > .path2, .low {
+.page17 > .path2, .page18 > .path2, .low {
     stroke: #93A603;
     color: #93A603;
 }
