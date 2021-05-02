@@ -206,18 +206,26 @@ div {
     grid-column: 2 / span 10;
     grid-row: 2 / span 9;
     margin: 0 auto;
+    animation: fade-in 1s forwards ease-in;
+    opacity: 0;
 }
 
 #Layer_2 {
     animation: fade-in 1s forwards ease-in;
-    animation-delay: 1s;
-    /* visibility: visible; */
+    animation-delay: 2s;
+    opacity: 0;
 }
 
 #Layer_3 {
     animation: fade-in 1s forwards ease-in;
+    animation-delay: 4s;
+    opacity: 0;
+}
+
+#Layer_4 {
+    animation: fade-out 1s forwards ease-in;
     animation-delay: 2s;
-    /* visibility: visible; */
+    opacity: 1;
 }
 
 @keyframes fade-in {
@@ -228,6 +236,18 @@ div {
   
     100% {
       opacity: 1;
+    }
+  
+  }
+
+  @keyframes fade-out {
+
+    0% {
+      opacity: 1;
+    }
+  
+    100% {
+      opacity: 0;
     }
   
   }
