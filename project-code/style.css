@@ -201,24 +201,20 @@ div {
     margin: 0 auto;
 }
 
-.diagram {
+#diagram {
     grid-column: 2 / span 10;
     grid-row: 2 / span 9;
     margin: 0 auto;
-    animation: fade-in 1s forwards ease-in;
-    animation-delay: 3s;
-}
-
-#Layer_1 {
-    animation-delay: 1s;
 }
 
 #Layer_2 {
-    animation-delay: 3s;
+    animation: fade-in 1s forwards ease-in;
+    animation-delay: 1s;
 }
 
 #Layer_3 {
-    animation-delay: 5s;
+    animation: fade-in 1s forwards ease-in;
+    animation-delay: 2s;
 }
 
 

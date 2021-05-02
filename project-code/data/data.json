@@ -38,21 +38,21 @@
     "text": "'The idea is that, as it grows, biomass will continuously capture CO2 from the atmosphere. When the biomass is burned for energy, the waste CO2 will also be captured and stored underground, instead of being released back into the atmosphere. The assumption is that this will result in negative emission'(FOEI).",
     "annotation": "",
     "graphVisible": false,
-    "diagramVisible": true,
+    "diagramVisible": 1,
     "pageHeader": "Beccs"
   },
   "page-5": {
     "text": "But this process doesn’t account for the entire carbon lifecycle, let’s add in some of the missing emissions, many of which are unacknowledged in BECCS models.",
     "annotation": "",
     "graphVisible": false,
-    "diagramVisible": 1,
+    "diagramVisible": 2,
     "pageHeader": "Beccs"
   },
   "page-6": {
     "text": "Because of industrial agriculture is required for BECCS, many extra emissions are released. In fact, industrial agriculture accounts for one-third of all greenhouse gas emissions.",
     "annotation": "",
     "graphVisible": false,
-    "diagramVisible": 2,
+    "diagramVisible": 3,
     "pageHeader": "Beccs"
   },
   "page-7": {

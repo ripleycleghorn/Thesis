@@ -36,7 +36,8 @@ let svg = d3.select('.graph-center')
 
 var parseDate = d3.timeParse("%Y");
 var response;
-var diagram;
+var beccs;
+var beccs_static;
 var land_visual;
 
 /** LOAD DATA **/
@@ -60,6 +61,11 @@ d3.csv("./data/all_emissions.csv").then(data => {
 d3.xml("./svg/diagram.svg").then(data => {
     beccs = data.documentElement
 });
+
+d3.xml("./svg/beccs-static.svg").then(data => {
+  beccs_static = data.documentElement
+});
+
 
 d3.xml("./svg/carbon.svg").then(data => {
     carbon = data.documentElement
@@ -132,12 +138,43 @@ function handleData(data) {
         d3.select('.diagram')
           .attr('class', 'diagram active')
           .node()
-          .append(beccs); 
+          .append(beccs)
+          d3.select('#Layer_2')
+          .attr('visibility', 'hidden')
+        d3.select('#Layer_3')
+          .attr('visibility', 'hidden')
+        //make layers 2 and 3 appear after layer 1
+        setTimeout(function () {
+          d3.select('#Layer_2')
+          .attr('visibility', 'visible')
+        }, 1000);
+        setTimeout(function () {
+          d3.select('#Layer_3')
+          .attr('visibility', 'visible')
+        }, 2000);
       } else if(pageData.diagramVisible == 2) {
         d3.select('.diagram')
           .attr('class', 'diagram active')
           .node()
-          .append(carbon); 
+          .append(beccs_static); 
+      } else if(pageData.diagramVisible == 3) {
+        d3.select('.diagram')
+          .attr('class', 'diagram active')
+          .node()
+          .append(carbon);
+          d3.select('#Layer_2')
+          .attr('visibility', 'hidden')
+        d3.select('#Layer_3')
+          .attr('visibility', 'hidden')
+        //make layers 2 and 3 appear after layer 1
+        setTimeout(function () {
+          d3.select('#Layer_2')
+          .attr('visibility', 'visible')
+        }, 1000);
+        setTimeout(function () {
+          d3.select('#Layer_3')
+          .attr('visibility', 'visible')
+        }, 2000); 
       }
     } else {
       if (diagramElement.hasChildNodes()) {
