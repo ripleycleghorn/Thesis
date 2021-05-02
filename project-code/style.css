@@ -224,8 +224,14 @@ div {
 
 #Layer_4 {
     animation: fade-out 1s forwards ease-in;
-    animation-delay: 2s;
+    animation-delay: .5s;
     opacity: 1;
+}
+
+#Layer_5 {
+    animation: fade-in 1s forwards ease-in;
+    animation-delay: 0s;
+    opacity: 0;
 }
 
 @keyframes fade-in {

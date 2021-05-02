@@ -126,7 +126,7 @@ function handleData(data) {
       d3.select('.annotation')
         .attr('class', 'annotation hidden')
     }
-    //diagram
+    //beccs diagrams
     if (pageData.diagramVisible) {
       if (diagramElement.hasChildNodes()) {
         diagramElement.removeChild(diagramElement.childNodes[0])
