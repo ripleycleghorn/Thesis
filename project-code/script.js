@@ -95,7 +95,6 @@ function handleData(data) {
       d3.select('.title')
         .html(pageData.title)
         .attr('class', 'title active')
-
     } else {
       d3.select('.title')
         .attr('class', 'title hidden')
@@ -105,7 +104,6 @@ function handleData(data) {
         .html(pageData.text)
         .attr('id', 'text' + counter)
         .attr('class', 'text active')
-
     } else {
       d3.select('.text')
         .attr('class', 'text hidden')
@@ -114,7 +112,6 @@ function handleData(data) {
     if (pageData.image) {
       d3.select('.image')
         .attr('class', 'image active')
-
     } else {
       d3.select('.image')
         .attr('class', 'image hidden')
@@ -139,19 +136,6 @@ function handleData(data) {
           .attr('class', 'diagram active')
           .node()
           .append(beccs)
-        d3.select('#Layer_2')
-          .attr('visibility', 'hidden')
-        d3.select('#Layer_3')
-          .attr('visibility', 'hidden')
-        //make layers 2 and 3 appear after layer 1
-        setTimeout(function () {
-          d3.select('#Layer_2')
-          .attr('visibility', 'visible')
-        }, 1000);
-        setTimeout(function () {
-          d3.select('#Layer_3')
-          .attr('visibility', 'visible')
-        }, 2000);
       } else if(pageData.diagramVisible == 2) {
         d3.select('.diagram')
           .attr('class', 'diagram active')
@@ -162,19 +146,6 @@ function handleData(data) {
           .attr('class', 'diagram active')
           .node()
           .append(carbon);
-        d3.select('#Layer_2')
-          .attr('visibility', 'hidden')
-        d3.select('#Layer_3')
-          .attr('visibility', 'hidden')
-        //make layers 2 and 3 appear after layer 1
-        setTimeout(function () {
-          d3.select('#Layer_2')
-          .attr('visibility', 'visible')
-        }, 1000);
-        setTimeout(function () {
-          d3.select('#Layer_3')
-          .attr('visibility', 'visible')
-        }, 2000); 
       }
     } else {
       if (diagramElement.hasChildNodes()) {
@@ -194,19 +165,6 @@ function handleData(data) {
           .attr('class', 'land-visual active')
           .node()
           .append(land_visual_1);
-        d3.select('#Layer_2')
-          .attr('visibility', 'hidden')
-        d3.select('#Layer_3')
-          .attr('visibility', 'hidden')
-        //make layers 2 and 3 appear after layer 1
-        setTimeout(function () {
-          d3.select('#Layer_2')
-          .attr('visibility', 'visible')
-        }, 1000);
-        setTimeout(function () {
-          d3.select('#Layer_3')
-          .attr('visibility', 'visible')
-        }, 2000); 
       } else if(pageData.landVisible == 2) {
         //delete previous land visual
         if (landElement.hasChildNodes()) {
@@ -216,19 +174,6 @@ function handleData(data) {
           .attr('class', 'land-visual active')
           .node()
           .append(land_visual_2);
-        d3.select('#Layer_2')
-          .attr('visibility', 'hidden')
-        d3.select('#Layer_3')
-          .attr('visibility', 'hidden')
-        //make layers 2 and 3 appear after layer 1
-        setTimeout(function () {
-          d3.select('#Layer_2')
-          .attr('visibility', 'visible')
-        }, 1000);
-        setTimeout(function () {
-          d3.select('#Layer_3')
-          .attr('visibility', 'visible')
-        }, 2000); 
       }
     } 
     else {

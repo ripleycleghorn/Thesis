@@ -46,8 +46,9 @@ div {
 }
 
 .hidden {
-    opacity: 0;
+    /* opacity: 0; */
     pointer-events: none;
+    visibility: hidden;
 }
 .active {
     opacity: 1;
@@ -201,7 +202,7 @@ div {
     margin: 0 auto;
 }
 
-#diagram {
+.diagram {
     grid-column: 2 / span 10;
     grid-row: 2 / span 9;
     margin: 0 auto;
@@ -210,13 +211,14 @@ div {
 #Layer_2 {
     animation: fade-in 1s forwards ease-in;
     animation-delay: 1s;
+    /* visibility: visible; */
 }
 
 #Layer_3 {
     animation: fade-in 1s forwards ease-in;
     animation-delay: 2s;
+    /* visibility: visible; */
 }
-
 
 @keyframes fade-in {
 
