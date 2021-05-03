@@ -42,7 +42,7 @@
     "pageHeader": "Beccs"
   },
   "page-5": {
-    "text": "There are many flaws to this logic. tree plantation replacing natural forest ecosystem",
+    "text": "There are many flaws to this logic. For example, rather than planting a diverse forest ecosystem, usually one single fast growing tree species is planted (referred to as monoculture plantations) which require large amounts of land and high external inputs, including water and chemicals (Figueroa).",
     "annotation": "",
     "graphVisible": false,
     "diagramVisible": 2,
@@ -56,7 +56,7 @@
     "pageHeader": "Beccs"
   },
   "page-7": {
-    "text": "'There is only one existing BECCS project in the world: the Decatur ethanol refinery in the USA, owned by ADM.' The DOE, who funded the project, claims that it provides a “carbon negative footprint. 'Since the refinery is powered by fossil fuels and corn is an energy-intensive crop, claiming the project a “success” is premature.' (Big Bad Fix).",
+    "text": "One of the few existing BECCS projects in the world is the Decatur ethanol refinery, owned by the largest agribusiness in the world, The Archer-Daniels-Midland Company. Although it’s claimed to be ‘carbon negative’, the fact that it is powered by fossil fuels and uses corn (an energy-intensive crop) this is an inaccurate claim (Big Bad Fix).",
     "annotation": "",
     "graphVisible": false,
     "diagramVisible": false,
@@ -64,7 +64,7 @@
     "image": "./images/adm-beccs.jpg"
   },
   "page-8": {
-    "text": "In order to understand the degree to which BECCS plays a role in future climate change, it’s helpful to first look at past emissions.",
+    "text": "In order to understand the degree to which BECCS is being proposed in future climate change policy, it’s helpful to first look at past emissions.",
     "annotation": "",
     "graphVisible": false,
     "diagramVisible": false,
@@ -255,7 +255,7 @@
     "pageHeader": "Other"
   },
   "page-26": {
-    "text": "Conclusion!!",
+    "text": "Einstein said that we can’t solve problems by using the same thinking that created them. In general, strategies like BECCS are problematic given that the same systems that are the main contributors to the current climate crisis are the ones that are producing these types of solutions. They often rely on a colonial concept of needing to ‘master’ nature. On the other hand, ‘Indigenous peoples have been doing safe and effective carbon dioxide removal while protecting biodiversity for centuries, without risky techno-fixes, conservation enclosures or market mechanisms, e.g., through community-based forest management’ (Figueroa).",
     "annotation": "",
     "graphVisible": false,
     "diagramVisible": false,

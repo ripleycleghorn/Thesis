@@ -247,11 +247,12 @@ function handleData(data) {
   }
 
   function drawGraph(x, y, graphData) {
-    
+    const pageData = data["page-" + counter]
     //give a page class to each graph
     svg.attr('class', 'graph-center page' + counter);
     //remove previous paths before drawing new ones
     svg.selectAll('path').remove();
+    svg.selectAll('.data-label').remove();    
     
     // Set the ranges
     var xScale = d3.scaleTime()
@@ -276,15 +277,20 @@ function handleData(data) {
         .attr('stroke-width', 2)
         .attr('stroke', '#070C0D')
 
-      svg.append("text")
-        // .attr('class', 'annotation')
-        .attr('x', width - margin.right + 5)
-        .attr('transform', `translate(0,100)`)
-        // .attr('y', d => yScale(d.emissions))
-        .attr("dy", "5em")
-        .attr("text-anchor", "start")
-        .style("fill", "#070C0D")
-        .text("Historic");
+      if(pageData.graphVisible && !pageData.historicOnly) {  
+        //only show data labels for future scenarios
+        svg.append("text")
+          .datum(graphData[i].value[graphData[i].value.length - 1])
+          .attr('class', 'data-label')
+          .attr('id', 'page' + counter + '-label' + i)
+          .attr('x', 10)
+          .attr("transform", function(d) { return "translate(" + xScale(d.year) + "," + yScale(d.emissions) + ")"; })
+          .attr("text-anchor", "start")
+          .text(graphData[i].value[graphData[i].value.length - 1].Entity);
+      } else {
+        d3.select('.data-label')
+          .attr('class', 'data-label hidden')
+      }
     });
 
     // axis
