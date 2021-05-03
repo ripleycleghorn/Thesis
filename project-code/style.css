@@ -24,8 +24,8 @@ div {
 }
 
 .teal {
-    /* padding-left: 2px;
-    padding-right: 2px; */
+    padding-left: 2px;
+    padding-right: 2px;
     color: white;
     background-color: #3C6E71;
 }
@@ -46,7 +46,6 @@ div {
 }
 
 .hidden {
-    /* opacity: 0; */
     pointer-events: none;
     visibility: hidden;
 }
@@ -62,7 +61,7 @@ div {
     font-weight: 100;
     color: #070C0D;
 }
-/* nav bar */
+/* navigation bar */
 
 .introduction {
     grid-column: 1 / span 2;
@@ -94,7 +93,7 @@ div {
     grid-row: 1 / span 1;
 }
 
-/* text and annotations */
+/* text, image and annotations */
 
 .title {
     font-size: 75px;
@@ -102,12 +101,13 @@ div {
     grid-row: 4 / span 4;
     margin: 0 auto;
     font-family: 'Antonio', sans-serif;
-    background: #3C6E71;
+    color: #3C6E71;
+    /* background: #3C6E71;
     background: -webkit-linear-gradient(to right, #3C6E71 0%, #B3BEBA 50%, #F2F2F2 100%);
     background: -moz-linear-gradient(to right, #3C6E71 0%, #B3BEBA 50%, #F2F2F2 100%);
     background: linear-gradient(to right, #3C6E71 0%, #B3BEBA 75%, #F2F2F2 100%);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent; */
 }
 
 .subtitle {
@@ -139,7 +139,7 @@ div {
     grid-row: 2 / span 5;
 }
 
-#text5, #text6 {
+#text5, #text6, #text24, #text25 {
     grid-column: 11 / span 2;
     grid-row: 2 / span 3;
 }
@@ -151,7 +151,7 @@ div {
     z-index: 100;
 }
 
-#text8 {
+#text8, #text22 {
     grid-column: 6 / span 2;
     grid-row: 4 / span 2;
 }
@@ -194,7 +194,7 @@ div {
     grid-row: 5 / span 4;
 }
 
-/* charts */
+/* charts and diagrams */
 
 .graph-center {
     grid-column: 2 / span 10;
@@ -234,6 +234,12 @@ div {
     opacity: 0;
 }
 
+.title, .subtitle {
+    animation: fade-out 6s backwards ease-in;
+    animation-delay: 0s;
+    opacity: .5;
+}
+
 @keyframes fade-in {
 
     0% {
@@ -246,7 +252,7 @@ div {
   
   }
 
-  @keyframes fade-out {
+@keyframes fade-out {
 
     0% {
       opacity: 1;
@@ -309,7 +315,7 @@ svg {
     font-size: 14px;
 }
 
-/* arrows */
+/* arrows and buttons */
 
 #arrow-right {
     grid-column: 12;
@@ -322,3 +328,16 @@ svg {
     text-align: right;
 }
 
+.button {
+    grid-row: 7;
+    height: 50px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+#left-button {
+    grid-column: 5;
+}
+
+#right-button {
+    grid-column: 8;
+}

@@ -9,6 +9,8 @@ const otherButton = document.getElementById("other");
 const conclusionButton = document.getElementById("conclusion");
 const diagramElement = document.getElementById("diagram");
 const landElement = document.getElementById('land-visual');
+const leftButton = document.getElementById('left-button');
+const rightButton = document.getElementById('right-button');
 
 let counter = 0;
 
@@ -126,6 +128,24 @@ function handleData(data) {
       d3.select('.annotation')
         .attr('class', 'annotation hidden')
     }
+    //button data
+    if (pageData.button) {
+      if (pageData.leftButtontext) {
+        d3.select('#left-button')
+          .html(pageData.leftButtontext)
+          .attr('class', 'button active')
+      }
+      if (pageData.rightButtontext) {
+        d3.select('#right-button')
+          .html(pageData.rightButtontext)
+          .attr('class', 'button active')
+      }
+    } else {
+      d3.select('#left-button')
+        .attr('class', 'button hidden')
+      d3.select('#right-button')
+        .attr('class', 'button hidden')
+    }
     //beccs diagrams
     if (pageData.diagramVisible) {
       if (diagramElement.hasChildNodes()) {
@@ -177,7 +197,7 @@ function handleData(data) {
       }
     } 
     else {
-      //remove this svg when on other pages so that when I return to that svg it doesn't get rendered incorrectly
+      //remove this svg when on other pages so that when I return to that svg it renders correctly
       if (landElement.hasChildNodes()) {
         landElement.removeChild(landElement.childNodes[0])
       }
@@ -313,6 +333,7 @@ function handleData(data) {
       d3.select('.beccs').classed('highlight', false)
       d3.select('.emissions').classed('highlight', false)
       d3.select('.land').classed('highlight', false)
+      d3.select('.other').classed('highlight', false)
     } 
     else if (pageData.pageHeader == "Beccs") {
       d3.select('.beccs')
@@ -321,6 +342,7 @@ function handleData(data) {
       d3.select('.introduction').classed('highlight', false)
       d3.select('.emissions').classed('highlight', false)
       d3.select('.land').classed('highlight', false)
+      d3.select('.other').classed('highlight', false)
     }
     else if (pageData.pageHeader == "Emissions") {
       d3.select('.emissions')
@@ -329,6 +351,8 @@ function handleData(data) {
       d3.select('.introduction').classed('highlight', false)
       d3.select('.beccs').classed('highlight', false)
       d3.select('.land').classed('highlight', false)
+      d3.select('.other').classed('highlight', false)
+      d3.select('.conclusion').classed('highlight', false)
     }
     else if (pageData.pageHeader == "Land") {
       d3.select('.land')
@@ -337,6 +361,28 @@ function handleData(data) {
       d3.select('.introduction').classed('highlight', false)
       d3.select('.beccs').classed('highlight', false)
       d3.select('.emissions').classed('highlight', false)
+      d3.select('.other').classed('highlight', false)
+      d3.select('.conclusion').classed('highlight', false)
+    }
+    else if (pageData.pageHeader == "Other") {
+      d3.select('.other')
+        .attr('class', 'nav other highlight')
+      //remove other headers
+      d3.select('.introduction').classed('highlight', false)
+      d3.select('.beccs').classed('highlight', false)
+      d3.select('.emissions').classed('highlight', false)
+      d3.select('.land').classed('highlight', false)
+      d3.select('.conclusion').classed('highlight', false)
+    }
+    else if (pageData.pageHeader == "Conclusion") {
+      d3.select('.conclusion')
+        .attr('class', 'nav conclusion highlight')
+      //remove other headers
+      d3.select('.introduction').classed('highlight', false)
+      d3.select('.beccs').classed('highlight', false)
+      d3.select('.emissions').classed('highlight', false)
+      d3.select('.land').classed('highlight', false)
+      d3.select('.other').classed('highlight', false)
     }
   }
 
@@ -379,12 +425,22 @@ function handleData(data) {
     highlight();
   }
   otherButton.onclick = function() {
-    counter = 0;
+    counter = 23;
     pageCheck();
     highlight();
   }
   conclusionButton.onclick = function() {
-    counter = 0;
+    counter = 26;
+    pageCheck();
+    highlight();
+  }
+  leftButton.onclick = function() {
+    counter = 23;
+    pageCheck();
+    highlight();
+  }
+  rightButton.onclick = function() {
+    counter = 26;
     pageCheck();
     highlight();
   }

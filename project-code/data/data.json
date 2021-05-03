@@ -17,7 +17,7 @@
     "pill": "pill-1"
   },
   "page-2": {
-    "text": "In a race against the clock, climate governance is embracing a variety of <span id='geoengineering' class='tooltip teal'>geoengineering</span> technologies to eliminate some of these emissions. However, given that these solutions aren’t being paired with meaningful fossil fuel reductions, they will be most likely be used to justify continuing business-as-usual practices. (2/3)",
+    "text": "In a race against the clock, climate governance is embracing a variety of <span id='geoengineering' class='tooltip teal'>geoengineering</span> technologies to eliminate some of these emissions. However, given that these solutions aren’t being paired with meaningful fossil fuel reductions, they will most likely be used to justify continuing business-as-usual practices. (2/3)",
     "annotation": "",
     "graphVisible": false,
     "diagramVisible": false,
@@ -27,7 +27,7 @@
     "pill": "pill-2"
   },
   "page-3": {
-    "text": "This project looks at the nuances of one of these technologies, called Bioenergy with Carbon Capture and Storage, or BECCS. So how does BECCS work? (3/3)",
+    "text": "This project looks at the nuances of one of these technologies called Bioenergy with Carbon Capture and Storage, or BECCS. So how does BECCS work? (3/3)",
     "annotation": "",
     "graphVisible": false,
     "diagramVisible": false,
@@ -42,17 +42,17 @@
     "pageHeader": "Beccs"
   },
   "page-5": {
-    "text": "But this process doesn’t account for the entire carbon lifecycle, let’s add in some of the missing emissions, many of which are unacknowledged in BECCS models.",
+    "text": "There are many flaws to this logic. tree plantation replacing natural forest ecosystem",
     "annotation": "",
     "graphVisible": false,
     "diagramVisible": 2,
     "pageHeader": "Beccs"
   },
   "page-6": {
-    "text": "Because of industrial agriculture is required for BECCS, many extra emissions are released. In fact, industrial agriculture accounts for one-third of all greenhouse gas emissions.",
+    "text": "Even more, BECCS has hardly been tested.",
     "annotation": "",
     "graphVisible": false,
-    "diagramVisible": 3,
+    "diagramVisible": 2,
     "pageHeader": "Beccs"
   },
   "page-7": {
@@ -96,7 +96,7 @@
   },
   "page-11": {
     "text": "",
-    "annotation": "But not all emissions have been evenly produced; by 1970, the U.S. and U.K. were responsible for <span class='tooltip teal'>75%</span> of emissions worldwide.",
+    "annotation": "Emissions begin to rise. But not all emissions have been evenly produced; by 1970, the U.S. and U.K. were responsible for <span class='tooltip teal'>75%</span> of emissions worldwide.",
     "graphVisible": true,
     "diagramVisible": false,
     "historicOnly": true,
@@ -146,7 +146,7 @@
   },
   "page-15": {
     "text": "",
-    "annotation": "Absent any changes, temperatures are set to rise to at least 4° Celsius above pre-industrial levels. This is referred to as the <span class='baseline'>baseline</span> scenario.",
+    "annotation": "Absent any changes, temperatures are set to rise to at least 39°F above pre-industrial levels. This is referred to as the <span class='baseline'>baseline</span> scenario.",
     "graphVisible": true,
     "diagramVisible": false,
     "historicOnly": false,
@@ -158,7 +158,7 @@
   },
   "page-16": {
     "text": "",
-    "annotation": "If all current climate mitigation <span class='policies'>policies</span> are enforced, the trajectory would look something like this: where temperatures might rise to between 2.7°C and 3.1°C.",
+    "annotation": "If all current climate mitigation <span class='policies'>policies</span> are enforced, the trajectory would look something like this: where temperatures might rise by about 37°F.",
     "graphVisible": true,
     "diagramVisible": false,
     "historicOnly": false,
@@ -170,7 +170,7 @@
   },
   "page-17": {
     "text": "",
-    "annotation": "Finally, there are scenarios that lead us to stay below <span class='low'>1.5°C</span> and <span class='high'>2°C</span>, the threshold that climate scientists agree will help us to avoid unpredictable climate reactions.",
+    "annotation": "Finally, there are scenarios that lead us to stay below a 35°F rise, corresponding to <span class='low'>1.5°C</span> and <span class='high'>2°C</span>, this is the threshold that climate scientists agree will help us to avoid unpredictable climate reactions.",
     "graphVisible": true,
     "diagramVisible": false,
     "historicOnly": false,
@@ -218,5 +218,47 @@
     "landVisible": 2,
     "historicOnly": false,
     "pageHeader": "Land"
+  },
+  "page-22": {
+    "text": "See more critique or jump to conclusion?",
+    "annotation": "",
+    "graphVisible": false,
+    "diagramVisible": false,
+    "landVisible": false,
+    "historicOnly": false,
+    "pageHeader": "Land",
+    "button": true,
+    "leftButtontext": "Critique",
+    "rightButtontext": "Conclusion"
+  },
+  "page-23": {
+    "text": "Another concern regarding BECCS is the fact that many fossil fuel companies are backing this technology. One concerning practice is called Enhanced Oil Recovery (EOR). The liquid CO2 (produced by BECCS) is used to extract oil from a site that otherwise would not produce additional oil. [statistic about how 40% of co2 from one beccs site is already being used for that.",
+    "annotation": "",
+    "graphVisible": false,
+    "diagramVisible": false,
+    "landVisible": false,
+    "historicOnly": false,
+    "pageHeader": "Other"
+  },
+  "page-24": {
+    "text": "Additionally, BECCS models often don't account for the entire carbon lifecycle, let’s add in some of the missing emissions, many of which are unacknowledged in BECCS models.",
+    "annotation": "",
+    "graphVisible": false,
+    "diagramVisible": 2,
+    "pageHeader": "Other"
+  },
+  "page-25": {
+    "text": "Because industrial agriculture is required for BECCS, many additional emissions are released. In fact, industrial agriculture accounts for one-third of all global greenhouse gas emissions.",
+    "annotation": "",
+    "graphVisible": false,
+    "diagramVisible": 3,
+    "pageHeader": "Other"
+  },
+  "page-26": {
+    "text": "Conclusion!!",
+    "annotation": "",
+    "graphVisible": false,
+    "diagramVisible": false,
+    "pageHeader": "Conclusion"
   }
 }
