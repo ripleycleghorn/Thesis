@@ -15,9 +15,11 @@ const rightButton = document.getElementById('right-button');
 let counter = 0;
 
 /** SET UP SVG **/
+let intViewportWidth = window.innerWidth;
+// console.log(intViewportWidth)
 //global variables
-let svgWidth = 850
-let svgHeight = svgWidth * 0.65
+let svgWidth = intViewportWidth * .7
+let svgHeight = svgWidth * 0.6
 
 let margin = {
   left: 50,
