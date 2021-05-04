@@ -18,8 +18,8 @@ let counter = 0;
 let intViewportWidth = window.innerWidth;
 // console.log(intViewportWidth)
 //global variables
-let svgWidth = intViewportWidth * .7
-let svgHeight = svgWidth * 0.6
+let svgWidth = 850
+let svgHeight = svgWidth * 0.65
 
 let margin = {
   left: 50,
