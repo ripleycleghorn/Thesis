@@ -96,19 +96,19 @@ div {
 
 /* text, image and annotations */
 
-.title {
+.title, .subtitle {
     font-size: 75px;
     grid-column: 1 / span 12;
     grid-row: 4 / span 4;
     margin: 0 auto;
     font-family: 'Antonio', sans-serif;
     color: #3C6E71;
-    /* background: #3C6E71;
+    background: #3C6E71;
     background: -webkit-linear-gradient(to right, #3C6E71 0%, #B3BEBA 50%, #F2F2F2 100%);
     background: -moz-linear-gradient(to right, #3C6E71 0%, #B3BEBA 50%, #F2F2F2 100%);
     background: linear-gradient(to right, #3C6E71 0%, #B3BEBA 75%, #F2F2F2 100%);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; */
+    -webkit-text-fill-color: transparent;
 }
 
 .subtitle {
@@ -240,11 +240,11 @@ div {
     opacity: 0;
 }
 
-.title, .subtitle {
+/* .title, .subtitle {
     animation: fade-out 6s forwards ease-in;
     animation-delay: 0s;
     opacity: 1;
-}
+} */
 
 @keyframes fade-in {
 
