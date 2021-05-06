@@ -66,6 +66,10 @@ d3.xml("./svg/diagram.svg").then(data => {
     beccs = data.documentElement
 });
 
+d3.xml("./svg/missing.svg").then(data => {
+  missing = data.documentElement
+});
+
 d3.xml("./svg/beccs-static.svg").then(data => {
   beccs_static = data.documentElement
 });
@@ -121,9 +125,8 @@ function handleData(data) {
     if (pageData.image) {
       d3.select('.image')
         .attr('class', 'image active')
-        .attr('id', 'image-container' + counter)
-      d3.select('img')
         .attr('id', 'image' + counter)
+      d3.select('img')
         .attr('src', pageData.image)
     } else {
       d3.select('.image')
@@ -177,6 +180,11 @@ function handleData(data) {
           .attr('class', 'diagram active')
           .node()
           .append(carbon);
+      } else if(pageData.diagramVisible == 4) {
+        d3.select('.diagram')
+          .attr('class', 'diagram active')
+          .node()
+          .append(missing);
       }
     } else {
       if (diagramElement.hasChildNodes()) {
@@ -245,7 +253,7 @@ function handleData(data) {
                   .duration(200)
                   .style("opacity", 1);
                 div.html(pageData.hoverText)
-                  .style("left", (400) + "px")
+                  .style("left", (300) + "px")
                   .style("top", (150) + "px")
                   .style("position", "absolute");
                 })
@@ -452,7 +460,7 @@ function handleData(data) {
     highlight();
   }
   leftButton.onclick = function() {
-    counter = 22;
+    counter = 21;
     pageCheck();
     highlight();
   }

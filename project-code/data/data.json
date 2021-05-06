@@ -18,7 +18,7 @@
   "page-2": {
     "text": ["In a race against the clock, climate governance is embracing a variety of <span id='geoengineering' class='tooltip teal'>geoengineering</span> technologies to eliminate some of these emissions. However, given that these solutions aren’t being paired with meaningful fossil fuel reductions, they will most likely be used to justify continuing business-as-usual practices."],
     "annotation": "",
-    "summary": "(2/3)",
+    "summary": "Why reject geoengineering? (2/3)",
     "graphVisible": false,
     "diagramVisible": false,
     "pageHeader": "Intro",
@@ -28,21 +28,21 @@
   "page-3": {
       "text": ["This project looks at the nuances of one of these technologies called Bioenergy with Carbon Capture and Storage, or BECCS. So how does BECCS work?"],
     "annotation": "",
-    "summary": "(3/3)",
+    "summary": "This project explores the nuances of BECCS (3/3)",
     "graphVisible": false,
     "diagramVisible": false,
     "pageHeader": "Intro"
   },
   "page-4": {
-    "text": ["'The idea is that, as it grows, biomass will continuously capture CO2 from the atmosphere. When the biomass is burned for energy, the waste CO2 will also be captured and stored underground, instead of being released back into the atmosphere. The assumption is that this will result in negative emission'(FOEI)."],
+    "text": ["'The idea is that as biomass grows, it will continuously capture CO2 from the atmosphere. When it’s burned for energy, the waste CO2 will also be captured and stored underground. The assumption is that this will result in negative emissions' because more carbon is being stored than emitted <sup>1</sup>."],
     "annotation": "",
-    "summary": "Crops capture C02, crops are burned, and CO2 is stored underground",
+    "summary": "Crops capture C02, crops burned, CO2 stored underground",
     "graphVisible": false,
     "diagramVisible": 1,
     "pageHeader": "Beccs"
   },
   "page-5": {
-    "text": ["For example, rather than planting a diverse forest ecosystem, usually one single fast growing tree species is planted (referred to as monoculture plantations) which requires large amounts of land and high external inputs, including water and chemicals (1). Even more, BECCS has hardly been tested."],
+    "text": ["For example, rather than planting a diverse forest ecosystem, usually only one, fast-growing tree species is planted (referred to as monocropping) which requires large amounts of land, water and chemicals <sup>1</sup>. Even more, BECCS has hardly been tested."],
     "annotation": "",
     "summary": "There are many flaws to this logic",
     "graphVisible": false,
@@ -50,18 +50,18 @@
     "pageHeader": "Beccs"
   },
   "page-6": {
-    "text": ["One of those is the Decatur ethanol refinery, owned by the largest agribusiness in the world, The Archer-Daniels-Midland Company. Although it’s supposedly ‘carbon negative’, meaning it reduces more carbon than it emits, the fact that it is powered by fossil fuels and uses corn (an energy-intensive crop) makes this doubtful (Big Bad Fix)."],
+    "text": ["This is one of them, called the Decatur ethanol refinery, and it’s owned by one of the largest agribusiness in the world. It is essentially a proof of concept funded by the Department of Energy. It’s not a negative emitter, since it’s powered by fossil fuels and uses energy-intensive crops. In fact, it only captures 16% of carbon emitted. <sup>2</sup>"],
     "annotation": "",
-    "summary": "Only a few plants currently exist worldwide",
+    "summary": "Only a few plants exist worldwide",
     "graphVisible": false,
     "diagramVisible": false,
     "pageHeader": "Beccs",
     "image": "./images/adm-beccs.jpg"
   },
   "page-7": {
-    "text": "",
+    "text": "We can look at past greenhouse gas emissions to understand BECCS' future role",
     "annotation": "",
-    "summary": "Let's look at past CO2 emissions to understand BECCS' future role",
+    "summary": "Let's back up",
     "graphVisible": false,
     "diagramVisible": false,
     "pageHeader": "Beccs"
@@ -91,7 +91,7 @@
     "filterLineend": 1970,
     "pageHeader": "Emissions",
     "hover": true,
-    "hoverText": "Given this stark statistic, the concept of 'Common But Differentiated Responsibility' emerged, recognizing the historical responsibility of industrialized countries for global environmental problems, and implying they take far-reaching measures in responding meaningfully to such problems (2)."
+    "hoverText": "Given this stark statistic, the concept of 'Common But Differentiated Responsibility' emerged, recognizing the historical responsibility of industrialized countries for global environmental problems, and implying they take far-reaching measures in responding meaningfully to such problems <sup>3</sup>."
   },
   "page-10": {
     "text": "",
@@ -206,7 +206,7 @@
     "pageHeader": "Land"
   },
   "page-20": {
-    "text": ["See more critique or jump to conclusion?"],
+    "text": ["See more critiques or jump to conclusion?"],
     "annotation": "",
     "summary": "Choose your ending",
     "graphVisible": false,
@@ -219,25 +219,26 @@
     "rightButtontext": "Conclusion"
   },
   "page-21": {
-    "text": ["Another concern regarding BECCS is the fact that many fossil fuel companies are backing this technology. One concerning practice is called Enhanced Oil Recovery (EOR). The liquid CO2 (produced by BECCS) is used to extract oil from a site that otherwise would not produce additional oil. [statistic about how 40% of co2 from one beccs site is already being used for that."],
+    "text": ["Land use is just one of many concerning factors that isn’t often discussed by the entities promoting BECCS, which include fossil fuel companies, like Shell. Further concerns surround the storage of liquid CO2;  in addition to potential leaks, there is the worry that the CO2 may not be stored at all; some of these companies are already using it to extract crude oil from an otherwise depleted field, a process called Enhanced Oil Recovery."],
     "annotation": "",
     "summary": "Who is backing BECCS?",
     "graphVisible": false,
     "diagramVisible": false,
     "landVisible": false,
     "historicOnly": false,
-    "pageHeader": "Other"
+    "pageHeader": "Other",
+    "image": "./images/shell.jpg"
   },
   "page-22": {
-    "text": ["Additionally, BECCS models often don't account for the entire carbon lifecycle, many of which are unacknowledged in BECCS models."],
+    "text": ["Additionally, BECCS models often don't account for the entire carbon lifecycle."],
     "annotation": "",
     "summary": "BECCS is not a negative emitter",
     "graphVisible": false,
-    "diagramVisible": 2,
+    "diagramVisible": 4,
     "pageHeader": "Other"
   },
   "page-23": {
-    "text": ["Because industrial agriculture is required for BECCS, many additional emissions are released. In fact, industrial agriculture accounts for one-third of all global greenhouse gas emissions."],
+    "text": ["BECCS relies on industrial agriculture, which itself is responsible for ⅓ of all greenhouse gas emissions."],
     "annotation": "",
     "summary": "Let’s add in missing emissions",
     "graphVisible": false,

@@ -41,7 +41,7 @@ div {
 .hoverText {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 14px;
-    width: 200px;
+    width: 180px;
     color: black;
     font-style: italic;
 }
@@ -132,6 +132,7 @@ summary {
     font-style: normal;
     font-weight: 700;
     color: #3C6E71;
+    margin: 5px;
 }
 
 #text4, #text5, #text22, #text23, #text8 {
@@ -148,14 +149,13 @@ summary {
     z-index: 100;
 }
 
-#image-container6 {
+.image.active {
     grid-column: 1 / span 12;
     grid-row: 1;
 }
 
-#image-container24 {
-    grid-column: 1 / span 12;
-    grid-row: 1;
+#image21 > img {
+    filter: grayscale(100%);
 }
 
 .annotation {
@@ -163,7 +163,7 @@ summary {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 17px;
     grid-column: 6 / span 2;
-    grid-row: 5 / span 4;
+    grid-row: 4 / span 4;
 }
 
 #annotation8 {
@@ -177,13 +177,12 @@ summary {
 }
 
 #annotation10 {
-    grid-column: 9 / span 2;
-    grid-row: 4 / span 3;
+    grid-column: 10 / span 2;
+    grid-row: 3 / span 3;
 }
 
 #annotation16 {
     grid-column: 6 / span 3;
-    grid-row: 5 / span 4;
 }
 
 /* charts and diagrams */
@@ -343,9 +342,10 @@ svg {
 }
 
 .button {
-    grid-row: 7;
+    grid-row: 5;
     height: 50px;
     font-family: 'Source Sans Pro', sans-serif;
+    font-size: 15px;
 }
 
 #left-button {
