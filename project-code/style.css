@@ -61,6 +61,7 @@ div {
     font-family: 'Antonio', sans-serif;
     font-weight: 100;
     color: #070C0D;
+    z-index: 100;
 }
 /* navigation bar */
 
@@ -97,9 +98,10 @@ div {
 /* text, image and annotations */
 
 .title, .subtitle {
-    font-size: 75px;
-    grid-column: 1 / span 12;
-    grid-row: 4 / span 4;
+    font-size: 95px;
+    grid-column: 3 / span 10;
+    grid-row: 3 / span 4;
+    z-index: 100;
     margin: 0 auto;
     font-family: 'Antonio', sans-serif;
     color: #3C6E71;
@@ -112,7 +114,7 @@ div {
 }
 
 .subtitle {
-    font-size: 50px;
+    font-size: 70px;
 }
 
 .text {
@@ -121,55 +123,39 @@ div {
     padding: 10px;
     font-style: italic;
     grid-column: 6 / span 2;
-    grid-row: 4 / span 4;
+    grid-row: 3 / span 1;
     background-color: white;
-}
-
-#text2, #text23 {
-    grid-column: 6 / span 2;
-    grid-row: 4 / span 5; 
-}
-
-#text3, #text8, #annotation13 {
-    grid-column: 6 / span 2;
-    grid-row: 4 / span 3; 
-}
-
-#text4, #text5 {
-    grid-column: 11 / span 2;
-    grid-row: 2 / span 5;
-}
-
-#text6 {
-    grid-column: 11 / span 2;
-    grid-row: 2 / span 1;
-} 
-
-#text24, #text25 {
-    grid-column: 11 / span 2;
-    grid-row: 2 / span 3;
-}
-
-#text7 {
-    grid-column: 3 / span 2;
-    grid-row: 4 / span 5;
-    margin-left: 20px;
     z-index: 100;
 }
 
-#text22 {
-    grid-column: 6 / span 2;
-    grid-row: 4 / span 1;
+summary {
+    font-style: normal;
+    font-weight: 700;
+    color: #3C6E71;
 }
 
-#text26 {
-    grid-column: 5 / span 3;
-    grid-row: 3 / span 8;
+#text4, #text5, #text22, #text23, #text8 {
+    grid-column: 11 / span 2;
 }
 
-.image {
-    grid-column: 3 / span 8;
-    grid-row: 2 / span 5;
+#text6 {
+    grid-column: 9 / span 2;
+    z-index: 100;
+}
+
+#text24 {
+    grid-column: 8 / span 3;
+    z-index: 100;
+}
+
+#image-container6 {
+    grid-column: 1 / span 12;
+    grid-row: 1;
+}
+
+#image-container24 {
+    grid-column: 1 / span 12;
+    grid-row: 1;
 }
 
 .annotation {
@@ -180,22 +166,22 @@ div {
     grid-row: 5 / span 4;
 }
 
-#annotation10 {
+#annotation8 {
     grid-column: 4 / span 2;
     grid-row: 7 / span 3;
 }
 
-#annotation11 {
+#annotation9 {
     grid-column: 7 / span 2;
     grid-row: 4 / span 3;
 }
 
-#annotation12 {
+#annotation10 {
     grid-column: 9 / span 2;
     grid-row: 4 / span 3;
 }
 
-#annotation18 {
+#annotation16 {
     grid-column: 6 / span 3;
     grid-row: 5 / span 4;
 }
@@ -209,11 +195,12 @@ div {
 }
 
 .diagram {
-    grid-column: 2 / span 10;
+    grid-column: 1 / span 12;
     grid-row: 2 / span 9;
     margin: 0 auto;
     animation: fade-in 1s forwards ease-in;
     opacity: 0;
+    transform: scale(1.25)
 }
 
 #Layer_2 {
@@ -282,55 +269,55 @@ svg {
 }
 
 /* chart path colors */
-.page15 > .path0, .page16 > .path0, .page17 > .path0, .page18 > .path0 {
+.page13 > .path0, .page14 > .path0, .page15 > .path0, .page16 > .path0 {
     stroke: #070C0D;
 }
 
-.page15 > .path1, .path2, .path3, .page16 > .path1, .path2 {
+.page13 > .path1, .path2, .path3, .page14 > .path1, .path2 {
     stroke: #F2F2F2;
 }
 
-.page15 > .path4, .page16 > .path4, .page17 > .path4, .page18 > .path4, .baseline {
+.page13 > .path4, .page14 > .path4, .page15 > .path4, .page16 > .path4, .baseline {
     stroke: #0468BF;
     color: #0468BF;
 }
 
-.page16 > .path3, .page17 > .path3, .page18 > .path3, .policies {
+.page14 > .path3, .page15 > .path3, .page16 > .path3, .policies {
     stroke: #F2B705;
     color: #F2B705;
 }
 
-.page18 > .path3, .page18 > .path0, .page18 > .path4 {
+.page16 > .path3, .page16 > .path0, .page16 > .path4 {
     stroke-opacity: .1;
 }
 
-.page17 > .path1, .page18 > .path1, .high {
+.page15 > .path1, .page16 > .path1, .high {
     stroke: #049DBF;
     color: #049DBF;
 }
 
-.page17 > .path2, .page18 > .path2, .low {
+.page15 > .path2, .page16 > .path2, .low {
     stroke: #93A603;
     color: #93A603;
 }
 
-#page15-label4, #page16-label4, #page17-label4 {
+#page13-label4, #page14-label4, #page15-label4 {
     fill: #0468BF;
 }
 
-#page15-label3, #page15-label2, #page15-label1, #page15-label0, #page16-label2, #page16-label1, #page16-label0, #page17-label0, #page18-label0, #page18-label4, #page18-label3 {
+#page13-label3, #page13-label2, #page13-label1, #page13-label0, #page14-label2, #page14-label1, #page14-label0, #page15-label0, #page16-label0, #page16-label4, #page16-label3 {
     fill: #F2F2F2;
 }
 
-#page16-label3, #page17-label3 {
+#page14-label3, #page15-label3 {
     fill: #F2B705;
 }
 
-#page17-label2, #page18-label2 {
+#page15-label2, #page16-label2 {
     fill: #93A603;
 }
 
-#page17-label1, #page18-label1 {
+#page15-label1, #page16-label1 {
     fill: #049DBF;
 }
 
@@ -345,12 +332,14 @@ svg {
 #arrow-right {
     grid-column: 12;
     grid-row: 10;
+    z-index: 100;
 }
 
 #arrow-left {
     grid-column: 1 / span 1;
     grid-row: 10;
     text-align: right;
+    z-index: 100;
 }
 
 .button {

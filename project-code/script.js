@@ -94,7 +94,9 @@ function handleData(data) {
   function pageCheck() {
     //get the data from the current page
     const pageData = data["page-" + counter]
-    //text data
+
+    //title
+    //text shadow css
     if (pageData.title) {
       d3.select('.title')
         .html(pageData.title)
@@ -103,11 +105,14 @@ function handleData(data) {
       d3.select('.title')
         .attr('class', 'title hidden')
     }
-    if (pageData.text) {
+    //text data
+    if (pageData.text || pageData.summary) {
       d3.select('.text')
-        .html(pageData.text)
-        .attr('id', 'text' + counter)
         .attr('class', 'text active')
+        .attr('id', 'text' + counter)
+        .html(pageData.text)
+        .append('summary')
+        .html(pageData.summary)
     } else {
       d3.select('.text')
         .attr('class', 'text hidden')
@@ -116,6 +121,10 @@ function handleData(data) {
     if (pageData.image) {
       d3.select('.image')
         .attr('class', 'image active')
+        .attr('id', 'image-container' + counter)
+      d3.select('img')
+        .attr('id', 'image' + counter)
+        .attr('src', pageData.image)
     } else {
       d3.select('.image')
         .attr('class', 'image hidden')
@@ -423,32 +432,32 @@ function handleData(data) {
     highlight();
   }
   emissionsButton.onclick = function() {
-    counter = 9;
+    counter = 8;
     pageCheck();
     highlight();
   }
   landButton.onclick = function() {
-    counter = 19;
+    counter = 17;
     pageCheck();
     highlight();
   }
   otherButton.onclick = function() {
-    counter = 23;
+    counter = 21;
     pageCheck();
     highlight();
   }
   conclusionButton.onclick = function() {
-    counter = 26;
+    counter = 24;
     pageCheck();
     highlight();
   }
   leftButton.onclick = function() {
-    counter = 23;
+    counter = 22;
     pageCheck();
     highlight();
   }
   rightButton.onclick = function() {
-    counter = 26;
+    counter = 24;
     pageCheck();
     highlight();
   }
