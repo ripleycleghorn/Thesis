@@ -56,7 +56,8 @@
     "graphVisible": false,
     "diagramVisible": false,
     "pageHeader": "Beccs",
-    "image": "./images/adm-beccs.jpg"
+    "image": "./images/adm-beccs.jpg",
+    "square": true
   },
   "page-7": {
     "text": "We can look at past greenhouse gas emissions to understand BECCS' future role",

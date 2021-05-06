@@ -149,6 +149,23 @@ summary {
     z-index: 100;
 }
 
+.square.active {
+    /* dynanimcally calculate based on viewport i.e. sqrt(height * width*.16) */
+    height: 297px;
+    width: 297px;
+    grid-column: 2 / span 4;
+    grid-row: 3 / span 4;
+    background-color: #070C0D;
+    color: #F2F2F2;
+    font-size: 30px;
+    padding-left: 7px;
+    padding-top: 7px;
+    z-index: 1000;
+    opacity: 0;
+    animation: mid-fade 1s forwards ease-in;
+    animation-delay: 5s;
+}
+
 .image.active {
     grid-column: 1 / span 12;
     grid-row: 1;
@@ -163,7 +180,7 @@ summary {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 17px;
     grid-column: 6 / span 2;
-    grid-row: 4 / span 4;
+    grid-row: 5 / span 4;
 }
 
 #annotation8 {
@@ -254,6 +271,18 @@ summary {
       opacity: 0;
     }
   
+  }
+
+@keyframes mid-fade {
+   
+    0% {
+        opacity: 0;
+      }
+    
+    100% {
+        opacity: 0.85;
+      }
+
   }
 
 .land-visual {

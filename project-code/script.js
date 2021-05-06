@@ -23,8 +23,8 @@ let svgHeight = svgWidth * 0.65
 
 let margin = {
   left: 50,
-  right: 50,
-  top: 0,
+  right: 20,
+  top: 20,
   bottom: 50
 }
 
@@ -63,7 +63,7 @@ d3.csv("./data/all_emissions.csv").then(data => {
 })
 
 d3.xml("./svg/diagram.svg").then(data => {
-    beccs = data.documentElement
+  beccs = data.documentElement
 });
 
 d3.xml("./svg/missing.svg").then(data => {
@@ -76,11 +76,11 @@ d3.xml("./svg/beccs-static.svg").then(data => {
 
 
 d3.xml("./svg/carbon.svg").then(data => {
-    carbon = data.documentElement
+  carbon = data.documentElement
 });
 
 d3.xml("./svg/land-visual-1.svg").then(data => {
-    land_visual_1 = data.documentElement
+  land_visual_1 = data.documentElement
 });
 
 d3.xml("./svg/land-visual-2.svg").then(data => {
@@ -165,22 +165,22 @@ function handleData(data) {
       if (diagramElement.hasChildNodes()) {
         diagramElement.removeChild(diagramElement.childNodes[0])
       }
-      if(pageData.diagramVisible == 1) {
+      if (pageData.diagramVisible == 1) {
         d3.select('.diagram')
           .attr('class', 'diagram active')
           .node()
           .append(beccs)
-      } else if(pageData.diagramVisible == 2) {
+      } else if (pageData.diagramVisible == 2) {
         d3.select('.diagram')
           .attr('class', 'diagram active')
           .node()
-          .append(beccs_static); 
-      } else if(pageData.diagramVisible == 3) {
+          .append(beccs_static);
+      } else if (pageData.diagramVisible == 3) {
         d3.select('.diagram')
           .attr('class', 'diagram active')
           .node()
           .append(carbon);
-      } else if(pageData.diagramVisible == 4) {
+      } else if (pageData.diagramVisible == 4) {
         d3.select('.diagram')
           .attr('class', 'diagram active')
           .node()
@@ -193,9 +193,17 @@ function handleData(data) {
       d3.select('.diagram')
         .attr('class', 'diagram hidden')
     }
+    //SQUARE
+    if (pageData.square) {
+      d3.select('.square')
+        .attr('class', 'square active')
+    } else {
+      d3.select('.square')
+        .attr('class', 'square hidden')
+    }
     //land visual
     if (pageData.landVisible) {
-      if(pageData.landVisible == 1) {
+      if (pageData.landVisible == 1) {
         //delete previous land visual
         if (landElement.hasChildNodes()) {
           landElement.removeChild(landElement.childNodes[0])
@@ -204,7 +212,7 @@ function handleData(data) {
           .attr('class', 'land-visual active')
           .node()
           .append(land_visual_1);
-      } else if(pageData.landVisible == 2) {
+      } else if (pageData.landVisible == 2) {
         //delete previous land visual
         if (landElement.hasChildNodes()) {
           landElement.removeChild(landElement.childNodes[0])
@@ -214,7 +222,7 @@ function handleData(data) {
           .node()
           .append(land_visual_2);
       }
-    } 
+    }
     else {
       //remove this svg when on other pages so that when I return to that svg it renders correctly
       if (landElement.hasChildNodes()) {
@@ -240,28 +248,28 @@ function handleData(data) {
         .attr('class', 'graph-center hidden')
     }
     if (pageData.hover) {
-      var div = 
-      d3.select(".tooltip")
-        .append("div")
-        .attr("class", "hoverText")
-        .style("opacity", 0);
+      var div =
+        d3.select(".tooltip")
+          .append("div")
+          .attr("class", "hoverText")
+          .style("opacity", 0);
 
-        // setup svg & add group
-        let hover = d3.select('.tooltip')
-            .on("mouseover", function(event) {
-                div.transition()
-                  .duration(200)
-                  .style("opacity", 1);
-                div.html(pageData.hoverText)
-                  .style("left", (300) + "px")
-                  .style("top", (150) + "px")
-                  .style("position", "absolute");
-                })
-            .on("mouseout", function(d) {
-                div.transition()
-                    .duration(500)
-                    .style("opacity", 0);
-                });
+      // setup svg & add group
+      let hover = d3.select('.tooltip')
+        .on("mouseover", function (event) {
+          div.transition()
+            .duration(200)
+            .style("opacity", 1);
+          div.html(pageData.hoverText)
+            .style("left", (300) + "px")
+            .style("top", (150) + "px")
+            .style("position", "absolute");
+        })
+        .on("mouseout", function (d) {
+          div.transition()
+            .duration(500)
+            .style("opacity", 0);
+        });
     }
   }
 
@@ -271,8 +279,8 @@ function handleData(data) {
     svg.attr('class', 'graph-center page' + counter);
     //remove previous paths before drawing new ones
     svg.selectAll('path').remove();
-    svg.selectAll('.data-label').remove();    
-    
+    svg.selectAll('.data-label').remove();
+
     // Set the ranges
     var xScale = d3.scaleTime()
       .domain(x)
@@ -289,22 +297,37 @@ function handleData(data) {
 
     //loop through each entity
     graphData.forEach(function (d, i) {
-      svg.append("path")
+      var path = svg.append("path")
         .attr("class", "chart" + counter + " path" + i)
         .attr("d", valueLine(d.value))
         .attr('fill', 'none')
         .attr('stroke-width', 2)
         .attr('stroke', '#070C0D')
 
-      if(pageData.graphVisible && !pageData.historicOnly) {  
+      const length = path.node().getTotalLength();
+
+      function animate() {
+        // Animate the path by setting the initial offset and dasharray and then transition the offset to 0
+        path.attr("stroke-dasharray", length + " " + length)
+          .attr("stroke-dashoffset", length)
+          .attr('class', "chart" + counter + " path" + i + ' animated')
+          .transition()
+          .ease(d3.easeLinear)
+          .attr("stroke-dashoffset", 0)
+          .duration(1000)
+      };
+
+      animate();
+
+      if (pageData.graphVisible && !pageData.historicOnly) {
         //only show data labels for future scenarios
         svg.append("text")
           .datum(graphData[i].value[graphData[i].value.length - 1])
           .attr('class', 'data-label')
           .attr('id', 'page' + counter + '-label' + i)
-          .attr('x', 10)
-          .attr("transform", function(d) { return "translate(" + xScale(d.year) + "," + yScale(d.emissions) + ")"; })
-          .attr("text-anchor", "start")
+          .attr('x', -10)
+          .attr("transform", function (d) { return "translate(" + xScale(d.year) + "," + (yScale(d.emissions) - 15) + ")"; })
+          .attr("text-anchor", "middle")
           .text(graphData[i].value[graphData[i].value.length - 1].Entity);
       } else {
         d3.select('.data-label')
@@ -314,7 +337,7 @@ function handleData(data) {
 
     // axis
     let xAxis = d3.axisBottom(xScale)
-      // .ticks(10)
+    // .ticks(10)
 
     let yAxis = d3.axisLeft(yScale)
       .tickFormat(d3.format("d"))
@@ -359,7 +382,7 @@ function handleData(data) {
       d3.select('.emissions').classed('highlight', false)
       d3.select('.land').classed('highlight', false)
       d3.select('.other').classed('highlight', false)
-    } 
+    }
     else if (pageData.pageHeader == "Beccs") {
       d3.select('.beccs')
         .attr('class', 'nav beccs highlight')
@@ -414,7 +437,7 @@ function handleData(data) {
   prevButton.onclick = function () {
     if (counter <= 0) return;
     counter -= 1;
-    console.log('current',counter)
+    console.log('current', counter)
     //will be replaced with:
     pageCheck();
     highlight();
@@ -423,48 +446,48 @@ function handleData(data) {
   nextButton.onclick = function () {
     if (counter >= numPages - 1) return;
     counter += 1;
-    console.log('current',counter)
+    console.log('current', counter)
     //will be replaced with:
     pageCheck();
     highlight();
   }
 
-  introButton.onclick = function() {
+  introButton.onclick = function () {
     counter = 0;
     pageCheck();
     highlight();
   }
-  beccsButton.onclick = function() {
+  beccsButton.onclick = function () {
     counter = 4;
     pageCheck();
     highlight();
   }
-  emissionsButton.onclick = function() {
+  emissionsButton.onclick = function () {
     counter = 8;
     pageCheck();
     highlight();
   }
-  landButton.onclick = function() {
+  landButton.onclick = function () {
     counter = 17;
     pageCheck();
     highlight();
   }
-  otherButton.onclick = function() {
+  otherButton.onclick = function () {
     counter = 21;
     pageCheck();
     highlight();
   }
-  conclusionButton.onclick = function() {
+  conclusionButton.onclick = function () {
     counter = 24;
     pageCheck();
     highlight();
   }
-  leftButton.onclick = function() {
+  leftButton.onclick = function () {
     counter = 21;
     pageCheck();
     highlight();
   }
-  rightButton.onclick = function() {
+  rightButton.onclick = function () {
     counter = 24;
     pageCheck();
     highlight();
