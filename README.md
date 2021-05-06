@@ -8,9 +8,9 @@ In 2018, the International Panel on Climate Change (IPCC) published a report dec
 ## Project Preview
 ![preview image](preview.png)
 ![image 1](1.png)
-![image 2](1.png)
-![image 3](1.png)
-![image 4](1.png)
+![image 2](2.png)
+![image 3](3.png)
+![image 4](4.png)
 
 #### Acknowledgements
 Thank you to Daniel Sauter and Alec Barrett for your help and support.
