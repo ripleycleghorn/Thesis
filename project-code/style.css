@@ -333,8 +333,12 @@ svg {
     fill: #0468BF;
 }
 
-#page13-label3, #page13-label2, #page13-label1, #page13-label0, #page14-label2, #page14-label1, #page14-label0, #page15-label0, #page16-label0, #page16-label4, #page16-label3 {
+#page13-label3, #page13-label2, #page13-label1, #page14-label2, #page14-label1, #page16-label4, #page16-label3, #page16-label0 {
     fill: #F2F2F2;
+}
+
+#page13-label0, #page12-label0, #page14-label0, #page15-label0 {
+    fill: #070C0D;
 }
 
 #page14-label3, #page15-label3 {

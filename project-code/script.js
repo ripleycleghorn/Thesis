@@ -305,30 +305,41 @@ function handleData(data) {
         .attr('stroke', '#070C0D')
 
       const length = path.node().getTotalLength();
-
+      var pathNum = counter + '-' + i;
+      var staticPatharray = ['12-0', '14-0', '14-4', '15-0', '15-4', '15-3', '16-0', '16-1', '16-2', '16-3', '16-4']
+      var staticDatalabelarray = ['12-0', '13-0', '14-0', '14-4', '15-0', '15-4', '15-3', '16-0','16-1', '16-2', '16-3', '16-4']
+      
       function animate() {
         // Animate the path by setting the initial offset and dasharray and then transition the offset to 0
         path.attr("stroke-dasharray", length + " " + length)
           .attr("stroke-dashoffset", length)
-          .attr('class', "chart" + counter + " path" + i + ' animated')
           .transition()
           .ease(d3.easeLinear)
           .attr("stroke-dashoffset", 0)
           .duration(1000)
       };
 
-      animate();
-
-      if (pageData.graphVisible && !pageData.historicOnly) {
-        //only show data labels for future scenarios
+      function dataLabel() {
         svg.append("text")
-          .datum(graphData[i].value[graphData[i].value.length - 1])
-          .attr('class', 'data-label')
-          .attr('id', 'page' + counter + '-label' + i)
-          .attr('x', -10)
-          .attr("transform", function (d) { return "translate(" + xScale(d.year) + "," + (yScale(d.emissions) - 15) + ")"; })
-          .attr("text-anchor", "middle")
-          .text(graphData[i].value[graphData[i].value.length - 1].Entity);
+            .datum(graphData[i].value[graphData[i].value.length - 1])
+            .attr('class', 'data-label')
+            .attr('id', 'page' + counter + '-label' + i)
+            .attr('x', -10)
+            .attr("transform", function (d) { return "translate(" + xScale(d.year) + "," + (yScale(d.emissions) - 15) + ")"; })
+            .attr("text-anchor", "middle")
+            .text(graphData[i].value[graphData[i].value.length - 1].Entity);
+      }
+      //only animate new lines
+      if (!staticPatharray.includes(pathNum)) {
+        animate();
+      }
+      //only show data labels for future scenarios, add delay the first time the label is shown
+      if (pageData.graphVisible && counter > 11) {
+        if (!staticDatalabelarray.includes(pathNum)) {
+          setTimeout(() => {dataLabel()}, 1500);
+        } else {
+          dataLabel();
+        };
       } else {
         d3.select('.data-label')
           .attr('class', 'data-label hidden')
