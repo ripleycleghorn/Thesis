@@ -132,7 +132,7 @@
   },
   "page-13": {
     "text": "",
-    "annotation": "Absent any changes, temperatures are set to rise to at least 39°F above pre-industrial levels. This is referred to as the <span class='baseline'>baseline</span> scenario.",
+    "annotation": "Absent any changes, temperatures are set to rise to at least 8°F above pre-industrial levels. This is referred to as the <span class='baseline'>baseline</span> scenario.",
     "graphVisible": true,
     "diagramVisible": false,
     "historicOnly": false,
@@ -144,7 +144,7 @@
   },
   "page-14": {
     "text": "",
-    "annotation": "If all current climate mitigation <span class='policies'>policies</span> are enforced, the trajectory would look something like this: where temperatures might rise by about 37°F.",
+    "annotation": "If all current climate mitigation <span class='policies'>policies</span> are enforced, the trajectory would look something like this: where temperatures might rise by about 5°F.",
     "graphVisible": true,
     "diagramVisible": false,
     "historicOnly": false,
@@ -156,7 +156,7 @@
   },
   "page-15": {
     "text": "",
-    "annotation": "Finally, there are scenarios that lead us to stay below a 35°F rise, corresponding to <span class='low'>1.5°C</span> and <span class='high'>2°C</span>, this is the threshold that climate scientists agree will help us to avoid unpredictable climate reactions.",
+    "annotation": "Finally, there are scenarios that lead us to stay below a 4°F rise, corresponding to <span class='low'>1.5°C</span> and <span class='high'>2°C</span>, this is the threshold that climate scientists agree will help us to avoid unpredictable climate reactions.",
     "graphVisible": true,
     "diagramVisible": false,
     "historicOnly": false,
