@@ -222,6 +222,12 @@ div {
     filter: grayscale(100%);
 }
 
+.image.active > img {
+    animation: fade-in .5s forwards ease-in;
+    animation-delay: 1s;
+    opacity: 0;
+}
+
 .annotation {
     padding: 10px;
     font-family: 'Source Sans Pro', sans-serif;
