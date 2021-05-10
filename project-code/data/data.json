@@ -8,7 +8,7 @@
     "pageHeader": "Intro"
   },
   "page-1": {
-    "text": ["Climate scientists agree: the earth is warming largely due to greenhouse gas emissions. Logically, the most important step is reducing emissions.  But one concern is dealing with historic emissions trapped in the atmosphere. (1/3)"],
+    "text": ["Because of the rapid rise in global temperatures, mitigating climate change will be one of the greatest challenges of this century. But many of the technologies being developed in response to this crisis may in fact reinforce historic drivers of global warming."],
     "summary": "Expand for details (1/3)",
     "annotation": "",
     "graphVisible": false,
@@ -18,7 +18,7 @@
   "page-2": {
     "text": ["In a race against the clock, climate governance is embracing a variety of <span id='geoengineering' class='tooltip teal'>geoengineering</span> technologies to eliminate some of these emissions. However, given that these solutions aren’t being paired with meaningful fossil fuel reductions, they will most likely be used to justify continuing business-as-usual practices."],
     "annotation": "",
-    "summary": "Why reject geoengineering? (2/3)",
+    "summary": "Expand for details (2/3)",
     "graphVisible": false,
     "diagramVisible": false,
     "pageHeader": "Intro",
@@ -26,31 +26,23 @@
     "hoverText": "Geoengineering: To make a large-scale effort to modify the earth or its environment, especially to counteract global warming"
   },
   "page-3": {
-      "text": ["This project looks at the nuances of one of these technologies called Bioenergy with Carbon Capture and Storage, or BECCS. So how does BECCS work?"],
+      "text": ["In this project, you will see some of the nuances of a widely proposed CO2 removal technology called Bioenergy with Carbon Capture and Storage, or BECCS. The U.S. and U.K. governments are heavily promoting BECCS to mitigate future emissions, which is why it’s important to take a critical look now."],
     "annotation": "",
-    "summary": "This project explores the nuances of BECCS (3/3)",
+    "summary": "Expand for details (3/3)",
     "graphVisible": false,
     "diagramVisible": false,
     "pageHeader": "Intro"
   },
   "page-4": {
-    "text": ["'The idea is that as biomass grows, it will continuously capture CO2 from the atmosphere. When it’s burned for energy, the waste CO2 will also be captured and stored underground. The assumption is that this will result in negative emissions' because more carbon is being stored than emitted <sup>1</sup>."],
+    "text": ["Crops capture C02, crops burned, CO2 stored underground"],
     "annotation": "",
-    "summary": "Crops capture C02, crops burned, CO2 stored underground",
+    "summary": "So how does BECCS work?",
     "graphVisible": false,
     "diagramVisible": 1,
     "pageHeader": "Beccs"
   },
   "page-5": {
-    "text": ["For example, rather than planting a diverse forest ecosystem, usually only one, fast-growing tree species is planted (referred to as monocropping) which requires large amounts of land, water and chemicals <sup>1</sup>. Even more, BECCS has hardly been tested."],
-    "annotation": "",
-    "summary": "There are many flaws to this logic",
-    "graphVisible": false,
-    "diagramVisible": 2,
-    "pageHeader": "Beccs"
-  },
-  "page-6": {
-    "text": ["This is one of them, called the Decatur ethanol refinery, and it’s owned by one of the largest agribusiness in the world. It is essentially a proof of concept funded by the Department of Energy. It’s not a negative emitter, since it’s powered by fossil fuels and uses energy-intensive crops. In fact, it only captures 16% of carbon emitted. <sup>2</sup>"],
+    "text": ["This is one of the few working facilities, the Decatur ethanol refinery, owned by one of the largest agribusiness in the world and funded by the Department of Energy. It’s not a negative emitter, since it’s powered by fossil fuels and only captures 16% of carbon emitted <sup>2</sup>."],
     "annotation": "",
     "summary": "Only a few plants exist worldwide",
     "graphVisible": false,
@@ -59,15 +51,15 @@
     "image": "./images/adm-beccs.jpg",
     "square": true
   },
-  "page-7": {
-    "text": "We can look at past greenhouse gas emissions to understand BECCS' future role",
+  "page-6": {
+    "text": "Let’s look at historic greenhouse gas emissions to understand the role BECCS might play in the future.",
     "annotation": "",
     "summary": "Let's back up",
     "graphVisible": false,
     "diagramVisible": false,
     "pageHeader": "Beccs"
   },
-  "page-8": {
+  "page-7": {
     "text": "One gigaton = one billion tons, measuring global emissions",
     "annotation": "Edison invents the central power station in 1882. At this time, global GHG emissions were nearing only 1 gigaton.",
     "summary": "What is a gigaton?",
@@ -80,9 +72,9 @@
     "filterLineend": 1885,
     "pageHeader": "Emissions"
   },
-  "page-9": {
+  "page-8": {
     "text": "",
-    "annotation": "Emissions quickly rise. But not all are equitably produced; by 1970, the U.S. and U.K. were responsible for <span class='tooltip teal'>75%</span> of emissions worldwide.",
+    "annotation": "Emissions quickly rise. But not all were evenly produced; by 1970, the U.S. and U.K. were responsible for <span class='tooltip teal'>75%</span> of emissions worldwide.",
     "graphVisible": true,
     "diagramVisible": false,
     "historicOnly": true,
@@ -94,7 +86,7 @@
     "hover": true,
     "hoverText": "Given this stark statistic, the concept of 'Common But Differentiated Responsibility' emerged, recognizing the historical responsibility of industrialized countries for global environmental problems, and implying they take far-reaching measures in responding meaningfully to such problems <sup>3</sup>."
   },
-  "page-10": {
+  "page-9": {
     "text": "",
     "annotation": "Today global emissions have reached more than 35 gigatons per year, and are projected to continue.",
     "graphVisible": true,
@@ -106,9 +98,21 @@
     "filterLineend": 2019,
     "pageHeader": "Emissions"
   },
+  "page-10": {
+    "text": "",
+    "annotation": "This accumulation of emissions corresponds to a rise in temperature of 2°F. If we compare this rise to body temperature, a 2°F increase <i>signals a problem.</i>",
+    "graphVisible": true,
+    "diagramVisible": false,
+    "historicOnly": true,
+    "filterAxisstart": 1860,
+    "filterAxisend": 2019,
+    "filterLinestart": 1860,
+    "filterLineend": 2019,
+    "pageHeader": "Emissions"
+  },
   "page-11": {
     "text": "",
-    "annotation": "This accumulation of emissions corresponds to a rise in temperature of 1.16°C (2°F). If we compare this rise to body temperature, a 2°F increase <i>signals a problem.</i>",
+    "annotation": "Now let’s look forward to possible future pathways.",
     "graphVisible": true,
     "diagramVisible": false,
     "historicOnly": true,
@@ -120,19 +124,19 @@
   },
   "page-12": {
     "text": "",
-    "annotation": "Now let’s look forward to possible future scenarios.",
+    "annotation": "Absent any changes, temperatures are set to rise by at least 8°F. This is referred to as <span class='baseline'>baseline</span>.",
     "graphVisible": true,
     "diagramVisible": false,
-    "historicOnly": true,
-    "filterAxisstart": 1860,
-    "filterAxisend": 2019,
-    "filterLinestart": 1860,
-    "filterLineend": 2019,
+    "historicOnly": false,
+    "filterAxisstart": 2010,
+    "filterAxisend": 2100,
+    "filterLinestart": 2010,
+    "filterLineend": 2100,
     "pageHeader": "Emissions"
   },
   "page-13": {
     "text": "",
-    "annotation": "Absent any changes, temperatures are set to rise to at least 8°F above pre-industrial levels. This is referred to as the <span class='baseline'>baseline</span> scenario.",
+    "annotation": "If all current climate mitigation <span class='policies'>policies</span> are enforced, the trajectory would look something like this: temperatures might rise by about 5°F.",
     "graphVisible": true,
     "diagramVisible": false,
     "historicOnly": false,
@@ -144,7 +148,7 @@
   },
   "page-14": {
     "text": "",
-    "annotation": "If all current climate mitigation <span class='policies'>policies</span> are enforced, the trajectory would look something like this: where temperatures might rise by about 5°F.",
+    "annotation": "Finally, there are pathways that lead us to stay below a 4°F rise, corresponding to <span class='low'>1.5°C</span> and <span class='high'>2°C</span>, a threshold that will help us avoid unpredictable climate reactions.",
     "graphVisible": true,
     "diagramVisible": false,
     "historicOnly": false,
@@ -156,18 +160,6 @@
   },
   "page-15": {
     "text": "",
-    "annotation": "Finally, there are scenarios that lead us to stay below a 4°F rise, corresponding to <span class='low'>1.5°C</span> and <span class='high'>2°C</span>, this is the threshold that climate scientists agree will help us to avoid unpredictable climate reactions.",
-    "graphVisible": true,
-    "diagramVisible": false,
-    "historicOnly": false,
-    "filterAxisstart": 2010,
-    "filterAxisend": 2100,
-    "filterLinestart": 2010,
-    "filterLineend": 2100,
-    "pageHeader": "Emissions"
-  },
-  "page-16": {
-    "text": "",
     "annotation": "One reason to be concerned about BECCS in particular is because it is one of the major players in these pathways. In fact of the 116 scenarios that would most likely keep global temperatures below 1.5 degrees, <span class='grey'>BECCS is included in 80% of them.</span>",
     "graphVisible": true,
     "diagramVisible": false,
@@ -178,7 +170,7 @@
     "filterLineend": 2100,
     "pageHeader": "Emissions"
   },
-  "page-17": {
+  "page-16": {
     "text": ["One reason is the amount of resources BECCS would require. Let's look at how much land would be needed for the crop plantations and factories."],
     "annotation": "",
     "summary": "So why should we be concerned about this?",
@@ -188,7 +180,7 @@
     "historicOnly": false,
     "pageHeader": "Land"
   },
-  "page-18": {
+  "page-17": {
     "text": "",
     "annotation": "",
     "graphVisible": false,
@@ -197,7 +189,7 @@
     "historicOnly": false,
     "pageHeader": "Land"
   },
-  "page-19": {
+  "page-18": {
     "text": "",
     "annotation": "",
     "graphVisible": false,
@@ -206,7 +198,7 @@
     "historicOnly": false,
     "pageHeader": "Land"
   },
-  "page-20": {
+  "page-19": {
     "text": ["See more critiques or jump to conclusion?"],
     "annotation": "",
     "summary": "Choose your ending",
@@ -219,8 +211,8 @@
     "leftButtontext": "Critique",
     "rightButtontext": "Conclusion"
   },
-  "page-21": {
-    "text": ["Land use is just one of many concerning factors that isn’t often discussed by the entities promoting BECCS, which include fossil fuel companies, like Shell. Further concerns surround the storage of liquid CO2;  in addition to potential leaks, there is the worry that the CO2 may not be stored at all; some of these companies are already using it to extract crude oil from an otherwise depleted field, a process called Enhanced Oil Recovery."],
+  "page-20": {
+    "text": ["Land use is just one of many concerning factors that isn’t often discussed by the entities promoting BECCS, which include fossil fuel companies, like Shell. Further concerns surround the storage (or lack thereof) of liquid CO2; some of these companies are already using the CO2 to extract crude oil from an otherwise depleted field, a process called Enhanced Oil Recovery."],
     "annotation": "",
     "summary": "Who is backing BECCS?",
     "graphVisible": false,
@@ -230,7 +222,7 @@
     "pageHeader": "Other",
     "image": "./images/shell.jpg"
   },
-  "page-22": {
+  "page-21": {
     "text": ["Additionally, BECCS models often don't account for the entire carbon lifecycle."],
     "annotation": "",
     "summary": "BECCS is not a negative emitter",
@@ -238,7 +230,7 @@
     "diagramVisible": 4,
     "pageHeader": "Other"
   },
-  "page-23": {
+  "page-22": {
     "text": ["BECCS relies on industrial agriculture, which itself is responsible for ⅓ of all greenhouse gas emissions."],
     "annotation": "",
     "summary": "Let’s add in missing emissions",
@@ -246,12 +238,49 @@
     "diagramVisible": 3,
     "pageHeader": "Other"
   },
-  "page-24": {
-    "text": ["Strategies like BECCS are not viable because they delay the necessity for an immediate and systemic reduction of fossil fuels by depending on the illusion of ‘offsetting’, or the idea that we can remove what we emit. However, it’s hard to believe we will eventually create an industrial-scale technology with no serious social or ecological ramifications.<br><br>But there are many other alternative pathways that don’t rely on risky interventions, and have existed for centuries. One example of this is community-based forest management. For example, the peasant food web is already able to feed 70% of the population while using less than 25% of natural resources. If we reject technologies like BECCS while phasing out fossil fuels, we will begin to see the abundance of solutions that lay within reach."],
+  "page-23": {
     "annotation": "",
+    "text": "There are many other alternative pathways that don’t rely on risky interventions, and have existed for centuries. Since BECCS uses industrial agriculture, we can start by transforming that system. Let's look at one example.",
+    "summary": "So what can we do?",
     "graphVisible": false,
     "diagramVisible": false,
     "pageHeader": "Conclusion",
-    "image": "./images/forest_management.jpg"
+    "image": ""
+  },
+  "page-24": {
+    "text": ["Agroecology is the practice of sustainable farming based on traditional methods. It’s also a political movement, with an aim to make traditional agriculture more economically viable and autonomous for small-scale farmers."],
+    "annotation": "",
+    "summary": "What is agroecology?",
+    "graphVisible": false,
+    "diagramVisible": false,
+    "pageHeader": "Conclusion",
+    "image": "./images/colmena.jpg"
+  },
+  "page-25": {
+    "text": ["Most of these farmers already use agroecology, and they feed an estimated 70% of the population while using less than a quarter of agricultural land. Agroecology embraces a holistic approach to the food system, rather than only focusing on individual crop yields."],
+    "annotation": "",
+    "summary": "Why agroecology?",
+    "graphVisible": false,
+    "diagramVisible": false,
+    "pageHeader": "Conclusion",
+    "percent-1": true
+  },
+  "page-26": {
+    "text": ["If we reject technologies like BECCS while simultaneously phasing out fossil fuels, we will begin to see the abundance of solutions that lay within reach."],
+    "annotation": "",
+    "summary": "Conclusion",
+    "graphVisible": false,
+    "diagramVisible": false,
+    "pageHeader": "Conclusion",
+    "image": "./images/farm.jpg"
+  },
+  "page-27": {
+    "text": [""],
+    "annotation": "",
+    "summary": "References",
+    "graphVisible": false,
+    "diagramVisible": false,
+    "pageHeader": "Conclusion",
+    "image": "./images/farm.jpg"
   }
 }

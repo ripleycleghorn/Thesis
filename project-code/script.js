@@ -4,7 +4,7 @@ const nextButton = document.getElementById("arrow-right");
 const introButton = document.getElementById("introduction");
 const beccsButton = document.getElementById("beccs");
 const emissionsButton = document.getElementById("emissions");
-const landButton = document.getElementById("land");
+const landButton = document.getElementById("land-use");
 const otherButton = document.getElementById("other");
 const conclusionButton = document.getElementById("conclusion");
 const diagramElement = document.getElementById("diagram");
@@ -271,6 +271,40 @@ function handleData(data) {
             .style("opacity", 0);
         });
     }
+    if(pageData['percent-1']) {
+      var percent_counter = 0
+      while(percent_counter < 10) {
+        d3.select('#container')
+          .append('div')
+          .attr('class', 'human active')
+          .attr('id', 'human-percent-' + percent_counter)
+        percent_counter++
+      }
+      d3.select('.human-text')
+        .attr('class', 'human-text active')
+    } else {
+      d3.selectAll('.human')
+        .attr('class', 'human hidden')
+      d3.select('.human-text')
+        .attr('class', 'human-text hidden')
+    }
+    if(pageData['percent-2']) {
+      var percent_counter = 0
+      while(percent_counter < 10) {
+        d3.select('#container')
+          .append('div')
+          .attr('class', 'land active')
+          .attr('id', 'land-percent-' + percent_counter)
+        percent_counter++
+      }
+      d3.select('.land-text')
+        .attr('class', 'land-text active')
+    } else {
+      d3.selectAll('.land')
+        .attr('class', 'land hidden')
+      d3.select('.land-text')
+        .attr('class', 'land-text hidden')
+    }
   }
 
   function drawGraph(x, y, graphData) {
@@ -306,8 +340,8 @@ function handleData(data) {
 
       const length = path.node().getTotalLength();
       var pathNum = counter + '-' + i;
-      var staticPatharray = ['12-0', '14-0', '14-4', '15-0', '15-4', '15-3', '16-0', '16-1', '16-2', '16-3', '16-4']
-      var staticDatalabelarray = ['12-0', '13-0', '14-0', '14-4', '15-0', '15-4', '15-3', '16-0','16-1', '16-2', '16-3', '16-4']
+      var staticPatharray = ['11-0', '13-0', '13-4', '14-0', '14-4', '14-3', '15-0', '15-1', '15-2', '15-3', '15-4']
+      var staticDatalabelarray = ['11-0', '12-0', '13-0', '13-4', '14-0', '14-4', '14-3', '15-0','15-1', '15-2', '15-3', '15-4']
       
       function animate() {
         // Animate the path by setting the initial offset and dasharray and then transition the offset to 0
@@ -334,7 +368,7 @@ function handleData(data) {
         animate();
       }
       //only show data labels for future scenarios, add delay the first time the label is shown
-      if (pageData.graphVisible && counter > 11) {
+      if (pageData.graphVisible && counter > 10) {
         if (!staticDatalabelarray.includes(pathNum)) {
           setTimeout(() => {dataLabel()}, 1500);
         } else {
@@ -391,7 +425,7 @@ function handleData(data) {
       //remove other headers
       d3.select('.beccs').classed('highlight', false)
       d3.select('.emissions').classed('highlight', false)
-      d3.select('.land').classed('highlight', false)
+      d3.select('.land-use').classed('highlight', false)
       d3.select('.other').classed('highlight', false)
     }
     else if (pageData.pageHeader == "Beccs") {
@@ -400,7 +434,7 @@ function handleData(data) {
       //remove other headers
       d3.select('.introduction').classed('highlight', false)
       d3.select('.emissions').classed('highlight', false)
-      d3.select('.land').classed('highlight', false)
+      d3.select('.land-use').classed('highlight', false)
       d3.select('.other').classed('highlight', false)
     }
     else if (pageData.pageHeader == "Emissions") {
@@ -409,13 +443,13 @@ function handleData(data) {
       //remove other headers
       d3.select('.introduction').classed('highlight', false)
       d3.select('.beccs').classed('highlight', false)
-      d3.select('.land').classed('highlight', false)
+      d3.select('.land-use').classed('highlight', false)
       d3.select('.other').classed('highlight', false)
       d3.select('.conclusion').classed('highlight', false)
     }
     else if (pageData.pageHeader == "Land") {
-      d3.select('.land')
-        .attr('class', 'nav land highlight')
+      d3.select('.land-use')
+        .attr('class', 'nav land-use highlight')
       //remove other headers
       d3.select('.introduction').classed('highlight', false)
       d3.select('.beccs').classed('highlight', false)
@@ -430,7 +464,7 @@ function handleData(data) {
       d3.select('.introduction').classed('highlight', false)
       d3.select('.beccs').classed('highlight', false)
       d3.select('.emissions').classed('highlight', false)
-      d3.select('.land').classed('highlight', false)
+      d3.select('.land-use').classed('highlight', false)
       d3.select('.conclusion').classed('highlight', false)
     }
     else if (pageData.pageHeader == "Conclusion") {
@@ -440,7 +474,7 @@ function handleData(data) {
       d3.select('.introduction').classed('highlight', false)
       d3.select('.beccs').classed('highlight', false)
       d3.select('.emissions').classed('highlight', false)
-      d3.select('.land').classed('highlight', false)
+      d3.select('.land-use').classed('highlight', false)
       d3.select('.other').classed('highlight', false)
     }
   }
@@ -474,32 +508,32 @@ function handleData(data) {
     highlight();
   }
   emissionsButton.onclick = function () {
-    counter = 8;
+    counter = 7;
     pageCheck();
     highlight();
   }
   landButton.onclick = function () {
-    counter = 17;
+    counter = 16;
     pageCheck();
     highlight();
   }
   otherButton.onclick = function () {
-    counter = 21;
+    counter = 20;
     pageCheck();
     highlight();
   }
   conclusionButton.onclick = function () {
-    counter = 24;
+    counter = 23;
     pageCheck();
     highlight();
   }
   leftButton.onclick = function () {
-    counter = 21;
+    counter = 20;
     pageCheck();
     highlight();
   }
   rightButton.onclick = function () {
-    counter = 24;
+    counter = 23;
     pageCheck();
     highlight();
   }
