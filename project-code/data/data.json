@@ -16,7 +16,7 @@
     "pageHeader": "Intro"
   },
   "page-2": {
-    "text": ["In a race against the clock, climate governance is embracing a variety of <span id='geoengineering' class='tooltip teal'>geoengineering</span> technologies to eliminate some of these emissions. However, given that these solutions aren’t being paired with meaningful fossil fuel reductions, they will most likely be used to justify continuing business-as-usual practices."],
+    "text": ["In a race against the clock, climate governance is embracing a variety of <span id='geoengineering' class='tooltip teal'>geoengineering</span> technologies to eliminate some of these emissions. But given that these solutions aren’t being paired with meaningful fossil fuel reductions, they will most likely be used to justify continuing business-as-usual practices."],
     "annotation": "",
     "summary": "Introduction (2/3)",
     "graphVisible": false,
