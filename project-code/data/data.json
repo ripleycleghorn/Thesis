@@ -9,7 +9,7 @@
   },
   "page-1": {
     "text": ["Because of the rapid rise in global temperatures, mitigating climate change will be one of the greatest challenges of this century. But many of the technologies being developed in response to this crisis may in fact reinforce historic drivers of global warming."],
-    "summary": "Expand for details (1/3)",
+    "summary": "Introduction (1/3)",
     "annotation": "",
     "graphVisible": false,
     "diagramVisible": false,
@@ -18,7 +18,7 @@
   "page-2": {
     "text": ["In a race against the clock, climate governance is embracing a variety of <span id='geoengineering' class='tooltip teal'>geoengineering</span> technologies to eliminate some of these emissions. However, given that these solutions aren’t being paired with meaningful fossil fuel reductions, they will most likely be used to justify continuing business-as-usual practices."],
     "annotation": "",
-    "summary": "Expand for details (2/3)",
+    "summary": "Introduction (2/3)",
     "graphVisible": false,
     "diagramVisible": false,
     "pageHeader": "Intro",
@@ -28,7 +28,7 @@
   "page-3": {
       "text": ["In this project, you will see some of the nuances of a widely proposed CO2 removal technology called Bioenergy with Carbon Capture and Storage, or BECCS. The U.S. and U.K. governments are heavily promoting BECCS to mitigate future emissions, which is why it’s important to take a critical look now."],
     "annotation": "",
-    "summary": "Expand for details (3/3)",
+    "summary": "Introduction (3/3)",
     "graphVisible": false,
     "diagramVisible": false,
     "pageHeader": "Intro"
@@ -44,7 +44,7 @@
   "page-5": {
     "text": ["This is one of the few working facilities, the Decatur ethanol refinery, owned by one of the largest agribusiness in the world and funded by the Department of Energy. It’s not a negative emitter, since it’s powered by fossil fuels and only captures 16% of carbon emitted <sup>2</sup>."],
     "annotation": "",
-    "summary": "Only a few plants exist worldwide",
+    "summary": "Only a few plants exist",
     "graphVisible": false,
     "diagramVisible": false,
     "pageHeader": "Beccs",
