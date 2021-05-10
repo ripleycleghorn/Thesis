@@ -228,6 +228,8 @@ div {
     font-size: 17px;
     grid-column: 6 / span 2;
     grid-row: 5 / span 4;
+    padding-top: 8px;
+    padding-bottom: 8px;
 }
 
 #annotation7 {
