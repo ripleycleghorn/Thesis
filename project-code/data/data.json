@@ -34,7 +34,7 @@
     "pageHeader": "Intro"
   },
   "page-4": {
-    "text": ["Crops capture C02, crops burned, CO2 stored underground"],
+    "text": ["Crops capture CO2, crops burned for energy, CO2 stored underground.<br><br>This supposedly results in negative emissions if more carbon is being captured than emitted."],
     "annotation": "",
     "summary": "So how does BECCS work?",
     "graphVisible": false,
@@ -52,7 +52,7 @@
     "square": true
   },
   "page-6": {
-    "text": "Let’s look at historic greenhouse gas emissions to understand the role BECCS might play in the future.",
+    "text": "We can look at historic greenhouse gas emissions to understand the role BECCS might play in the future.",
     "annotation": "",
     "summary": "Let's back up",
     "graphVisible": false,
@@ -136,7 +136,7 @@
   },
   "page-13": {
     "text": "",
-    "annotation": "If all current climate mitigation <span class='policies'>policies</span> are enforced, the trajectory would look something like this: temperatures might rise by about 5°F.",
+    "annotation": "If all current climate mitigation <span class='policies'>policies</span> are enforced, temperatures might rise by about 5°F.",
     "graphVisible": true,
     "diagramVisible": false,
     "historicOnly": false,
@@ -148,7 +148,7 @@
   },
   "page-14": {
     "text": "",
-    "annotation": "Finally, there are pathways that lead us to stay below a 4°F rise, corresponding to <span class='low'>1.5°C</span> and <span class='high'>2°C</span>, a threshold that will help us avoid unpredictable climate reactions.",
+    "annotation": "Finally, the last two stay below a 4°F rise, representing the <span class='low'>1.5°C</span> and <span class='high'>2°C</span> pathways, <span class='low'>this</span> pathway is our best bet; it will help us avoid unpredictable climate reactions.",
     "graphVisible": true,
     "diagramVisible": false,
     "historicOnly": false,
@@ -160,7 +160,7 @@
   },
   "page-15": {
     "text": "",
-    "annotation": "One reason to be concerned about BECCS in particular is because it is one of the major players in these pathways. In fact of the 116 scenarios that would most likely keep global temperatures below 1.5 degrees, <span class='grey'>BECCS is included in 80% of them.</span>",
+    "annotation": "One reason to be concerned about BECCS in particular is because it is one of the major players in this pathway. In fact of the 116 models that would most likely keep global temperatures below <span class='low'>1.5°C</span>, <span class='grey'>BECCS is included in 80% of them.</span>",
     "graphVisible": true,
     "diagramVisible": false,
     "historicOnly": false,
@@ -206,7 +206,7 @@
     "diagramVisible": false,
     "landVisible": false,
     "historicOnly": false,
-    "pageHeader": "Land",
+    "pageHeader": "Other",
     "button": true,
     "leftButtontext": "Critique",
     "rightButtontext": "Conclusion"
@@ -223,7 +223,7 @@
     "image": "./images/shell.jpg"
   },
   "page-21": {
-    "text": ["Additionally, BECCS models often don't account for the entire carbon lifecycle."],
+    "text": ["Models often don't account for the entire carbon lifecycle. Let’s add in missing emissions."],
     "annotation": "",
     "summary": "BECCS is not a negative emitter",
     "graphVisible": false,
@@ -231,9 +231,9 @@
     "pageHeader": "Other"
   },
   "page-22": {
-    "text": ["BECCS relies on industrial agriculture, which itself is responsible for ⅓ of all greenhouse gas emissions."],
+    "text": ["Which itself is responsible for ⅓ of all greenhouse gas emissions. Many of these additional emissions are a biproduct of that process."],
     "annotation": "",
-    "summary": "Let’s add in missing emissions",
+    "summary": "BECCS relies on industrial agriculture",
     "graphVisible": false,
     "diagramVisible": 3,
     "pageHeader": "Other"

@@ -111,15 +111,16 @@ function handleData(data) {
     }
     //text data
     if (pageData.text || pageData.summary) {
-      d3.select('.text')
-        .attr('class', 'text active')
+      d3.select('.summary')
+        .attr('class', 'summary active')
         .attr('id', 'text' + counter)
-        .html(pageData.text)
-        .append('summary')
         .html(pageData.summary)
+        .append('div')
+        .attr('class', 'text')
+        .html(pageData.text)
     } else {
-      d3.select('.text')
-        .attr('class', 'text hidden')
+      d3.select('.summary')
+        .attr('class', 'summary hidden')
     }
     //image data
     if (pageData.image) {
@@ -396,14 +397,16 @@ function handleData(data) {
       .attr("id", "y-axis")
 
     // text label for the y axis
-    svg.append("text")
-      .attr('class', 'label')
+    if(document.getElementById("label") == null) {
+      svg.append("text")
+      .attr('id', 'label')
       .attr("transform", "rotate(-90)")
       .attr("y", 0 - margin.left)
       .attr("x", 0 - (height / 2))
       .attr("dy", "1em")
       .style("text-anchor", "middle")
-      .text("Gigatons");
+      .text("Gigatons of CO2");
+    }
 
     //append axis
     d3.select('#x-axis')
@@ -518,7 +521,7 @@ function handleData(data) {
     highlight();
   }
   otherButton.onclick = function () {
-    counter = 20;
+    counter = 19;
     pageCheck();
     highlight();
   }
