@@ -271,6 +271,8 @@ function handleData(data) {
             .duration(500)
             .style("opacity", 0);
         });
+    } else {
+      svg.selectAll('.hoverText').remove();
     }
     if(pageData['percent-1']) {
       var percent_counter = 0
