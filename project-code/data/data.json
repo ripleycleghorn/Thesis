@@ -274,7 +274,7 @@
     "image": "./images/farm.jpg"
   },
   "page-27": {
-    "text": [""],
+    "text": ["Global CO2 Emissions, Our World in Data", "Future GHG Emissions, Our World in Data", "Big Bad Fix, Biofuel Watch 2017", "BECCS, Geoengineering Monitor 2018", "Rightsizing CO2 Removal, Field and Mach 2017", "The Danger of BECCS, FOEI 2020"],
     "annotation": "",
     "summary": "References",
     "graphVisible": false,

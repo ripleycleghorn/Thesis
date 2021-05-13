@@ -122,6 +122,19 @@ function handleData(data) {
         .append('div')
         .attr('class', 'text')
         .html(pageData.text)
+      if(counter == 27) {
+        //loop through references
+        d3.select('.summary')
+          .attr('class', 'summary active')
+          .attr('id', 'text' + counter)
+          .html(pageData.summary)
+        pageData.text.forEach((item) => {
+          d3.select('.summary')
+            .append('div')
+            .attr('class', 'text')
+            .html(item)
+        })
+      }
     } else {
       d3.select('.summary')
         .attr('class', 'summary hidden')
