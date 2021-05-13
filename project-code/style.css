@@ -196,21 +196,19 @@ div {
     grid-row: 7 / span 5;
 }
 
-.square.active {
-    /* dynanimcally calculate based on viewport i.e. sqrt(height * width*.16) */
-    height: 297px;
-    width: 297px;
-    grid-column: 2 / span 4;
-    grid-row: 3 / span 4;
-    background-color: #070C0D;
-    color: #F2F2F2;
-    font-size: 30px;
-    padding-left: 7px;
-    padding-top: 7px;
+.square-container {
+    grid-column: 2 / span 8;
+    grid-row: 3 / span 10;
     z-index: 1000;
+
+}
+
+.square-canvas.active {
+    /* dynanimcally calculate based on viewport i.e. sqrt(height * width*.16) */
     opacity: 0;
-    animation: mid-fade 1s forwards ease-in;
+    animation: fade-in 1s forwards ease-in;
     animation-delay: 5s;
+    z-index: 1000;
 }
 
 .image.active {
@@ -352,8 +350,8 @@ div {
 }
 
 svg {
-    height: 550px;
-    width: 880px;
+    height: 40vw;
+    width: 60vw;
 }
 
 .human-text, .land-text {

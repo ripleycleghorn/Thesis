@@ -9,6 +9,7 @@ const otherButton = document.getElementById("other");
 const conclusionButton = document.getElementById("conclusion");
 const diagramElement = document.getElementById("diagram");
 const landElement = document.getElementById('land-visual');
+const squareElement = document.getElementById('square');
 const leftButton = document.getElementById('left-button');
 const rightButton = document.getElementById('right-button');
 
@@ -16,10 +17,13 @@ let counter = 0;
 
 /** SET UP SVG **/
 let intViewportWidth = window.innerWidth;
+let intViewportHeight = window.innerHeight;
+let squareDimension = Math.sqrt(intViewportWidth * intViewportHeight * .16);
+console.log(squareDimension);
 // console.log(intViewportWidth)
 //global variables
-let svgWidth = 850
-let svgHeight = svgWidth * 0.65
+let svgWidth = .6 * intViewportWidth
+let svgHeight = .4 * intViewportWidth
 
 let margin = {
   left: 50,
@@ -196,11 +200,31 @@ function handleData(data) {
     }
     //SQUARE
     if (pageData.square) {
-      d3.select('.square')
-        .attr('class', 'square active')
+      if (squareElement.hasChildNodes()) {
+        squareElement.removeChild(squareElement.childNodes[0])
+      }
+
+      d3.select('.square-container')
+        .attr('class', 'square-container active')
+        .append('svg')
+        .attr('class', 'square-canvas active')
+        .append('rect')
+        .attr('fill', '#F2F2F2')
+        .attr('width', squareDimension)
+        .attr('height', squareDimension)
+
+      d3.select('.square-canvas')
+        .append('text')
+        .attr('class', 'square-text')
+        .text('16%')
+        .attr('fill', 'black')
+        .attr('font-size', '30px')
+        .attr('y', 40)
+        .attr('x', 20)
+
     } else {
-      d3.select('.square')
-        .attr('class', 'square hidden')
+      d3.select('.square-container')
+        .attr('class', 'square-container hidden')
     }
     //land visual
     if (pageData.landVisible) {

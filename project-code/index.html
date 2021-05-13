@@ -24,26 +24,34 @@
         <div class="summary hidden" id='summary'></div>
         <div class="graph-center hidden"></div>
         <div class="image hidden"><img alt="" width="100%" height="auto"></div>
-        <div class="square">16%</div>
+        <div class="square-container" id='square'></div>
         <div class="annotation hidden"></div>
-        <div class="diagram hidden" id = 'diagram'></div>
-        <div class="carbon hidden" id = 'carbon'></div>
+        <div class="diagram hidden" id='diagram'></div>
+        <div class="carbon hidden" id='carbon'></div>
         <div class="land-visual hidden" id='land-visual'></div>
         <div class="human-text hidden">Already feed 70% of the population</div>
         <div class="land-text hidden">Using less than a quar-<br>ter of agricultural land</div>
-        <button class="button hidden" id = 'left-button'>critique</button>
-        <button class="button hidden" id = 'right-button'>conclusion</button>
+        <button class="button hidden" id='left-button'>critique</button>
+        <button class="button hidden" id='right-button'>conclusion</button>
         <!-- footer -->
         <div id="arrow-left" style="cursor: pointer;">
             <img src="./svg/left-arrow.svg" width="20%" height="auto" alt="img">
         </div>
         <div id="arrow-right" style="cursor: pointer;">
-            <img src="./svg/right-arrow.svg" width="20%"
-            height="auto" alt="img">
+            <img src="./svg/right-arrow.svg" width="20%" height="auto" alt="img">
         </div>
         <div id="counter"></div>
     </div>
     <script src="script.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K303CT12J6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-K303CT12J6');
+    </script>
 </body>
 
 </html>
