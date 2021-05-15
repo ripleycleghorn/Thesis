@@ -13,8 +13,6 @@ In 2018, the International Panel on Climate Change (IPCC) published a report dec
 ![image 4](4.png)
 
 #### Acknowledgements
-Thank you to Daniel Sauter and Alec Barrett for your help and support. Thank you as well to Ege Uz for providing much-needed technical aid.
+Thank you to Daniel Sauter for your continuous guidance throughout the program. Thank you as well to Ege Uz and Alec Barrett for providing much-needed coding support.
 
-I'd also like to acknowledge Leonardo Figueroa Helland's teaching as the source of inspiration for this project.
-
-Submitted in partial fulfillment of the requirements for the degree of Master Science in Data Visualization at Parsons School of Design.
+I'd like to acknowledge Leonardo Figueroa Helland's teaching as the source of inspiration for this project.
