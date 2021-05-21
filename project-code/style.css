@@ -24,12 +24,9 @@ div {
 }
 
 .teal {
-    /* padding-left: 2px;
-    padding-right: 2px; */
     color: white;
     background-color: #3C6E71;
-    /* display: inline-block; */
-    animation: shake 0.5s;
+    /* animation: shake 0.5s; */
 }
 
 .grey {
@@ -39,12 +36,18 @@ div {
     background-color: #989998;
 }
 
+.beige {
+    background-color: rgba(242, 242, 242, .9);
+}
+
 .hoverText {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 14px;
     width: 180px;
     color: black;
     font-style: italic;
+    background-color: white;
+    border: 1px solid #989998;
 }
 
 .hidden {

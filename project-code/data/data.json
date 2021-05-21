@@ -148,7 +148,7 @@
   },
   "page-14": {
     "text": "",
-    "annotation": "Finally, the last two stay below a 4°F rise, representing the <span class='low'>1.5°C</span> and <span class='high'>2°C</span> pathways, <span class='low'>this</span> pathway is our best bet; it will help us avoid unpredictable climate reactions.",
+    "annotation": "<span class='beige'>Finally, the last two stay below a 4°F rise, representing the <span class='low'>1.5°C</span> and <span class='high'>2°C</span> pathways, <span class='low'>this</span> pathway is our best bet; it will help us avoid unpredictable climate reactions.</span>",
     "graphVisible": true,
     "diagramVisible": false,
     "historicOnly": false,

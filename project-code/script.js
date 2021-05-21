@@ -122,7 +122,7 @@ function handleData(data) {
         .append('div')
         .attr('class', 'text')
         .html(pageData.text)
-      if(counter == 27) {
+      if (counter == 27) {
         //loop through references
         d3.select('.summary')
           .attr('class', 'summary active')
@@ -290,6 +290,7 @@ function handleData(data) {
         d3.select(".tooltip")
           .append("div")
           .attr("class", "hoverText")
+          .attr("id", "hoverText-" + counter)
           .style("opacity", 0);
 
       // setup svg & add group
@@ -299,9 +300,13 @@ function handleData(data) {
             .duration(200)
             .style("opacity", 1);
           div.html(pageData.hoverText)
-            .style("left", (300) + "px")
-            .style("top", (150) + "px")
-            .style("position", "absolute");
+            .style("right", function (d) {
+              if (counter == 8) { return (width) + "px" } 
+              else { return (width * 1.2) + "px" }
+            })
+            .style("bottom", (height / 1.2) + "px")
+            .style("position", "absolute")
+            .style("padding", "10px");
         })
         .on("mouseout", function (d) {
           div.transition()
@@ -311,9 +316,9 @@ function handleData(data) {
     } else {
       svg.selectAll('.hoverText').remove();
     }
-    if(pageData['percent-1']) {
+    if (pageData['percent-1']) {
       var percent_counter = 0
-      while(percent_counter < 10) {
+      while (percent_counter < 10) {
         d3.select('#container')
           .append('div')
           .attr('class', 'human active')
@@ -328,9 +333,9 @@ function handleData(data) {
       d3.select('.human-text')
         .attr('class', 'human-text hidden')
     }
-    if(pageData['percent-2']) {
+    if (pageData['percent-2']) {
       var percent_counter = 0
-      while(percent_counter < 10) {
+      while (percent_counter < 10) {
         d3.select('#container')
           .append('div')
           .attr('class', 'land active')
@@ -381,8 +386,8 @@ function handleData(data) {
       const length = path.node().getTotalLength();
       var pathNum = counter + '-' + i;
       var staticPatharray = ['11-0', '13-0', '13-4', '14-0', '14-4', '14-3', '15-0', '15-1', '15-2', '15-3', '15-4']
-      var staticDatalabelarray = ['11-0', '12-0', '13-0', '13-4', '14-0', '14-4', '14-3', '15-0','15-1', '15-2', '15-3', '15-4']
-      
+      var staticDatalabelarray = ['11-0', '12-0', '13-0', '13-4', '14-0', '14-4', '14-3', '15-0', '15-1', '15-2', '15-3', '15-4']
+
       function animate() {
         // Animate the path by setting the initial offset and dasharray and then transition the offset to 0
         path.attr("stroke-dasharray", length + " " + length)
@@ -395,13 +400,13 @@ function handleData(data) {
 
       function dataLabel() {
         svg.append("text")
-            .datum(graphData[i].value[graphData[i].value.length - 1])
-            .attr('class', 'data-label')
-            .attr('id', 'page' + counter + '-label' + i)
-            .attr('x', -10)
-            .attr("transform", function (d) { return "translate(" + xScale(d.year) + "," + (yScale(d.emissions) - 15) + ")"; })
-            .attr("text-anchor", "middle")
-            .text(graphData[i].value[graphData[i].value.length - 1].Entity);
+          .datum(graphData[i].value[graphData[i].value.length - 1])
+          .attr('class', 'data-label')
+          .attr('id', 'page' + counter + '-label' + i)
+          .attr('x', -10)
+          .attr("transform", function (d) { return "translate(" + xScale(d.year) + "," + (yScale(d.emissions) - 15) + ")"; })
+          .attr("text-anchor", "middle")
+          .text(graphData[i].value[graphData[i].value.length - 1].Entity);
       }
       //only animate new lines
       if (!staticPatharray.includes(pathNum)) {
@@ -410,7 +415,7 @@ function handleData(data) {
       //only show data labels for future scenarios, add delay the first time the label is shown
       if (pageData.graphVisible && counter > 10) {
         if (!staticDatalabelarray.includes(pathNum)) {
-          setTimeout(() => {dataLabel()}, 1500);
+          setTimeout(() => { dataLabel() }, 1500);
         } else {
           dataLabel();
         };
@@ -436,15 +441,15 @@ function handleData(data) {
       .attr("id", "y-axis")
 
     // text label for the y axis
-    if(document.getElementById("label") == null) {
+    if (document.getElementById("label") == null) {
       svg.append("text")
-      .attr('id', 'label')
-      .attr("transform", "rotate(-90)")
-      .attr("y", 0 - margin.left)
-      .attr("x", 0 - (height / 2))
-      .attr("dy", "1em")
-      .style("text-anchor", "middle")
-      .text("Gigatons of CO2");
+        .attr('id', 'label')
+        .attr("transform", "rotate(-90)")
+        .attr("y", 0 - margin.left)
+        .attr("x", 0 - (height / 2))
+        .attr("dy", "1em")
+        .style("text-anchor", "middle")
+        .text("Gigatons of CO2");
     }
 
     //append axis
