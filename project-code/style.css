@@ -517,18 +517,15 @@ svg {
 /* arrows and buttons */
 
 #arrow-right {
-    position: absolute;
-    bottom: 30px;
-    right: -150px;
     z-index: 100;
+    grid-column: 11 / span 1;
+    grid-row: 10 / span 1;
 }
 
 #arrow-left {
-    position: absolute;
-    bottom: 30px;
-    left: -150px;
-    text-align: right;
     z-index: 100;
+    grid-column: 2 / span 1;
+    grid-row: 10 / span 1;
 }
 
 .button {
