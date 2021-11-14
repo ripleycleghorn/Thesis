@@ -355,6 +355,7 @@ div {
 svg {
     height: 40vw;
     width: 60vw;
+    pointer-events:none
 }
 
 .human-text, .land-text {
